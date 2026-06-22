@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Automatix FCZ — AI Automation for European Businesses</title>
+<meta name="description" content="Automatix FCZ helps European SMEs and scale-ups automate operations with AI agents, workflow automation and custom integrations." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        colors: {
+          navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
+          ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
+        },
+        boxShadow: { glow: '0 0 60px -10px rgba(255,122,48,0.35)' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .bg-grid {
+    background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .gradient-text {
+    background: linear-gradient(90deg, #ff9a5c, #ff7a30);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
+  .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -20px rgba(11,17,32,0.25); }
+  .float { animation: floaty 6s ease-in-out infinite; }
+  .float-delay { animation: floaty 6s ease-in-out infinite; animation-delay: 1.2s; }
+  @keyframes floaty { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
+</style>
+</head>
+<body class="bg-white text-navy-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect width="28" height="28" rx="7" fill="#ff7a30"/>
+        <path d="M8 19L13 9L18 19" stroke="#0b1120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="9" r="1.6" fill="#0b1120"/>
+      </svg>
+      <span class="text-white font-bold text-lg tracking-tight">Automatix <span class="text-ember-500">FCZ</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+      <a href="#services" data-i18n="nav.services" class="hover:text-white transition">Services</a>
+      <a href="#how" data-i18n="nav.how" class="hover:text-white transition">How it works</a>
+      <a href="#pricing" data-i18n="nav.pricing" class="hover:text-white transition">Pricing</a>
+      <a href="#about" data-i18n="nav.about" class="hover:text-white transition">About</a>
+      <a href="#contact" data-i18n="nav.contact" class="hover:text-white transition">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <select id="langSelect" aria-label="Language" class="bg-navy-800 text-slate-200 text-sm border border-white/15 rounded-full px-3 py-2 focus:outline-none focus:border-ember-500">
+        <option value="nl">🇳🇱 Nederlands</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+      </select>
+      <a href="#contact" data-i18n="nav.cta" class="hidden sm:inline-flex items-center rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold text-sm px-5 py-2.5 transition">
+        Book a free call
+      </a>
+      <button id="menuBtn" class="md:hidden text-white p-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-navy-900 px-6 py-4 space-y-3 text-slate-300">
+    <a href="#services" data-i18n="nav.services" class="block hover:text-white">Services</a>
+    <a href="#how" data-i18n="nav.how" class="block hover:text-white">How it works</a>
+    <a href="#pricing" data-i18n="nav.pricing" class="block hover:text-white">Pricing</a>
+    <a href="#about" data-i18n="nav.about" class="block hover:text-white">About</a>
+    <a href="#contact" data-i18n="nav.contact" class="block hover:text-white">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative bg-navy-900 bg-grid overflow-hidden pt-40 pb-28 px-6 lg:px-8">
+  <canvas class="agent-bg absolute inset-0 w-full h-full"></canvas>
+  <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[640px] h-[640px] rounded-full bg-ember-500/20 blur-3xl"></div>
+  <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <span data-i18n="hero.badge" class="inline-flex items-center gap-2 text-xs font-semibold text-ember-400 bg-ember-500/10 border border-ember-500/30 rounded-full px-3 py-1">
+        🇳🇱 Engineered in Rotterdam, built for Europe
+      </span>
+      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+        <span data-i18n="hero.title1">Automate the busywork.</span><br/>
+        <span data-i18n="hero.title2" class="gradient-text">Scale what matters.</span>
+      </h1>
+      <p data-i18n="hero.subtitle" class="mt-6 text-lg text-slate-300 max-w-xl">
+        Automatix FCZ designs and builds AI-driven automation for European SMEs and scale-ups — from intelligent agents to end-to-end workflow integration, all GDPR-first by design.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#contact" data-i18n="hero.cta1" class="rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold px-6 py-3 transition shadow-glow">Book a free consult</a>
+        <a href="#how" data-i18n="hero.cta2" class="rounded-full border border-white/20 text-white font-semibold px-6 py-3 hover:bg-white/5 transition">See how it works</a>
+      </div>
+      <div class="mt-10 flex items-center gap-6 text-slate-400 text-sm">
+        <div><span class="text-white font-bold text-xl">15+</span> <span data-i18n="hero.stat1">automations shipped</span></div>
+        <div class="w-px h-8 bg-white/10"></div>
+        <div><span class="text-white font-bold text-xl">€180K</span> <span data-i18n="hero.stat2">in saved ops time</span></div>
+      </div>
+    </div>
+    <div class="relative h-[420px] hidden lg:block">
+      <div class="float absolute top-4 left-4 w-72 rounded-2xl bg-navy-800/80 border border-white/10 p-5 shadow-xl">
+        <div data-i18n="hero.card1.title" class="text-xs text-slate-400 mb-2">Workflow: Lead intake</div>
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-sm text-white"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> <span data-i18n="hero.card1.line1">New lead detected</span></div>
+          <div class="flex items-center gap-2 text-sm text-white"><span class="w-2 h-2 rounded-full bg-ember-400"></span> <span data-i18n="hero.card1.line2">AI agent qualifies lead</span></div>
+          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="w-2 h-2 rounded-full bg-slate-500"></span> <span data-i18n="hero.card1.line3">CRM updated automatically</span></div>
+        </div>
+      </div>
+      <div class="float-delay absolute bottom-4 right-0 w-64 rounded-2xl bg-navy-800/80 border border-white/10 p-5 shadow-xl">
+        <div data-i18n="hero.card2.title" class="text-xs text-slate-400 mb-2">Monthly hours saved</div>
+        <div class="text-3xl font-bold text-white">312<span class="text-ember-400">h</span></div>
+        <div class="mt-2 h-2 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-4/5 bg-gradient-to-r from-ember-400 to-ember-500"></div></div>
+      </div>
+      <div class="absolute inset-0 -z-10 flex items-center justify-center">
+        <div class="w-72 h-72 rounded-full bg-gradient-to-br from-ember-500/30 to-transparent blur-2xl"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="bg-navy-950 py-8 px-6 lg:px-8 border-t border-white/5">
+  <div class="max-w-7xl mx-auto">
+    <p data-i18n="trust.label" class="text-center text-xs uppercase tracking-widest text-slate-500 mb-6">Trusted by ambitious teams across the Benelux</p>
+    <div class="flex flex-wrap justify-center gap-x-12 gap-y-4 text-slate-400 font-semibold text-lg">
+      <span>NorthPeak</span>
+      <span>Delta Works</span>
+      <span>Veld&amp;Co</span>
+      <span>BrightHarbor</span>
+      <span>Kanaal Group</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-white py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span data-i18n="services.label" class="text-ember-600 font-semibold text-sm uppercase tracking-wide">What we do</span>
+      <h2 data-i18n="services.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900">AI automation, end to end</h2>
+      <p data-i18n="services.subtitle" class="mt-4 text-slate-600">From a single automated workflow to a fully integrated AI operating layer for your business.</p>
+    </div>
+    <div class="reveal mt-10 max-w-4xl mx-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden">
+      <canvas class="pipeline-bg block w-full" style="height:96px"></canvas>
+    </div>
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card -->
+      <div class="reveal card-hover bg-slate-50 border border-slate-200 rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-ember-500/10 flex items-center justify-center text-ember-600 mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3 data-i18n="services.1.title" class="font-bold text-lg text-navy-900">Process Automation</h3>
+        <p data-i18n="services.1.desc" class="mt-2 text-slate-600 text-sm">Eliminate repetitive manual work with AI-driven workflows that run themselves, 24/7.</p>
+      </div>
+      <div class="reveal card-hover bg-slate-50 border border-slate-200 rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-ember-500/10 flex items-center justify-center text-ember-600 mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3 data-i18n="services.2.title" class="font-bold text-lg text-navy-900">AI Agents &amp; Chatbots</h3>
+        <p data-i18n="services.2.desc" class="mt-2 text-slate-600 text-sm">Intelligent assistants that handle sales, support and internal ops conversations around the clock.</p>
+      </div>
+      <div class="reveal card-hover bg-slate-50 border border-slate-200 rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-ember-500/10 flex items-center justify-center text-ember-600 mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l4-4 4 4 4-6"/></svg>
+        </div>
+        <h3 data-i18n="services.3.title" class="font-bold text-lg text-navy-900">Data &amp; Analytics Pipelines</h3>
+        <p data-i18n="services.3.desc" class="mt-2 text-slate-600 text-sm">Turn scattered data into real-time dashboards and decisions, automatically refreshed.</p>
+      </div>
+      <div class="reveal card-hover bg-slate-50 border border-slate-200 rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-ember-500/10 flex items-center justify-center text-ember-600 mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        </div>
+        <h3 data-i18n="services.4.title" class="font-bold text-lg text-navy-900">System Integration</h3>
+        <p data-i18n="services.4.desc" class="mt-2 text-slate-600 text-sm">Connect your CRM, ERP, email and tools into one seamless, automated flow.</p>
+      </div>
+      <div class="reveal card-hover bg-slate-50 border border-slate-200 rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-ember-500/10 flex items-center justify-center text-ember-600 mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 10L3 5l9-5 9 5-9 5z"/></svg>
+        </div>
+        <h3 data-i18n="services.5.title" class="font-bold text-lg text-navy-900">Custom AI Solutions</h3>
+        <p data-i18n="services.5.desc" class="mt-2 text-slate-600 text-sm">Bespoke models and tools engineered around your specific business case.</p>
+      </div>
+      <div class="reveal card-hover bg-slate-50 border border-slate-200 rounded-2xl p-7">
+        <div class="w-11 h-11 rounded-xl bg-ember-500/10 flex items-center justify-center text-ember-600 mb-5">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
+        </div>
+        <h3 data-i18n="services.6.title" class="font-bold text-lg text-navy-900">Compliance &amp; Security</h3>
+        <p data-i18n="services.6.desc" class="mt-2 text-slate-600 text-sm">GDPR-first architecture and EU data residency, built for European standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="relative bg-navy-900 bg-grid overflow-hidden py-24 px-6 lg:px-8">
+  <canvas class="agent-bg absolute inset-0 w-full h-full"></canvas>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span data-i18n="how.label" class="text-ember-400 font-semibold text-sm uppercase tracking-wide">How it works</span>
+      <h2 data-i18n="how.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-white">From audit to autopilot in four steps</h2>
+    </div>
+    <div class="reveal mt-10 max-w-3xl mx-auto rounded-2xl border border-white/10 bg-navy-800/40 overflow-hidden">
+      <canvas class="flow-bg block w-full" style="height:90px"></canvas>
+    </div>
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal relative bg-navy-800/60 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-extrabold text-ember-500/40 mb-4">01</div>
+        <h3 data-i18n="how.1.title" class="font-bold text-white">Discovery Call</h3>
+        <p data-i18n="how.1.desc" class="mt-2 text-slate-400 text-sm">We map your operations and find the highest-impact automation opportunities.</p>
+      </div>
+      <div class="reveal relative bg-navy-800/60 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-extrabold text-ember-500/40 mb-4">02</div>
+        <h3 data-i18n="how.2.title" class="font-bold text-white">Audit &amp; Roadmap</h3>
+        <p data-i18n="how.2.desc" class="mt-2 text-slate-400 text-sm">A clear, prioritized roadmap with expected time and cost savings per automation.</p>
+      </div>
+      <div class="reveal relative bg-navy-800/60 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-extrabold text-ember-500/40 mb-4">03</div>
+        <h3 data-i18n="how.3.title" class="font-bold text-white">Build &amp; Integrate</h3>
+        <p data-i18n="how.3.desc" class="mt-2 text-slate-400 text-sm">Our team builds and connects the automations directly into your existing stack.</p>
+      </div>
+      <div class="reveal relative bg-navy-800/60 border border-white/10 rounded-2xl p-6">
+        <div class="text-4xl font-extrabold text-ember-500/40 mb-4">04</div>
+        <h3 data-i18n="how.4.title" class="font-bold text-white">Launch &amp; Optimize</h3>
+        <p data-i18n="how.4.desc" class="mt-2 text-slate-400 text-sm">We monitor performance and keep tuning as your business evolves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="bg-white py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span data-i18n="pricing.label" class="text-ember-600 font-semibold text-sm uppercase tracking-wide">Pricing</span>
+      <h2 data-i18n="pricing.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900">Plans that scale with your automation needs</h2>
+      <p data-i18n="pricing.subtitle" class="mt-4 text-slate-600">Transparent monthly pricing. No hidden fees. Cancel anytime.</p>
+    </div>
+    <div class="mt-16 grid lg:grid-cols-3 gap-6 items-start">
+      <div class="reveal card-hover border border-slate-200 rounded-2xl p-8">
+        <h3 data-i18n="pricing.starter.name" class="font-bold text-lg text-navy-900">Starter</h3>
+        <p data-i18n="pricing.starter.desc" class="text-slate-500 text-sm mt-1">For small teams automating their first workflows.</p>
+        <div class="mt-6 text-4xl font-extrabold text-navy-900">€1,200<span data-i18n="pricing.perMo" class="text-base font-medium text-slate-500">/mo</span></div>
+        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+          <li>✓ <span data-i18n="pricing.starter.f1">Up to 3 automations</span></li>
+          <li>✓ <span data-i18n="pricing.starter.f2">1 AI agent / chatbot</span></li>
+          <li>✓ <span data-i18n="pricing.starter.f3">Email &amp; chat support</span></li>
+          <li>✓ <span data-i18n="pricing.starter.f4">Monthly optimization review</span></li>
+        </ul>
+        <a href="#contact" data-i18n="pricing.cta.secondary" class="mt-8 block text-center rounded-full border border-navy-900 text-navy-900 font-semibold py-3 hover:bg-navy-900 hover:text-white transition">Get started</a>
+      </div>
+      <div class="reveal card-hover relative border-2 border-ember-500 rounded-2xl p-8 shadow-glow">
+        <span data-i18n="pricing.badge" class="absolute -top-3 left-1/2 -translate-x-1/2 bg-ember-500 text-navy-950 text-xs font-bold px-3 py-1 rounded-full">Most popular</span>
+        <h3 data-i18n="pricing.growth.name" class="font-bold text-lg text-navy-900">Growth</h3>
+        <p data-i18n="pricing.growth.desc" class="text-slate-500 text-sm mt-1">For scale-ups automating across departments.</p>
+        <div class="mt-6 text-4xl font-extrabold text-navy-900">€2,800<span data-i18n="pricing.perMo" class="text-base font-medium text-slate-500">/mo</span></div>
+        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+          <li>✓ <span data-i18n="pricing.growth.f1">Up to 10 automations</span></li>
+          <li>✓ <span data-i18n="pricing.growth.f2">3 AI agents / chatbots</span></li>
+          <li>✓ <span data-i18n="pricing.growth.f3">Full system integrations</span></li>
+          <li>✓ <span data-i18n="pricing.growth.f4">Priority support + dedicated lead</span></li>
+          <li>✓ <span data-i18n="pricing.growth.f5">Weekly optimization review</span></li>
+        </ul>
+        <a href="#contact" data-i18n="pricing.cta.secondary" class="mt-8 block text-center rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold py-3 transition">Get started</a>
+      </div>
+      <div class="reveal card-hover border border-slate-200 rounded-2xl p-8">
+        <h3 data-i18n="pricing.enterprise.name" class="font-bold text-lg text-navy-900">Enterprise</h3>
+        <p data-i18n="pricing.enterprise.desc" class="text-slate-500 text-sm mt-1">For organizations with complex, large-scale needs.</p>
+        <div data-i18n="pricing.enterprise.price" class="mt-6 text-4xl font-extrabold text-navy-900">Custom</div>
+        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+          <li>✓ <span data-i18n="pricing.enterprise.f1">Unlimited automations</span></li>
+          <li>✓ <span data-i18n="pricing.enterprise.f2">Custom AI model development</span></li>
+          <li>✓ <span data-i18n="pricing.enterprise.f3">Dedicated infrastructure &amp; SLA</span></li>
+          <li>✓ <span data-i18n="pricing.enterprise.f4">On-site workshops</span></li>
+        </ul>
+        <a href="#contact" data-i18n="pricing.cta.primary" class="mt-8 block text-center rounded-full border border-navy-900 text-navy-900 font-semibold py-3 hover:bg-navy-900 hover:text-white transition">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="bg-slate-50 py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span data-i18n="testimonials.label" class="text-ember-600 font-semibold text-sm uppercase tracking-wide">Testimonials</span>
+      <h2 data-i18n="testimonials.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900">Trusted by operators, not just IT teams</h2>
+    </div>
+    <div class="mt-16 grid md:grid-cols-3 gap-6">
+      <div class="reveal bg-white border border-slate-200 rounded-2xl p-7">
+        <p data-i18n="testimonials.1.quote" class="text-slate-600 text-sm">"Automatix FCZ automated our entire lead intake process. What took our team 15 hours a week now runs itself."</p>
+        <div class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-ember-500/20 flex items-center justify-center font-bold text-ember-600">SG</div>
+          <div>
+            <div class="font-semibold text-navy-900 text-sm">Sanne de Groot</div>
+            <div class="text-xs text-slate-500">COO, Delta Works</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal bg-white border border-slate-200 rounded-2xl p-7">
+        <p data-i18n="testimonials.2.quote" class="text-slate-600 text-sm">"Sharp, pragmatic, and fast. They understood our messy workflows and turned them into something we actually trust."</p>
+        <div class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-ember-500/20 flex items-center justify-center font-bold text-ember-600">LB</div>
+          <div>
+            <div class="font-semibold text-navy-900 text-sm">Lucas Bakker</div>
+            <div class="text-xs text-slate-500">Founder, Veld&amp;Co</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal bg-white border border-slate-200 rounded-2xl p-7">
+        <p data-i18n="testimonials.3.quote" class="text-slate-600 text-sm">"GDPR was a real concern for us — they treated it as a first-class requirement, not an afterthought."</p>
+        <div class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-ember-500/20 flex items-center justify-center font-bold text-ember-600">MD</div>
+          <div>
+            <div class="font-semibold text-navy-900 text-sm">Marieke van Dijk</div>
+            <div class="text-xs text-slate-500">Operations Lead, NorthPeak</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="bg-white py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <span data-i18n="about.label" class="text-ember-600 font-semibold text-sm uppercase tracking-wide">About us</span>
+      <h2 data-i18n="about.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900">Built in Rotterdam. Built for European business.</h2>
+      <p data-i18n="about.p1" class="mt-5 text-slate-600">
+        Automatix FCZ is a team of automation engineers, AI specialists and operations consultants based in the Netherlands.
+        We help European SMEs and scale-ups cut through manual busywork with practical, well-integrated AI automation —
+        not hype, not vendor lock-in.
+      </p>
+      <p data-i18n="about.p2" class="mt-4 text-slate-600">
+        Every solution we ship is designed with European data protection standards in mind, so you can automate with
+        confidence.
+      </p>
+      <div class="mt-8 grid grid-cols-3 gap-6">
+        <div>
+          <div class="text-2xl font-extrabold text-navy-900">2026</div>
+          <div data-i18n="about.stat1" class="text-xs text-slate-500 mt-1">Founded</div>
+        </div>
+        <div>
+          <div class="text-2xl font-extrabold text-navy-900">2</div>
+          <div data-i18n="about.stat2" class="text-xs text-slate-500 mt-1">Team members</div>
+        </div>
+        <div>
+          <div class="text-2xl font-extrabold text-navy-900">3</div>
+          <div data-i18n="about.stat3" class="text-xs text-slate-500 mt-1">Countries served</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal relative h-80 rounded-3xl bg-gradient-to-br from-navy-900 to-navy-700 overflow-hidden">
+      <div class="absolute inset-0 bg-grid opacity-30"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="w-40 h-40 rounded-full bg-ember-500/30 blur-2xl"></div>
+      </div>
+      <div class="absolute bottom-6 left-6 text-white">
+        <div data-i18n="about.hq.label" class="text-sm text-slate-300">Headquarters</div>
+        <div data-i18n="about.hq.value" class="text-xl font-bold">Rotterdam, Netherlands</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative bg-navy-900 bg-grid overflow-hidden py-24 px-6 lg:px-8">
+  <canvas class="agent-bg absolute inset-0 w-full h-full"></canvas>
+  <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16">
+    <div class="reveal">
+      <span data-i18n="contact.label" class="text-ember-400 font-semibold text-sm uppercase tracking-wide">Get in touch</span>
+      <h2 data-i18n="contact.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-white">Let's automate something today</h2>
+      <p data-i18n="contact.subtitle" class="mt-4 text-slate-300 max-w-md">Tell us a bit about your business and we'll get back to you within one business day to schedule a free consult.</p>
+      <div class="mt-8 space-y-4 text-slate-300 text-sm">
+        <div class="flex items-center gap-3"><span class="text-ember-400">✉</span> hello@automatixfcz.nl</div>
+        <div class="flex items-center gap-3"><span class="text-ember-400">☎</span> +31 (0)10 123 4567</div>
+        <div class="flex items-center gap-3"><span class="text-ember-400">📍</span> <span data-i18n="contact.address">Wilhelminakade 12, 3072 AP Rotterdam, NL</span></div>
+      </div>
+    </div>
+    <form class="reveal bg-navy-800/60 border border-white/10 rounded-2xl p-8 space-y-4" onsubmit="event.preventDefault(); document.getElementById('formNote').classList.remove('hidden');">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <input required type="text" data-i18n-placeholder="contact.form.name" placeholder="Full name" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
+        <input required type="text" data-i18n-placeholder="contact.form.company" placeholder="Company" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
+      </div>
+      <input required type="email" data-i18n-placeholder="contact.form.email" placeholder="Work email" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
+      <textarea required data-i18n-placeholder="contact.form.message" placeholder="What would you like to automate?" rows="4" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500"></textarea>
+      <button type="submit" data-i18n="contact.form.submit" class="w-full rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold py-3 transition">Send message</button>
+      <p id="formNote" data-i18n="contact.form.note" class="hidden text-emerald-400 text-sm text-center">Thanks! This is a demo form — connect it to your CRM or email service to go live.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy-950 border-t border-white/5 py-12 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <span class="text-white font-bold text-lg">Automatix <span class="text-ember-500">FCZ</span></span>
+      <p data-i18n="footer.tagline" class="mt-3 text-sm text-slate-500">AI automation for European businesses. Engineered in Rotterdam.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer.companyHeading" class="text-white font-semibold text-sm mb-3">Company</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="#about" data-i18n="footer.aboutLink" class="hover:text-white">About us</a></li>
+        <li><a href="#services" data-i18n="footer.servicesLink" class="hover:text-white">Services</a></li>
+        <li><a href="#contact" data-i18n="footer.contactLink" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.servicesHeading" class="text-white font-semibold text-sm mb-3">Services</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li data-i18n="services.1.title">Process Automation</li>
+        <li data-i18n="services.2.title">AI Agents &amp; Chatbots</li>
+        <li data-i18n="services.4.title">System Integration</li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.legalHeading" class="text-white font-semibold text-sm mb-3">Legal</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="#" data-i18n="footer.privacy" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="#" data-i18n="footer.terms" class="hover:text-white">Terms of Service</a></li>
+        <li><a href="#" data-i18n="footer.gdpr" class="hover:text-white">GDPR</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
+    <span data-i18n="footer.copyright">© 2026 Automatix FCZ. All rights reserved.</span>
+    <span data-i18n="footer.kvkLine">KVK: 00000000 · Rotterdam, The Netherlands</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+<script src="i18n.js"></script>
+<script src="agent-bg.js" defer></script>
+<script src="pipeline-bg.js" defer></script>
+<script src="flow-bg.js" defer></script>
+</body>
+</html>
