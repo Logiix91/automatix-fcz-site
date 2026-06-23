@@ -22,7 +22,7 @@
     canvas.style.height = height + "px";
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    const count = 4;
+    const count = 6;
     const margin = width / (count + 1);
     nodes = Array.from({ length: count }, (_, i) => ({
       x: margin * (i + 1),

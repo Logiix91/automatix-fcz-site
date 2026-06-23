@@ -36,6 +36,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.automatixfcz.nl/conversational-ai.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.automatixfcz.nl/intelligent-document-processing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.automatixfcz.nl/managed-services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.automatixfcz.nl/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
