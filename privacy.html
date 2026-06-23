@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Automatix FCZ</title>
+<meta name="description" content="Privacy Policy for Automatix FCZ: what personal data we collect, why, and your rights under the GDPR." />
+<link rel="canonical" href="https://www.automatixfcz.nl/privacy.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Privacy Policy — Automatix FCZ" />
+<meta property="og:description" content="What personal data Automatix FCZ collects, why, and your rights under the GDPR." />
+<meta property="og:url" content="https://www.automatixfcz.nl/privacy.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        colors: {
+          navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
+          ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
+        },
+        boxShadow: { glow: '0 0 60px -10px rgba(255,122,48,0.35)' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .bg-grid {
+    background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body class="bg-white text-navy-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect width="28" height="28" rx="7" fill="#ff7a30"/>
+        <path d="M8 19L13 9L18 19" stroke="#0b1120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="9" r="1.6" fill="#0b1120"/>
+      </svg>
+      <span class="text-white font-bold text-lg tracking-tight">Automatix <span class="text-ember-500">FCZ</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+      <a href="index.html#services" data-i18n="nav.services" class="hover:text-white transition">Services</a>
+      <a href="index.html#how" data-i18n="nav.how" class="hover:text-white transition">How it works</a>
+      <a href="index.html#pricing" data-i18n="nav.pricing" class="hover:text-white transition">Pricing</a>
+      <a href="index.html#about" data-i18n="nav.about" class="hover:text-white transition">About</a>
+      <a href="index.html#contact" data-i18n="nav.contact" class="hover:text-white transition">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <select id="langSelect" aria-label="Language" class="bg-navy-800 text-slate-200 text-sm border border-white/15 rounded-full px-3 py-2 focus:outline-none focus:border-ember-500">
+        <option value="nl">🇳🇱 Nederlands</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+      </select>
+      <a href="index.html#contact" data-i18n="nav.cta" class="hidden sm:inline-flex items-center rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold text-sm px-5 py-2.5 transition">
+        Book a free call
+      </a>
+      <button id="menuBtn" class="md:hidden text-white p-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-navy-900 px-6 py-4 space-y-3 text-slate-300">
+    <a href="index.html#services" data-i18n="nav.services" class="block hover:text-white">Services</a>
+    <a href="index.html#how" data-i18n="nav.how" class="block hover:text-white">How it works</a>
+    <a href="index.html#pricing" data-i18n="nav.pricing" class="block hover:text-white">Pricing</a>
+    <a href="index.html#about" data-i18n="nav.about" class="block hover:text-white">About</a>
+    <a href="index.html#contact" data-i18n="nav.contact" class="block hover:text-white">Contact</a>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="bg-navy-900 bg-grid pt-36 pb-16 px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <h1 data-i18n="legal.privacy.title" class="text-4xl sm:text-5xl font-extrabold text-white">Privacy Policy</h1>
+    <p data-i18n="legal.privacy.updated" class="mt-3 text-sm text-slate-400">Last updated: June 2026</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="bg-white py-20 px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <p data-i18n="legal.privacy.intro" class="reveal text-lg text-slate-600">
+      Automatix FCZ ("we", "us") respects your privacy. This page explains what personal data we collect, why, and what rights you have under the GDPR.
+    </p>
+
+    <div class="mt-10 space-y-10">
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s1.title" class="text-xl font-bold text-navy-900">Who we are</h2>
+        <p data-i18n="legal.privacy.s1.body" class="mt-2 text-slate-600">Automatix FCZ is a Rotterdam-based automation studio (KVK: 00000000). Our data contact is hello@automatixfcz.nl.</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s2.title" class="text-xl font-bold text-navy-900">What we collect</h2>
+        <p data-i18n="legal.privacy.s2.body" class="mt-2 text-slate-600">Through our contact form we collect the name, company, email address and message you provide. We don't collect payment details on this site, and you don't need an account.</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s3.title" class="text-xl font-bold text-navy-900">Why we process it</h2>
+        <p data-i18n="legal.privacy.s3.body" class="mt-2 text-slate-600">We use this data only to respond to your enquiry, schedule a consultation, and deliver agreed services. We never sell or rent your data.</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s4.title" class="text-xl font-bold text-navy-900">Legal basis</h2>
+        <p data-i18n="legal.privacy.s4.body" class="mt-2 text-slate-600">We rely on your consent when you submit the form, and on contract performance once a client relationship begins.</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s5.title" class="text-xl font-bold text-navy-900">How long we keep it</h2>
+        <p data-i18n="legal.privacy.s5.body" class="mt-2 text-slate-600">Enquiry data is kept up to 24 months. Client data is kept for the duration of the engagement plus the retention period required by Dutch tax law (currently 7 years for financial records).</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s6.title" class="text-xl font-bold text-navy-900">Cookies & local storage</h2>
+        <p data-i18n="legal.privacy.s6.body" class="mt-2 text-slate-600">This site uses no tracking or advertising cookies. We store your chosen display language in your browser's local storage purely for convenience — clear it anytime via your browser settings.</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s7.title" class="text-xl font-bold text-navy-900">Sharing your data</h2>
+        <p data-i18n="legal.privacy.s7.body" class="mt-2 text-slate-600">We only share data with processors strictly necessary to run our business (e.g. email or CRM tools), under GDPR-compliant agreements, and never transfer it outside the EU/EEA without proper safeguards.</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s8.title" class="text-xl font-bold text-navy-900">Security</h2>
+        <p data-i18n="legal.privacy.s8.body" class="mt-2 text-slate-600">We apply appropriate technical and organizational measures to protect your data against unauthorized access, loss or misuse.</p>
+      </div>
+      <div id="gdpr" class="reveal scroll-mt-24 rounded-2xl border border-ember-500/30 bg-ember-500/5 p-6">
+        <h2 data-i18n="legal.privacy.s9.title" class="text-xl font-bold text-navy-900">Your rights</h2>
+        <p data-i18n="legal.privacy.s9.body" class="mt-2 text-slate-600">Under the GDPR you can access, correct, or erase your data, restrict or object to its processing, and request portability. You can also lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens). To exercise any right, email hello@automatixfcz.nl.</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s10.title" class="text-xl font-bold text-navy-900">Changes to this policy</h2>
+        <p data-i18n="legal.privacy.s10.body" class="mt-2 text-slate-600">We may update this policy occasionally. The version published here is always the current one.</p>
+      </div>
+      <div class="reveal">
+        <h2 data-i18n="legal.privacy.s11.title" class="text-xl font-bold text-navy-900">Contact</h2>
+        <p data-i18n="legal.privacy.s11.body" class="mt-2 text-slate-600">Questions about this policy? Email hello@automatixfcz.nl or write to Wilhelminakade 12, 3072 AP Rotterdam, NL.</p>
+      </div>
+    </div>
+
+    <a href="index.html" data-i18n="legal.backHome" class="reveal inline-block mt-12 text-ember-600 font-semibold hover:underline">← Back to home</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy-950 border-t border-white/5 py-12 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <span class="text-white font-bold text-lg">Automatix <span class="text-ember-500">FCZ</span></span>
+      <p data-i18n="footer.tagline" class="mt-3 text-sm text-slate-500">AI automation for European businesses. Engineered in Rotterdam.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer.companyHeading" class="text-white font-semibold text-sm mb-3">Company</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="index.html#about" data-i18n="footer.aboutLink" class="hover:text-white">About us</a></li>
+        <li><a href="index.html#services" data-i18n="footer.servicesLink" class="hover:text-white">Services</a></li>
+        <li><a href="index.html#contact" data-i18n="footer.contactLink" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.servicesHeading" class="text-white font-semibold text-sm mb-3">Services</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="process-automation.html" data-i18n="services.1.title" class="hover:text-white">Process Automation</a></li>
+        <li><a href="ai-agents-chatbots.html" data-i18n="services.2.title" class="hover:text-white">AI Agents &amp; Chatbots</a></li>
+        <li><a href="data-analytics-pipelines.html" data-i18n="services.3.title" class="hover:text-white">Data &amp; Analytics Pipelines</a></li>
+        <li><a href="system-integration.html" data-i18n="services.4.title" class="hover:text-white">System Integration</a></li>
+        <li><a href="custom-ai-solutions.html" data-i18n="services.5.title" class="hover:text-white">Custom AI Solutions</a></li>
+        <li><a href="compliance-security.html" data-i18n="services.6.title" class="hover:text-white">Compliance &amp; Security</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.legalHeading" class="text-white font-semibold text-sm mb-3">Legal</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="privacy.html" data-i18n="footer.privacy" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="terms.html" data-i18n="footer.terms" class="hover:text-white">Terms of Service</a></li>
+        <li><a href="privacy.html#gdpr" data-i18n="footer.gdpr" class="hover:text-white">GDPR</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
+    <span data-i18n="footer.copyright">© 2026 Automatix FCZ. All rights reserved.</span>
+    <span data-i18n="footer.kvkLine">KVK: 00000000 · Rotterdam, The Netherlands</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+<script src="i18n.js"></script>
+</body>
+</html>

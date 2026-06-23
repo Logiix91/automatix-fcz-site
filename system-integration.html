@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>System Integration — Automatix FCZ</title>
+<meta name="description" content="We connect your CRM, ERP, email, and other software into one seamless flow, so information moves automatically instead of being copy-pasted between tabs." />
+<link rel="canonical" href="https://www.automatixfcz.nl/system-integration.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="System Integration — Automatix FCZ" />
+<meta property="og:description" content="We connect your CRM, ERP, email, and other software into one seamless flow, so information moves automatically instead of being copy-pasted between tabs." />
+<meta property="og:url" content="https://www.automatixfcz.nl/system-integration.html" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="System Integration — Automatix FCZ" />
+<meta name="twitter:description" content="We connect your CRM, ERP, email, and other software into one seamless flow, so information moves automatically instead of being copy-pasted between tabs." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        colors: {
+          navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
+          ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
+        },
+        boxShadow: { glow: '0 0 60px -10px rgba(255,122,48,0.35)' },
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .bg-grid {
+    background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body class="bg-white text-navy-900 antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect width="28" height="28" rx="7" fill="#ff7a30"/>
+        <path d="M8 19L13 9L18 19" stroke="#0b1120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="20" cy="9" r="1.6" fill="#0b1120"/>
+      </svg>
+      <span class="text-white font-bold text-lg tracking-tight">Automatix <span class="text-ember-500">FCZ</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
+      <a href="index.html#services" data-i18n="nav.services" class="hover:text-white transition">Services</a>
+      <a href="index.html#how" data-i18n="nav.how" class="hover:text-white transition">How it works</a>
+      <a href="index.html#pricing" data-i18n="nav.pricing" class="hover:text-white transition">Pricing</a>
+      <a href="index.html#about" data-i18n="nav.about" class="hover:text-white transition">About</a>
+      <a href="index.html#contact" data-i18n="nav.contact" class="hover:text-white transition">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <select id="langSelect" aria-label="Language" class="bg-navy-800 text-slate-200 text-sm border border-white/15 rounded-full px-3 py-2 focus:outline-none focus:border-ember-500">
+        <option value="nl">🇳🇱 Nederlands</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+      </select>
+      <a href="index.html#contact" data-i18n="nav.cta" class="hidden sm:inline-flex items-center rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold text-sm px-5 py-2.5 transition">
+        Book a free call
+      </a>
+      <button id="menuBtn" class="md:hidden text-white p-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-navy-900 px-6 py-4 space-y-3 text-slate-300">
+    <a href="index.html#services" data-i18n="nav.services" class="block hover:text-white">Services</a>
+    <a href="index.html#how" data-i18n="nav.how" class="block hover:text-white">How it works</a>
+    <a href="index.html#pricing" data-i18n="nav.pricing" class="block hover:text-white">Pricing</a>
+    <a href="index.html#about" data-i18n="nav.about" class="block hover:text-white">About</a>
+    <a href="index.html#contact" data-i18n="nav.contact" class="block hover:text-white">Contact</a>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="bg-navy-900 bg-grid pt-36 pb-16 px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-ember-500/10 text-ember-400 mb-5">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+    </div>
+    <h1 data-i18n="services.4.title" class="text-4xl sm:text-5xl font-extrabold text-white">System Integration</h1>
+    <p data-i18n="services.4.subtitle" class="mt-4 text-lg text-slate-300">Make your tools talk to each other.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="bg-white py-20 px-6 lg:px-8">
+  <div class="max-w-3xl mx-auto">
+    <p data-i18n="services.4.intro" class="reveal text-lg text-slate-600">We connect your CRM, ERP, email, and other software into one seamless flow, so information moves automatically instead of being copy-pasted between tabs.</p>
+
+    <div class="reveal mt-10">
+      <h2 data-i18n="services.whatsIncluded" class="text-xl font-bold text-navy-900">What's included</h2>
+      <ul class="mt-4 space-y-3 text-slate-600">
+        <li class="flex gap-3"><span class="text-ember-500 font-bold">✓</span><span data-i18n="services.4.f1">Feature 1</span></li>
+        <li class="flex gap-3"><span class="text-ember-500 font-bold">✓</span><span data-i18n="services.4.f2">Feature 2</span></li>
+        <li class="flex gap-3"><span class="text-ember-500 font-bold">✓</span><span data-i18n="services.4.f3">Feature 3</span></li>
+        <li class="flex gap-3"><span class="text-ember-500 font-bold">✓</span><span data-i18n="services.4.f4">Feature 4</span></li>
+        <li class="flex gap-3"><span class="text-ember-500 font-bold">✓</span><span data-i18n="services.4.f5">Feature 5</span></li>
+      </ul>
+    </div>
+
+    <div class="reveal mt-10 rounded-2xl border border-ember-500/30 bg-ember-500/5 p-6">
+      <h2 data-i18n="services.inPractice" class="text-lg font-bold text-navy-900">In practice</h2>
+      <p data-i18n="services.4.example" class="mt-2 text-slate-600">For example: we connected a client's CRM, accounting software and e-signature tool, so a signed deal now creates the invoice and updates the forecast automatically.</p>
+    </div>
+
+    <div class="reveal mt-12 rounded-2xl bg-navy-900 bg-grid p-8 text-center">
+      <h2 data-i18n="services.cta.title" class="text-2xl font-bold text-white">Ready to automate this?</h2>
+      <p data-i18n="services.cta.body" class="mt-2 text-slate-300 max-w-md mx-auto">Book a free consultation and we'll show you exactly how this would work for your business.</p>
+      <a href="index.html#contact" data-i18n="hero.cta1" class="mt-6 inline-flex rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold px-6 py-3 transition shadow-glow">Book a free consult</a>
+    </div>
+
+    <a href="index.html#services" data-i18n="services.backToServices" class="reveal inline-block mt-10 text-ember-600 font-semibold hover:underline">← Back to all services</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-navy-950 border-t border-white/5 py-12 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <span class="text-white font-bold text-lg">Automatix <span class="text-ember-500">FCZ</span></span>
+      <p data-i18n="footer.tagline" class="mt-3 text-sm text-slate-500">AI automation for European businesses. Engineered in Rotterdam.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer.companyHeading" class="text-white font-semibold text-sm mb-3">Company</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="index.html#about" data-i18n="footer.aboutLink" class="hover:text-white">About us</a></li>
+        <li><a href="index.html#services" data-i18n="footer.servicesLink" class="hover:text-white">Services</a></li>
+        <li><a href="index.html#contact" data-i18n="footer.contactLink" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.servicesHeading" class="text-white font-semibold text-sm mb-3">Services</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="process-automation.html" data-i18n="services.1.title" class="hover:text-white">Process Automation</a></li>
+        <li><a href="ai-agents-chatbots.html" data-i18n="services.2.title" class="hover:text-white">AI Agents &amp; Chatbots</a></li>
+        <li><a href="data-analytics-pipelines.html" data-i18n="services.3.title" class="hover:text-white">Data &amp; Analytics Pipelines</a></li>
+        <li><a href="system-integration.html" data-i18n="services.4.title" class="hover:text-white">System Integration</a></li>
+        <li><a href="custom-ai-solutions.html" data-i18n="services.5.title" class="hover:text-white">Custom AI Solutions</a></li>
+        <li><a href="compliance-security.html" data-i18n="services.6.title" class="hover:text-white">Compliance &amp; Security</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.legalHeading" class="text-white font-semibold text-sm mb-3">Legal</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="privacy.html" data-i18n="footer.privacy" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="terms.html" data-i18n="footer.terms" class="hover:text-white">Terms of Service</a></li>
+        <li><a href="privacy.html#gdpr" data-i18n="footer.gdpr" class="hover:text-white">GDPR</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
+    <span data-i18n="footer.copyright">© 2026 Automatix FCZ. All rights reserved.</span>
+    <span data-i18n="footer.kvkLine">KVK: 00000000 · Rotterdam, The Netherlands</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+<script src="i18n.js"></script>
+</body>
+</html>

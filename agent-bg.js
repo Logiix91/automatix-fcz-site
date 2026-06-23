@@ -36,10 +36,37 @@
     };
   }
 
+  function makeMote(width, height) {
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: 0.6 + Math.random() * 1.3,
+      vy: -(0.06 + Math.random() * 0.12),
+      phase: Math.random() * Math.PI * 2,
+    };
+  }
+
+  function makeDrone(scene) {
+    const fromLeft = Math.random() < 0.5;
+    const y = scene.height * (0.18 + Math.random() * 0.18);
+    return {
+      x: fromLeft ? -30 : scene.width + 30,
+      y,
+      vx: (fromLeft ? 1 : -1) * (0.55 + Math.random() * 0.3),
+      rotor: 0,
+      bob: Math.random() * Math.PI * 2,
+      scale: 0.8 + Math.random() * 0.35,
+    };
+  }
+
   function buildScene(canvas) {
     const section = canvas.parentElement;
     const ctx = canvas.getContext("2d");
-    const scene = { canvas, ctx, section, width: 0, height: 0, baseY: 0, sites: [], robots: [], flying: [] };
+    const scene = {
+      canvas, ctx, section, width: 0, height: 0, baseY: 0,
+      sites: [], robots: [], flying: [], motes: [], sparks: [],
+      drone: null, droneCooldown: 120 + Math.random() * 200, sweep: -0.2,
+    };
 
     scene.resize = function () {
       const rect = section.getBoundingClientRect();
@@ -63,6 +90,10 @@
         return makeRobot(site, 0.85 + Math.random() * 0.4);
       });
       scene.flying = [];
+      scene.sparks = [];
+      const moteCount = Math.max(10, Math.min(28, Math.floor(scene.width / 30)));
+      scene.motes = Array.from({ length: moteCount }, () => makeMote(scene.width, scene.height));
+      scene.drone = null;
     };
 
     scene.resize();
@@ -143,7 +174,6 @@
     const bw = 17 * site.blockScale;
     const bh = 10 * site.blockScale;
 
-    // foundation pad
     ctx.fillStyle = "rgba(255,255,255,0.08)";
     ctx.fillRect(site.x - bw / 2 - 4, baseY - 2, bw + 8, 3);
 
@@ -172,7 +202,86 @@
     ctx.restore();
   }
 
-  function updateSite(site) {
+  function drawMote(ctx, m) {
+    const tw = 0.4 + Math.sin(m.phase) * 0.3;
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255,200,170,${Math.max(0, tw) * 0.5})`;
+    ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function drawSpark(ctx, p) {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255,154,92,${Math.max(p.life, 0)})`;
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function drawDrone(ctx, d) {
+    ctx.save();
+    ctx.translate(d.x, d.y + Math.sin(d.bob) * 3);
+    if (d.vx < 0) ctx.scale(-1, 1);
+    const s = d.scale;
+
+    ctx.strokeStyle = "rgba(203,213,225,0.5)";
+    ctx.lineWidth = 1.3 * s;
+    ctx.beginPath();
+    ctx.moveTo(-9 * s, -4 * s);
+    ctx.lineTo(9 * s, -4 * s);
+    ctx.stroke();
+
+    const spin = Math.abs(Math.sin(d.rotor)) * 3 * s;
+    ctx.strokeStyle = "rgba(203,213,225,0.35)";
+    ctx.beginPath();
+    ctx.moveTo(-9 * s - spin, -4 * s);
+    ctx.lineTo(-9 * s + spin, -4 * s);
+    ctx.moveTo(9 * s - spin, -4 * s);
+    ctx.lineTo(9 * s + spin, -4 * s);
+    ctx.stroke();
+
+    ctx.fillStyle = "rgba(22,34,66,0.95)";
+    ctx.strokeStyle = "rgba(255,154,92,0.75)";
+    ctx.lineWidth = 1.2 * s;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 7 * s, 4 * s, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.fillStyle = "rgba(255,122,48,0.9)";
+    ctx.arc(4 * s, -0.5 * s, 1.3 * s, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.strokeStyle = "rgba(203,213,225,0.5)";
+    ctx.lineWidth = 1 * s;
+    ctx.beginPath();
+    ctx.moveTo(0, 4 * s);
+    ctx.lineTo(0, 9 * s);
+    ctx.stroke();
+    ctx.fillStyle = "rgba(16,26,48,0.9)";
+    ctx.strokeStyle = "rgba(255,154,92,0.7)";
+    ctx.fillRect(-3 * s, 9 * s, 6 * s, 6 * s);
+    ctx.strokeRect(-3 * s, 9 * s, 6 * s, 6 * s);
+
+    ctx.restore();
+  }
+
+  function spawnSparks(scene, x, y) {
+    const count = 9 + Math.floor(Math.random() * 5);
+    for (let i = 0; i < count; i++) {
+      const a = Math.random() * Math.PI * 2;
+      const speed = 0.4 + Math.random() * 1.1;
+      scene.sparks.push({
+        x, y,
+        vx: Math.cos(a) * speed,
+        vy: Math.sin(a) * speed - 0.3,
+        r: 1 + Math.random() * 1.4,
+        life: 1,
+      });
+    }
+  }
+
+  function updateSite(site, scene) {
     if (site.state === "holding") {
       site.timer -= 1;
       if (site.timer <= 0) {
@@ -190,6 +299,23 @@
     const { ctx, robots, sites } = scene;
     ctx.clearRect(0, 0, scene.width, scene.height);
 
+    scene.motes.forEach((m) => {
+      m.y += m.vy;
+      m.phase += 0.03;
+      if (m.y < -5) { m.y = scene.height + 5; m.x = Math.random() * scene.width; }
+      drawMote(ctx, m);
+    });
+
+    scene.sweep += 0.0026;
+    if (scene.sweep > 1.3) scene.sweep = -0.3;
+    const sweepX = scene.sweep * scene.width;
+    const sweepGrad = ctx.createLinearGradient(sweepX - 60, 0, sweepX + 60, 0);
+    sweepGrad.addColorStop(0, "rgba(255,154,92,0)");
+    sweepGrad.addColorStop(0.5, "rgba(255,154,92,0.05)");
+    sweepGrad.addColorStop(1, "rgba(255,154,92,0)");
+    ctx.fillStyle = sweepGrad;
+    ctx.fillRect(0, 0, scene.width, scene.height);
+
     ctx.beginPath();
     ctx.strokeStyle = "rgba(255,255,255,0.06)";
     ctx.lineWidth = 1;
@@ -197,7 +323,23 @@
     ctx.lineTo(scene.width, scene.baseY + 2);
     ctx.stroke();
 
-    sites.forEach((site) => updateSite(site));
+    sites.forEach((site) => updateSite(site, scene));
+
+    for (let i = 0; i < robots.length; i++) {
+      for (let j = i + 1; j < robots.length; j++) {
+        const a = robots[i], b = robots[j];
+        const dx = a.x - b.x;
+        if (Math.abs(dx) > 70) continue;
+        const dist = Math.abs(dx);
+        const alpha = (1 - dist / 70) * 0.12;
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(255,154,92,${alpha})`;
+        ctx.lineWidth = 1;
+        ctx.moveTo(a.x, scene.baseY - 24 * a.scale);
+        ctx.lineTo(b.x, scene.baseY - 24 * b.scale);
+        ctx.stroke();
+      }
+    }
 
     robots.forEach((r) => {
       const min = r.roamCenter - r.roamRange;
@@ -269,13 +411,38 @@
         if (site.height >= site.maxHeight) {
           site.state = "holding";
           site.timer = 100 + Math.random() * 160;
+          spawnSparks(scene, site.x, scene.baseY - site.height * 10 * site.blockScale);
         }
         return false;
       }
       return true;
     });
 
+    scene.sparks.forEach((p) => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.03;
+      p.life -= 0.025;
+      drawSpark(ctx, p);
+    });
+    scene.sparks = scene.sparks.filter((p) => p.life > 0);
+
     sites.forEach((site) => drawSite(ctx, site, scene.baseY));
+
+    if (scene.drone) {
+      const d = scene.drone;
+      d.x += d.vx;
+      d.rotor += 0.9;
+      d.bob += 0.08;
+      drawDrone(ctx, d);
+      if (d.x < -40 || d.x > scene.width + 40) scene.drone = null;
+    } else {
+      scene.droneCooldown -= 1;
+      if (scene.droneCooldown <= 0) {
+        scene.drone = makeDrone(scene);
+        scene.droneCooldown = 260 + Math.random() * 320;
+      }
+    }
   }
 
   function loop() {
