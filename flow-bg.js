@@ -4,6 +4,13 @@
   const ctx = canvas.getContext("2d");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const ACCENTS = {
+    default: { light: "255,154,92", mid: "255,122,48" },
+    violet: { light: "186,180,255", mid: "150,142,255" },
+    cyan: { light: "103,212,247", mid: "56,189,248" },
+  };
+  const accent = ACCENTS[canvas.dataset.variant] || ACCENTS.default;
+
   let width, height, dpr, nodes, branches, pulseX, speed, trail, wavePhase, cycles;
 
   function waveY(baseY, x, first, last, phase) {
@@ -12,7 +19,7 @@
   }
 
   function resize() {
-    const rect = canvas.getBoundingClientRect();
+    const rect = canvas.parentElement.getBoundingClientRect();
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     width = rect.width;
     height = rect.height;
@@ -53,7 +60,7 @@
   function drawNode(n, y) {
     ctx.beginPath();
     ctx.fillStyle = "rgba(16,26,48,1)";
-    ctx.strokeStyle = `rgba(255,154,92,${0.55 + n.glow * 0.45})`;
+    ctx.strokeStyle = `rgba(${accent.light},${0.55 + n.glow * 0.45})`;
     ctx.lineWidth = 1.5 + n.glow * 1.5;
     ctx.arc(n.x, y, 9 + n.glow * 3, 0, Math.PI * 2);
     ctx.fill();
@@ -67,7 +74,7 @@
 
     if (n.glow > 0) {
       ctx.beginPath();
-      ctx.strokeStyle = `rgba(255,154,92,${n.glow * 0.5})`;
+      ctx.strokeStyle = `rgba(${accent.light},${n.glow * 0.5})`;
       ctx.lineWidth = 1;
       ctx.arc(n.x, y, 16 + (1 - n.glow) * 10, 0, Math.PI * 2);
       ctx.stroke();
@@ -118,7 +125,7 @@
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.strokeStyle = "rgba(255,122,48,0.55)";
+    ctx.strokeStyle = `rgba(${accent.mid},0.55)`;
     ctx.lineWidth = 2;
     const litEnd = Math.min(Math.max(pulseX, first), last);
     for (let x = first; x <= litEnd; x += 4) {
@@ -138,7 +145,7 @@
     trail = trail.filter((t) => t.life > 0);
     trail.forEach((t) => {
       ctx.beginPath();
-      ctx.fillStyle = `rgba(255,154,92,${t.life * 0.6})`;
+      ctx.fillStyle = `rgba(${accent.light},${t.life * 0.6})`;
       ctx.arc(t.x, t.y, 2.5 * t.life, 0, Math.PI * 2);
       ctx.fill();
     });
@@ -162,8 +169,8 @@
 
     if (pulseX >= first && pulseX <= last + 20) {
       ctx.beginPath();
-      ctx.fillStyle = "rgba(255,154,92,0.95)";
-      ctx.shadowColor = "rgba(255,122,48,0.8)";
+      ctx.fillStyle = `rgba(${accent.light},0.95)`;
+      ctx.shadowColor = `rgba(${accent.mid},0.8)`;
       ctx.shadowBlur = 8;
       ctx.arc(pulseX, pulseY, 4, 0, Math.PI * 2);
       ctx.fill();

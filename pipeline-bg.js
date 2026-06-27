@@ -11,10 +11,17 @@
     { fill: "rgba(11,17,32,0.88)", stroke: "rgba(168,162,255,0.8)" },
   ];
 
+  const ACCENTS = {
+    default: { light: "255,154,92", mid: "255,122,48" },
+    cyan: { light: "103,212,247", mid: "56,189,248" },
+    emerald: { light: "110,231,183", mid: "52,211,153" },
+  };
+  const accent = ACCENTS[canvas.dataset.variant] || ACCENTS.default;
+
   let width, height, dpr, gears, boxes, popups, binCount, binPulse, dots, scanX;
 
   function resize() {
-    const rect = canvas.getBoundingClientRect();
+    const rect = canvas.parentElement.getBoundingClientRect();
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     width = rect.width;
     height = rect.height;
@@ -102,7 +109,7 @@
       ctx.restore();
     }
     ctx.beginPath();
-    ctx.fillStyle = "rgba(255,122,48,0.9)";
+    ctx.fillStyle = `rgba(${accent.mid},0.9)`;
     ctx.arc(0, 0, 3.2, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
@@ -130,7 +137,7 @@
     ctx.save();
     ctx.translate(p.x, p.y);
     ctx.globalAlpha = Math.max(p.life, 0);
-    ctx.strokeStyle = "rgba(255,122,48,0.95)";
+    ctx.strokeStyle = `rgba(${accent.mid},0.95)`;
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(-5, 0);
@@ -146,7 +153,7 @@
     ctx.save();
     ctx.translate(p.x, p.y);
     ctx.fillStyle = "rgba(255,255,255,0.06)";
-    ctx.strokeStyle = `rgba(255,154,92,${0.5 + pulse * 0.4})`;
+    ctx.strokeStyle = `rgba(${accent.light},${0.5 + pulse * 0.4})`;
     ctx.lineWidth = 1.4;
     ctx.beginPath();
     ctx.moveTo(-13, -16);
@@ -174,9 +181,9 @@
     if (scanX > 1.3) scanX = -0.3;
     const sx = scanX * width;
     const grad = ctx.createLinearGradient(sx - 40, 0, sx + 40, 0);
-    grad.addColorStop(0, "rgba(255,154,92,0)");
-    grad.addColorStop(0.5, "rgba(255,154,92,0.07)");
-    grad.addColorStop(1, "rgba(255,154,92,0)");
+    grad.addColorStop(0, `rgba(${accent.light},0)`);
+    grad.addColorStop(0.5, `rgba(${accent.light},0.07)`);
+    grad.addColorStop(1, `rgba(${accent.light},0)`);
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, width, height);
 

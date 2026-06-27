@@ -85,8 +85,9 @@
 </header>
 
 <!-- PAGE HEADER -->
-<section class="bg-navy-900 bg-grid pt-36 pb-16 px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto text-center reveal">
+<section class="relative bg-navy-900 bg-grid overflow-hidden pt-36 pb-16 px-6 lg:px-8">
+  <canvas class="flow-bg absolute inset-0 w-full h-full"></canvas>
+  <div class="relative z-10 max-w-3xl mx-auto text-center reveal">
     <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-ember-500/10 text-ember-400 mb-5">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 1l4 4-4 4M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 0 1-4 4H3"/></svg>
     </div>
@@ -180,5 +181,6 @@
   revealEls.forEach(el => io.observe(el));
 </script>
 <script src="i18n.js"></script>
+<script src="flow-bg.js" defer></script>
 </body>
 </html>

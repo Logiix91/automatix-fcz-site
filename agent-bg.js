@@ -3,6 +3,15 @@
   if (!canvases.length) return;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const ACCENTS = {
+    default: { light: "255,154,92", mid: "255,122,48", glow: "255,200,170" },
+    violet: { light: "186,180,255", mid: "150,142,255", glow: "224,219,255" },
+    cyan: { light: "103,212,247", mid: "56,189,248", glow: "186,238,255" },
+  };
+  function getAccent(canvas) {
+    return ACCENTS[canvas.dataset.variant] || ACCENTS.default;
+  }
+
   function makeSite(x) {
     return {
       x,
@@ -66,6 +75,7 @@
       canvas, ctx, section, width: 0, height: 0, baseY: 0,
       sites: [], robots: [], flying: [], motes: [], sparks: [],
       drone: null, droneCooldown: 120 + Math.random() * 200, sweep: -0.2,
+      accent: getAccent(canvas),
     };
 
     scene.resize = function () {
@@ -103,7 +113,7 @@
 
   const scenes = Array.from(canvases).map(buildScene);
 
-  function drawRobot(ctx, r, baseY) {
+  function drawRobot(ctx, r, baseY, accent) {
     const s = r.scale;
     const legShift = Math.sin(r.walk) * 3 * s;
 
@@ -144,25 +154,25 @@
     ctx.stroke();
 
     ctx.fillStyle = "rgba(22,34,66,0.9)";
-    ctx.strokeStyle = "rgba(255,154,92,0.8)";
+    ctx.strokeStyle = `rgba(${accent.light},0.8)`;
     ctx.lineWidth = 1.2 * s;
     ctx.fillRect(-5 * s, -32 * s, 10 * s, 9 * s);
     ctx.strokeRect(-5 * s, -32 * s, 10 * s, 9 * s);
 
     ctx.beginPath();
-    ctx.strokeStyle = "rgba(255,154,92,0.6)";
+    ctx.strokeStyle = `rgba(${accent.light},0.6)`;
     ctx.lineWidth = 1 * s;
     ctx.moveTo(0, -32 * s);
     ctx.lineTo(0, -37 * s);
     ctx.stroke();
     const glow = 0.5 + Math.sin(r.walk * 1.3) * 0.5;
     ctx.beginPath();
-    ctx.fillStyle = `rgba(255,122,48,${0.5 + glow * 0.5})`;
+    ctx.fillStyle = `rgba(${accent.mid},${0.5 + glow * 0.5})`;
     ctx.arc(0, -38 * s, 1.6 * s, 0, Math.PI * 2);
     ctx.fill();
 
     if (!r.blinking) {
-      ctx.fillStyle = "rgba(255,154,92,0.9)";
+      ctx.fillStyle = `rgba(${accent.light},0.9)`;
       ctx.fillRect(-3 * s, -29 * s, 2 * s, 2 * s);
       ctx.fillRect(1 * s, -29 * s, 2 * s, 2 * s);
     }
@@ -170,14 +180,14 @@
     ctx.restore();
   }
 
-  function drawSite(ctx, site, baseY) {
+  function drawSite(ctx, site, baseY, accent) {
     const bw = 17 * site.blockScale;
     const bh = 10 * site.blockScale;
 
     ctx.fillStyle = "rgba(255,255,255,0.08)";
     ctx.fillRect(site.x - bw / 2 - 4, baseY - 2, bw + 8, 3);
 
-    const tones = ["rgba(255,154,92,0.55)", "rgba(255,122,48,0.6)", "rgba(203,213,225,0.45)"];
+    const tones = [`rgba(${accent.light},0.55)`, `rgba(${accent.mid},0.6)`, "rgba(203,213,225,0.45)"];
     for (let h = 0; h < site.height; h++) {
       const y = baseY - (h + 1) * bh;
       ctx.fillStyle = "rgba(16,26,48,0.85)";
@@ -190,10 +200,10 @@
     }
   }
 
-  function drawFlying(ctx, f) {
+  function drawFlying(ctx, f, accent) {
     ctx.save();
     ctx.fillStyle = "rgba(16,26,48,0.9)";
-    ctx.strokeStyle = "rgba(255,154,92,0.85)";
+    ctx.strokeStyle = `rgba(${accent.light},0.85)`;
     ctx.lineWidth = 1.3;
     const size = 9 * f.scale;
     ctx.translate(f.x, f.y);
@@ -202,22 +212,22 @@
     ctx.restore();
   }
 
-  function drawMote(ctx, m) {
+  function drawMote(ctx, m, accent) {
     const tw = 0.4 + Math.sin(m.phase) * 0.3;
     ctx.beginPath();
-    ctx.fillStyle = `rgba(255,200,170,${Math.max(0, tw) * 0.5})`;
+    ctx.fillStyle = `rgba(${accent.glow},${Math.max(0, tw) * 0.5})`;
     ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
     ctx.fill();
   }
 
-  function drawSpark(ctx, p) {
+  function drawSpark(ctx, p, accent) {
     ctx.beginPath();
-    ctx.fillStyle = `rgba(255,154,92,${Math.max(p.life, 0)})`;
+    ctx.fillStyle = `rgba(${accent.light},${Math.max(p.life, 0)})`;
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     ctx.fill();
   }
 
-  function drawDrone(ctx, d) {
+  function drawDrone(ctx, d, accent) {
     ctx.save();
     ctx.translate(d.x, d.y + Math.sin(d.bob) * 3);
     if (d.vx < 0) ctx.scale(-1, 1);
@@ -240,7 +250,7 @@
     ctx.stroke();
 
     ctx.fillStyle = "rgba(22,34,66,0.95)";
-    ctx.strokeStyle = "rgba(255,154,92,0.75)";
+    ctx.strokeStyle = `rgba(${accent.light},0.75)`;
     ctx.lineWidth = 1.2 * s;
     ctx.beginPath();
     ctx.ellipse(0, 0, 7 * s, 4 * s, 0, 0, Math.PI * 2);
@@ -248,7 +258,7 @@
     ctx.stroke();
 
     ctx.beginPath();
-    ctx.fillStyle = "rgba(255,122,48,0.9)";
+    ctx.fillStyle = `rgba(${accent.mid},0.9)`;
     ctx.arc(4 * s, -0.5 * s, 1.3 * s, 0, Math.PI * 2);
     ctx.fill();
 
@@ -259,7 +269,7 @@
     ctx.lineTo(0, 9 * s);
     ctx.stroke();
     ctx.fillStyle = "rgba(16,26,48,0.9)";
-    ctx.strokeStyle = "rgba(255,154,92,0.7)";
+    ctx.strokeStyle = `rgba(${accent.light},0.7)`;
     ctx.fillRect(-3 * s, 9 * s, 6 * s, 6 * s);
     ctx.strokeRect(-3 * s, 9 * s, 6 * s, 6 * s);
 
@@ -296,23 +306,23 @@
   }
 
   function step(scene) {
-    const { ctx, robots, sites } = scene;
+    const { ctx, robots, sites, accent } = scene;
     ctx.clearRect(0, 0, scene.width, scene.height);
 
     scene.motes.forEach((m) => {
       m.y += m.vy;
       m.phase += 0.03;
       if (m.y < -5) { m.y = scene.height + 5; m.x = Math.random() * scene.width; }
-      drawMote(ctx, m);
+      drawMote(ctx, m, accent);
     });
 
     scene.sweep += 0.0026;
     if (scene.sweep > 1.3) scene.sweep = -0.3;
     const sweepX = scene.sweep * scene.width;
     const sweepGrad = ctx.createLinearGradient(sweepX - 60, 0, sweepX + 60, 0);
-    sweepGrad.addColorStop(0, "rgba(255,154,92,0)");
-    sweepGrad.addColorStop(0.5, "rgba(255,154,92,0.05)");
-    sweepGrad.addColorStop(1, "rgba(255,154,92,0)");
+    sweepGrad.addColorStop(0, `rgba(${accent.light},0)`);
+    sweepGrad.addColorStop(0.5, `rgba(${accent.light},0.05)`);
+    sweepGrad.addColorStop(1, `rgba(${accent.light},0)`);
     ctx.fillStyle = sweepGrad;
     ctx.fillRect(0, 0, scene.width, scene.height);
 
@@ -333,7 +343,7 @@
         const dist = Math.abs(dx);
         const alpha = (1 - dist / 70) * 0.12;
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(255,154,92,${alpha})`;
+        ctx.strokeStyle = `rgba(${accent.light},${alpha})`;
         ctx.lineWidth = 1;
         ctx.moveTo(a.x, scene.baseY - 24 * a.scale);
         ctx.lineTo(b.x, scene.baseY - 24 * b.scale);
@@ -391,7 +401,7 @@
         }
       }
 
-      drawRobot(ctx, r, scene.baseY);
+      drawRobot(ctx, r, scene.baseY, accent);
     });
 
     scene.flying.forEach((f) => {
@@ -400,7 +410,7 @@
       const arc = Math.sin(frac * Math.PI) * 14;
       const x = f.fromX + (f.toX - f.fromX) * frac;
       const y = f.fromY + (f.toY - f.fromY) * frac - arc;
-      drawFlying(ctx, { x, y, scale: f.scale });
+      drawFlying(ctx, { x, y, scale: f.scale }, accent);
     });
 
     scene.flying = scene.flying.filter((f) => {
@@ -423,18 +433,18 @@
       p.y += p.vy;
       p.vy += 0.03;
       p.life -= 0.025;
-      drawSpark(ctx, p);
+      drawSpark(ctx, p, accent);
     });
     scene.sparks = scene.sparks.filter((p) => p.life > 0);
 
-    sites.forEach((site) => drawSite(ctx, site, scene.baseY));
+    sites.forEach((site) => drawSite(ctx, site, scene.baseY, accent));
 
     if (scene.drone) {
       const d = scene.drone;
       d.x += d.vx;
       d.rotor += 0.9;
       d.bob += 0.08;
-      drawDrone(ctx, d);
+      drawDrone(ctx, d, accent);
       if (d.x < -40 || d.x > scene.width + 40) scene.drone = null;
     } else {
       scene.droneCooldown -= 1;
