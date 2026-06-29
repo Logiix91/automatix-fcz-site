@@ -161,6 +161,7 @@
         <li><a href="privacy.html" data-i18n="footer.privacy" class="hover:text-white">Privacy Policy</a></li>
         <li><a href="terms.html" data-i18n="footer.terms" class="hover:text-white">Terms of Service</a></li>
         <li><a href="privacy.html#gdpr" data-i18n="footer.gdpr" class="hover:text-white">GDPR</a></li>
+        <li><button type="button" data-i18n="footer.cookieSettings" onclick="Automatix.openConsentSettings()" class="hover:text-white text-left">Cookie settings</button></li>
       </ul>
     </div>
   </div>
@@ -181,6 +182,7 @@
   revealEls.forEach(el => io.observe(el));
 </script>
 <script src="i18n.js"></script>
+<script src="consent.js" defer></script>
 <script src="pipeline-bg.js" defer></script>
 </body>
 </html>

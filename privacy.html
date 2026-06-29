@@ -118,8 +118,9 @@
         <p data-i18n="legal.privacy.s5.body" class="mt-2 text-slate-600">Enquiry data is kept up to 24 months. Client data is kept for the duration of the engagement plus the retention period required by Dutch tax law (currently 7 years for financial records).</p>
       </div>
       <div class="reveal">
-        <h2 data-i18n="legal.privacy.s6.title" class="text-xl font-bold text-navy-900">Cookies & local storage</h2>
-        <p data-i18n="legal.privacy.s6.body" class="mt-2 text-slate-600">This site uses no tracking or advertising cookies. We store your chosen display language in your browser's local storage purely for convenience. Clear it anytime via your browser settings.</p>
+        <h2 data-i18n="legal.privacy.s6.title" class="text-xl font-bold text-navy-900">Cookies & analytics</h2>
+        <p data-i18n="legal.privacy.s6.body" class="mt-2 text-slate-600">This site uses Cloudflare Web Analytics: a cookieless, privacy-first tool that counts visits without tracking you individually or sharing data with advertisers. It only runs if you accept it in the cookie banner; you can change your choice anytime via 'Cookie settings' in the footer. We separately store your chosen display language in your browser's local storage, purely for convenience, which you can clear via your browser settings.</p>
+        <button type="button" data-i18n="legal.privacy.s6.cta" onclick="Automatix.openConsentSettings()" class="mt-4 inline-flex items-center rounded-full border border-navy-900 text-navy-900 font-semibold text-sm px-5 py-2.5 hover:bg-navy-900 hover:text-white transition">Manage cookie settings</button>
       </div>
       <div class="reveal">
         <h2 data-i18n="legal.privacy.s7.title" class="text-xl font-bold text-navy-900">Sharing your data</h2>
@@ -181,6 +182,7 @@
         <li><a href="privacy.html" data-i18n="footer.privacy" class="hover:text-white">Privacy Policy</a></li>
         <li><a href="terms.html" data-i18n="footer.terms" class="hover:text-white">Terms of Service</a></li>
         <li><a href="privacy.html#gdpr" data-i18n="footer.gdpr" class="hover:text-white">GDPR</a></li>
+        <li><button type="button" data-i18n="footer.cookieSettings" onclick="Automatix.openConsentSettings()" class="hover:text-white text-left">Cookie settings</button></li>
       </ul>
     </div>
   </div>
@@ -201,5 +203,6 @@
   revealEls.forEach(el => io.observe(el));
 </script>
 <script src="i18n.js"></script>
+<script src="consent.js" defer></script>
 </body>
 </html>
