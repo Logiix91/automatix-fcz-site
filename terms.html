@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -11,13 +11,13 @@
 <meta property="og:description" content="General Terms and Conditions for Automatix FCZ services." />
 <meta property="og:url" content="https://www.automatixfcz.nl/terms.html" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        fontFamily: { display: ['Barlow Condensed', 'sans-serif'], sans: ['Barlow', 'sans-serif'], body: ['Inter', 'sans-serif'] },
         colors: {
           navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
           ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
@@ -29,7 +29,7 @@
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; }
+  body { font-family: 'Barlow', sans-serif; }
   .bg-grid {
     background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
                        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
@@ -84,7 +84,7 @@
 <!-- PAGE HEADER -->
 <section class="bg-navy-900 bg-grid pt-36 pb-16 px-6 lg:px-8">
   <div class="max-w-3xl mx-auto text-center reveal">
-    <h1 data-i18n="legal.terms.title" class="text-4xl sm:text-5xl font-extrabold text-white">Terms of Service</h1>
+    <h1 data-i18n="legal.terms.title" class="text-4xl sm:text-5xl font-extrabold text-white font-display">Terms of Service</h1>
     <p data-i18n="legal.terms.updated" class="mt-3 text-sm text-slate-400">Last updated: June 2026</p>
   </div>
 </section>

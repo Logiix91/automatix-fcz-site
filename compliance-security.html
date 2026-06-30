@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -14,13 +14,13 @@
 <meta name="twitter:title" content="Governance, Compliance & Security | Automatix FCZ" />
 <meta name="twitter:description" content="Identity and access management, encryption, logging, audit trails, data classification, backup and disaster recovery: designed from day one with GDPR and the EU AI Act's principles in mind." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        fontFamily: { display: ['Barlow Condensed', 'sans-serif'], sans: ['Barlow', 'sans-serif'], body: ['Inter', 'sans-serif'] },
         colors: {
           navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
           ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
@@ -32,7 +32,7 @@
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; }
+  body { font-family: 'Barlow', sans-serif; }
   .bg-grid {
     background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
                        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
@@ -91,7 +91,7 @@
     <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-ember-500/10 text-ember-400 mb-5">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
     </div>
-    <h1 data-i18n="services.6.title" class="text-4xl sm:text-5xl font-extrabold text-white">Governance, Compliance & Security</h1>
+    <h1 data-i18n="services.6.title" class="text-4xl sm:text-5xl font-extrabold text-white font-display">Governance, Compliance & Security</h1>
     <p data-i18n="services.6.subtitle" class="mt-4 text-lg text-slate-300">Not an add-on, but a default part of every implementation.</p>
   </div>
 </section>

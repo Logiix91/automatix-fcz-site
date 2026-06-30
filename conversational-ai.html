@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -14,13 +14,13 @@
 <meta name="twitter:title" content="Conversational AI | Automatix FCZ" />
 <meta name="twitter:description" content="Beyond a single chatbot: we build conversational AI layers that work consistently across voice, web chat, WhatsApp and IVR, understanding context, switching languages, and handing off to the right system or person." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        fontFamily: { display: ['Barlow Condensed', 'sans-serif'], sans: ['Barlow', 'sans-serif'], body: ['Inter', 'sans-serif'] },
         colors: {
           navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
           ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
@@ -32,7 +32,7 @@
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; }
+  body { font-family: 'Barlow', sans-serif; }
   .bg-grid {
     background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
                        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
@@ -91,7 +91,7 @@
     <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-ember-500/10 text-ember-400 mb-5">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
     </div>
-    <h1 data-i18n="services.7.title" class="text-4xl sm:text-5xl font-extrabold text-white">Conversational AI</h1>
+    <h1 data-i18n="services.7.title" class="text-4xl sm:text-5xl font-extrabold text-white font-display">Conversational AI</h1>
     <p data-i18n="services.7.subtitle" class="mt-4 text-lg text-slate-300">Natural, multilingual conversation at enterprise scale.</p>
   </div>
 </section>

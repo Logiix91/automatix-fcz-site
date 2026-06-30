@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,13 +37,13 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        fontFamily: { display: ['Barlow Condensed', 'sans-serif'], sans: ['Barlow', 'sans-serif'], body: ['Inter', 'sans-serif'] },
         colors: {
           navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
           ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
@@ -55,7 +55,7 @@
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; }
+  body { font-family: 'Barlow', sans-serif; }
   .bg-grid {
     background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
                        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
@@ -63,15 +63,8 @@
   }
   .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
-  .gradient-text {
-    background: linear-gradient(90deg, #ff9a5c, #ff7a30);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
   .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
   .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -20px rgba(11,17,32,0.25); }
-  .float { animation: floaty 6s ease-in-out infinite; }
-  .float-delay { animation: floaty 6s ease-in-out infinite; animation-delay: 1.2s; }
-  @keyframes floaty { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-12px); } }
 </style>
 </head>
 <body class="bg-white text-navy-900 antialiased">
@@ -113,6 +106,7 @@
     <a href="#pricing" data-i18n="nav.pricing" class="block hover:text-white">Pricing</a>
     <a href="#about" data-i18n="nav.about" class="block hover:text-white">About</a>
     <a href="#contact" data-i18n="nav.contact" class="block hover:text-white">Contact</a>
+    <a href="#contact" data-i18n="nav.cta" class="block mt-3 rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold text-sm px-5 py-2.5 text-center transition">Book a free call</a>
   </div>
 </header>
 
@@ -120,40 +114,20 @@
 <section class="relative bg-navy-900 bg-grid overflow-hidden pt-40 pb-28 px-6 lg:px-8">
   <canvas class="hero-bg absolute inset-0 w-full h-full"></canvas>
   <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[640px] h-[640px] rounded-full bg-ember-500/20 blur-3xl"></div>
-  <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16 items-center">
-    <div>
-      <span data-i18n="hero.badge" class="inline-flex items-center gap-2 text-xs font-semibold text-ember-400 bg-ember-500/10 border border-ember-500/30 rounded-full px-3 py-1">
-        🇳🇱 AI Transformation Partner, built in Rotterdam
-      </span>
-      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
-        <span data-i18n="hero.title1">Close the gap between AI hype and AI value.</span><br/>
-        <span data-i18n="hero.title2" class="gradient-text">We make automation actually work.</span>
-      </h1>
-      <p data-i18n="hero.subtitle" class="mt-6 text-lg text-slate-300 max-w-xl">
-        Automatix FCZ designs and implements custom AI-transformation and intelligent process-automation solutions for logistics, industry, government and professional-services organizations, from autonomous AI agents to end-to-end systems integration, always GDPR-first by design.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#contact" data-i18n="hero.cta1" class="rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold px-6 py-3 transition shadow-glow">Book a free consult</a>
-        <a href="#how" data-i18n="hero.cta2" class="rounded-full border border-white/20 text-white font-semibold px-6 py-3 hover:bg-white/5 transition">See how it works</a>
-      </div>
-    </div>
-    <div class="relative h-[420px] hidden lg:block">
-      <div class="float absolute top-4 left-4 w-72 rounded-2xl bg-navy-800/80 border border-white/10 p-5 shadow-xl">
-        <div data-i18n="hero.card1.title" class="text-xs text-slate-400 mb-2">Workflow: Lead intake</div>
-        <div class="space-y-2">
-          <div class="flex items-center gap-2 text-sm text-white"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> <span data-i18n="hero.card1.line1">New lead detected</span></div>
-          <div class="flex items-center gap-2 text-sm text-white"><span class="w-2 h-2 rounded-full bg-ember-400"></span> <span data-i18n="hero.card1.line2">AI agent qualifies lead</span></div>
-          <div class="flex items-center gap-2 text-sm text-slate-400"><span class="w-2 h-2 rounded-full bg-slate-500"></span> <span data-i18n="hero.card1.line3">CRM updated automatically</span></div>
-        </div>
-      </div>
-      <div class="float-delay absolute bottom-4 right-0 w-64 rounded-2xl bg-navy-800/80 border border-white/10 p-5 shadow-xl">
-        <div data-i18n="hero.card2.title" class="text-xs text-slate-400 mb-2">Monthly hours saved</div>
-        <div class="text-3xl font-bold text-white">312<span class="text-ember-400">h</span></div>
-        <div class="mt-2 h-2 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-4/5 bg-gradient-to-r from-ember-400 to-ember-500"></div></div>
-      </div>
-      <div class="absolute inset-0 -z-10 flex items-center justify-center">
-        <div class="w-72 h-72 rounded-full bg-gradient-to-br from-ember-500/30 to-transparent blur-2xl"></div>
-      </div>
+  <div class="max-w-3xl mx-auto relative z-10 text-center">
+    <span data-i18n="hero.badge" class="inline-flex items-center gap-2 text-xs font-semibold text-ember-400 bg-ember-500/10 border border-ember-500/30 rounded-full px-3 py-1">
+      🇳🇱 AI Transformation Partner, built in Rotterdam
+    </span>
+    <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight font-display">
+      <span data-i18n="hero.title1">Close the gap between AI hype and AI value.</span><br/>
+      <span data-i18n="hero.title2" class="text-ember-400">We make automation actually work.</span>
+    </h1>
+    <p data-i18n="hero.subtitle" class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">
+      Automatix FCZ designs and implements custom AI-transformation and intelligent process-automation solutions for logistics, industry, government and professional-services organizations, from autonomous AI agents to end-to-end systems integration, always GDPR-first by design.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4 justify-center">
+      <a href="#contact" data-i18n="hero.cta1" class="rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold px-6 py-3 transition shadow-glow">Book a free consult</a>
+      <a href="#how" data-i18n="hero.cta2" class="rounded-full border border-white/20 text-white font-semibold px-6 py-3 hover:bg-white/5 transition">See how it works</a>
     </div>
   </div>
 </section>
@@ -162,8 +136,7 @@
 <section class="bg-navy-950 py-20 px-6 lg:px-8 border-t border-white/5">
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-2xl mx-auto reveal">
-      <span data-i18n="valuegap.label" class="text-ember-400 font-semibold text-sm uppercase tracking-wide">The problem we solve</span>
-      <h2 data-i18n="valuegap.title" class="mt-3 text-2xl sm:text-3xl font-extrabold text-white">The Netherlands leads in AI adoption. Most organizations see nothing for it.</h2>
+      <h2 data-i18n="valuegap.title" class="text-2xl sm:text-3xl font-extrabold text-white">The Netherlands leads in AI adoption. Most organizations see nothing for it.</h2>
     </div>
     <div class="mt-12 grid sm:grid-cols-3 gap-6">
       <div class="reveal rounded-2xl bg-navy-800/60 border border-white/10 p-6">
@@ -186,8 +159,7 @@
 <section id="services" class="bg-white py-24 px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-2xl mx-auto reveal">
-      <span data-i18n="services.label" class="text-ember-600 font-semibold text-sm uppercase tracking-wide">What we do</span>
-      <h2 data-i18n="services.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900">AI automation, end to end</h2>
+      <h2 data-i18n="services.title" class="text-3xl sm:text-4xl font-extrabold text-navy-900">AI automation, end to end</h2>
       <p data-i18n="services.subtitle" class="mt-4 text-slate-600">From a single automated workflow to a fully integrated AI operating layer for your business.</p>
     </div>
     <div class="reveal mt-10 max-w-4xl mx-auto rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden">
@@ -248,7 +220,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
         </div>
         <h3 data-i18n="services.7.title" class="font-bold text-lg text-navy-900">Conversational AI</h3>
-        <p data-i18n="services.7.desc" class="mt-2 text-slate-600 text-sm">Enterprise-grade voice and chat interfaces that understand context across every channel, in every language you operate in.</p>
+        <p data-i18n="services.7.desc" class="mt-2 text-slate-600 text-sm">Voice and chat interfaces that hold context across WhatsApp, web chat and phone — in every language you operate in.</p>
         <a href="conversational-ai.html" data-i18n="services.learnMore" class="mt-3 inline-block text-ember-600 font-semibold text-sm hover:underline">Learn more →</a>
       </div>
       <div class="reveal card-hover bg-slate-50 border border-slate-200 rounded-2xl p-7">
@@ -313,8 +285,7 @@
 <section id="pricing" class="bg-white py-24 px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
     <div class="text-center max-w-2xl mx-auto reveal">
-      <span data-i18n="pricing.label" class="text-ember-600 font-semibold text-sm uppercase tracking-wide">Pricing</span>
-      <h2 data-i18n="pricing.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900">How we work, and how you pay</h2>
+      <h2 data-i18n="pricing.title" class="text-3xl sm:text-4xl font-extrabold text-navy-900">How we work, and how you pay</h2>
       <p data-i18n="pricing.subtitle" class="mt-4 text-slate-600">Three revenue streams, one goal: results that last.</p>
     </div>
     <div class="mt-16 grid lg:grid-cols-3 gap-6 items-start">
@@ -343,15 +314,10 @@
         </ul>
         <a href="#contact" data-i18n="pricing.cta.secondary" class="mt-8 block text-center rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold py-3 transition">Book a free consult</a>
       </div>
-      <div class="reveal card-hover border border-slate-200 rounded-2xl p-8">
-        <h3 data-i18n="pricing.software.name" class="font-bold text-lg text-navy-900">Own Software</h3>
-        <p data-i18n="pricing.software.desc" class="text-slate-500 text-sm mt-1">On the roadmap: an AI Agent Management Platform and reusable workflow and knowledge platforms.</p>
-        <div data-i18n="pricing.software.status" class="mt-6 text-4xl font-extrabold text-navy-900">Coming soon</div>
-        <ul class="mt-6 space-y-3 text-sm text-slate-600">
-          <li>✓ <span data-i18n="pricing.software.f1">Speeds up future implementations</span></li>
-          <li>✓ <span data-i18n="pricing.software.f2">Reusable workflow and integration components</span></li>
-          <li>✓ <span data-i18n="pricing.software.f3">Scalable, SaaS-like licensing model</span></li>
-        </ul>
+      <div class="reveal border border-dashed border-slate-200 rounded-2xl p-6 flex flex-col justify-center text-center">
+        <p data-i18n="pricing.software.name" class="text-xs font-semibold text-slate-400 uppercase tracking-wide">Own Software</p>
+        <p data-i18n="pricing.software.desc" class="mt-2 text-slate-500 text-sm">On the roadmap: an AI Agent Management Platform and reusable workflow and knowledge platforms.</p>
+        <p data-i18n="pricing.software.status" class="mt-3 text-sm font-semibold text-ember-600">Coming soon</p>
       </div>
     </div>
   </div>
@@ -372,9 +338,8 @@
 <section id="about" class="bg-white py-24 px-6 lg:px-8">
   <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
     <div class="reveal">
-      <span data-i18n="about.label" class="text-ember-600 font-semibold text-sm uppercase tracking-wide">About us</span>
-      <h2 data-i18n="about.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-navy-900">Built in Rotterdam. Built for European business.</h2>
-      <p data-i18n="about.quote" class="mt-5 text-lg text-slate-700 italic border-l-4 border-ember-500 pl-4">
+      <h2 data-i18n="about.title" class="text-3xl sm:text-4xl font-extrabold text-navy-900">Built in Rotterdam. Built for European business.</h2>
+      <p data-i18n="about.quote" class="mt-5 text-lg text-slate-700 italic bg-ember-500/5 rounded-lg px-4 py-3">
         Technology is not a goal in itself, but an instrument to help organizations operate smarter, more efficiently and in a more future-proof way.
       </p>
       <div class="mt-6 grid sm:grid-cols-2 gap-4">
@@ -408,11 +373,14 @@
         </div>
       </div>
     </div>
-    <div class="reveal relative h-80 rounded-3xl bg-gradient-to-br from-navy-900 to-navy-700 overflow-hidden">
-      <div class="absolute inset-0 bg-grid opacity-30"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="w-40 h-40 rounded-full bg-ember-500/30 blur-2xl"></div>
-      </div>
+    <div class="reveal relative h-80 rounded-3xl overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80"
+        alt="Rotterdam skyline — Automatix FCZ is based in Rotterdam, Netherlands"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent"></div>
       <div class="absolute bottom-6 left-6 text-white">
         <div data-i18n="about.hq.label" class="text-sm text-slate-300">Headquarters</div>
         <div data-i18n="about.hq.value" class="text-xl font-bold">Rotterdam, Netherlands</div>
@@ -459,8 +427,7 @@
   <canvas class="hero-bg absolute inset-0 w-full h-full"></canvas>
   <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16">
     <div class="reveal">
-      <span data-i18n="contact.label" class="text-ember-400 font-semibold text-sm uppercase tracking-wide">Get in touch</span>
-      <h2 data-i18n="contact.title" class="mt-3 text-3xl sm:text-4xl font-extrabold text-white">Let's automate something today</h2>
+      <h2 data-i18n="contact.title" class="text-3xl sm:text-4xl font-extrabold text-white">Let's automate something today</h2>
       <p data-i18n="contact.subtitle" class="mt-4 text-slate-300 max-w-md">Tell us a bit about your business and we'll get back to you within one business day to schedule a free consult.</p>
       <div class="mt-8 space-y-4 text-slate-300 text-sm">
         <div class="flex items-center gap-3"><span class="text-ember-400">✉</span> hello@automatixfcz.nl</div>
@@ -468,15 +435,18 @@
         <div class="flex items-center gap-3"><span class="text-ember-400">📍</span> <span data-i18n="contact.address">Wilhelminakade 12, 3072 AP Rotterdam, NL</span></div>
       </div>
     </div>
-    <form class="reveal bg-navy-800/60 border border-white/10 rounded-2xl p-8 space-y-4" onsubmit="event.preventDefault(); document.getElementById('formNote').classList.remove('hidden');">
+    <!-- Replace YOUR_FORM_ID with your Formspree form ID from https://formspree.io/forms -->
+    <form id="contactForm" class="reveal bg-navy-800/60 border border-white/10 rounded-2xl p-8 space-y-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
       <div class="grid sm:grid-cols-2 gap-4">
-        <input required type="text" data-i18n-placeholder="contact.form.name" placeholder="Full name" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
-        <input required type="text" data-i18n-placeholder="contact.form.company" placeholder="Company" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
+        <input required name="name" type="text" data-i18n-placeholder="contact.form.name" placeholder="Full name" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
+        <input required name="company" type="text" data-i18n-placeholder="contact.form.company" placeholder="Company" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
       </div>
-      <input required type="email" data-i18n-placeholder="contact.form.email" placeholder="Work email" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
-      <textarea required data-i18n-placeholder="contact.form.message" placeholder="What would you like to automate?" rows="4" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500"></textarea>
-      <button type="submit" data-i18n="contact.form.submit" class="w-full rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold py-3 transition">Send message</button>
-      <p id="formNote" data-i18n="contact.form.note" class="hidden text-emerald-400 text-sm text-center">Thanks! This is a demo form. Connect it to your CRM or email service to go live.</p>
+      <input required name="email" type="email" data-i18n-placeholder="contact.form.email" placeholder="Work email" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500" />
+      <textarea required name="message" data-i18n-placeholder="contact.form.message" placeholder="What would you like to automate?" rows="4" class="w-full bg-navy-900 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-ember-500"></textarea>
+      <p class="text-xs text-slate-500">We'll reply within one business day. Data handled per our <a href="privacy.html" class="underline hover:text-slate-300">privacy policy</a>.</p>
+      <button type="submit" id="formSubmitBtn" data-i18n="contact.form.submit" class="w-full rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold py-3 transition">Send message</button>
+      <p id="formSuccess" data-i18n="contact.form.note" class="hidden text-emerald-400 text-sm text-center">Message sent. We'll reply within one business day.</p>
+      <p id="formError" class="hidden text-red-400 text-sm text-center">Something went wrong — email us at <a href="mailto:hello@automatixfcz.nl" class="underline">hello@automatixfcz.nl</a>.</p>
     </form>
   </div>
 </section>
@@ -534,6 +504,26 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('formSubmitBtn');
+      const origText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '...';
+      try {
+        const res = await fetch(contactForm.action, { method: 'POST', body: new FormData(contactForm), headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          document.getElementById('formSuccess').classList.remove('hidden');
+          document.getElementById('formError').classList.add('hidden');
+          contactForm.reset();
+        } else { document.getElementById('formError').classList.remove('hidden'); }
+      } catch { document.getElementById('formError').classList.remove('hidden'); }
+      finally { btn.disabled = false; btn.textContent = origText; }
+    });
+  }
 </script>
 <script src="i18n.js"></script>
 <script src="consent.js" defer></script>

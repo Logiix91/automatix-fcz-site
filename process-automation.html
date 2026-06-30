@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -14,13 +14,13 @@
 <meta name="twitter:title" content="Process Automation | Automatix FCZ" />
 <meta name="twitter:description" content="We map your repetitive, manual processes and rebuild them as automated workflows that run themselves: accurately, 24/7, without anyone babysitting a spreadsheet." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
-        fontFamily: { sans: ['Inter', 'sans-serif'] },
+        fontFamily: { display: ['Barlow Condensed', 'sans-serif'], sans: ['Barlow', 'sans-serif'], body: ['Inter', 'sans-serif'] },
         colors: {
           navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
           ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
@@ -32,7 +32,7 @@
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; }
+  body { font-family: 'Barlow', sans-serif; }
   .bg-grid {
     background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
                        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
@@ -91,7 +91,7 @@
     <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-ember-500/10 text-ember-400 mb-5">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
     </div>
-    <h1 data-i18n="services.1.title" class="text-4xl sm:text-5xl font-extrabold text-white">Process Automation</h1>
+    <h1 data-i18n="services.1.title" class="text-4xl sm:text-5xl font-extrabold text-white font-display">Process Automation</h1>
     <p data-i18n="services.1.subtitle" class="mt-4 text-lg text-slate-300">Eliminate the busywork your team shouldn't be doing.</p>
   </div>
 </section>
