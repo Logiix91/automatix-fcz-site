@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Automatix FCZ | AI Transformation & Intelligent Process Automation</title>
+<meta name="description" content="Automatix FCZ is een strategische AI-transformatiepartner voor logistiek, industrie, overheid en zakelijke dienstverlening: AI-agents, procesautomatisering en systeemintegratie." />
+<link rel="canonical" href="https://www.automatixfcz.nl/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Automatix FCZ | AI Transformation & Intelligent Process Automation" />
+<meta property="og:description" content="Automatix FCZ is een strategische AI-transformatiepartner voor logistiek, industrie, overheid en zakelijke dienstverlening: AI-agents, procesautomatisering en systeemintegratie." />
+<meta property="og:url" content="https://www.automatixfcz.nl/" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:site_name" content="Automatix FCZ" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Automatix FCZ | AI Transformation & Intelligent Process Automation" />
+<meta name="twitter:description" content="Automatix FCZ — AI-transformatiepartner voor logistiek, industrie, overheid en zakelijke dienstverlening." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Automatix FCZ",
+  "url": "https://www.automatixfcz.nl/",
+  "email": "hello@automatixfcz.nl",
+  "telephone": "+31101234567",
+  "foundingDate": "2026",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Wilhelminakade 12",
+    "postalCode": "3072 AP",
+    "addressLocality": "Rotterdam",
+    "addressCountry": "NL"
+  },
+  "areaServed": "EU"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Bricolage Grotesque', 'sans-serif'],
+          sans: ['Manrope', 'sans-serif'],
+        },
+        colors: {
+          brand: {
+            50:  '#eef2ff',
+            100: '#e0e7ff',
+            200: '#c7d2fe',
+            300: '#a5b4fc',
+            400: '#818cf8',
+            500: '#6366f1',
+            600: '#4f46e5',
+            700: '#4338ca',
+            800: '#3730a3',
+            900: '#312e81',
+            950: '#1e1b4b',
+          },
+          gold: {
+            300: '#fcd34d',
+            400: '#fbbf24',
+            500: '#f59e0b',
+            600: '#d97706',
+          }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  .card-lift { transition: transform .2s ease, box-shadow .2s ease; }
+  .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.12); }
+
+  /* fluid type scale */
+  .t-display { font-size: clamp(2.4rem, 5.5vw, 4.25rem); line-height: 1.04; letter-spacing: -0.02em; }
+  .t-large   { font-size: clamp(1.9rem, 3.5vw, 3rem);    line-height: 1.1;  letter-spacing: -0.015em; }
+  .t-medium  { font-size: clamp(1.35rem, 2vw, 1.75rem);  line-height: 1.2;  }
+
+  /* dot-grid pattern helper */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(99,102,241,0.15) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* subtle rule grid */
+  .rule-grid {
+    background-image:
+      linear-gradient(rgba(99,102,241,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99,102,241,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+</style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+<!-- ─── NAV ──────────────────────────────────────────────────────── -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" rx="7" fill="#4f46e5"/>
+        <path d="M9 21L14.5 10L20 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="21.5" cy="10" r="2" fill="white"/>
+      </svg>
+      <span class="font-display font-bold text-lg tracking-tight text-slate-900">Automatix <span class="text-brand-600">FCZ</span></span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-7 text-sm text-slate-600 font-medium">
+      <a href="#services" data-i18n="nav.services" class="hover:text-brand-600 transition">Services</a>
+      <a href="#how"      data-i18n="nav.how"      class="hover:text-brand-600 transition">Methode</a>
+      <a href="#pricing"  data-i18n="nav.pricing"  class="hover:text-brand-600 transition">Prijzen</a>
+      <a href="#about"    data-i18n="nav.about"    class="hover:text-brand-600 transition">Over ons</a>
+      <a href="#contact"  data-i18n="nav.contact"  class="hover:text-brand-600 transition">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <select id="langSelect" aria-label="Language" class="text-slate-600 text-sm border border-slate-200 rounded-full px-3 py-1.5 focus:outline-none focus:border-brand-500 bg-white">
+        <option value="nl">🇳🇱 NL</option>
+        <option value="en">🇬🇧 EN</option>
+      </select>
+      <a href="#contact" data-i18n="nav.cta" class="hidden sm:inline-flex items-center rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-5 py-2.5 transition">
+        Gratis consult →
+      </a>
+      <button id="menuBtn" class="md:hidden text-slate-700 p-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white px-6 py-4 space-y-1 text-slate-700 font-medium">
+    <a href="#services" data-i18n="nav.services" class="block py-2 hover:text-brand-600">Services</a>
+    <a href="#how"      data-i18n="nav.how"      class="block py-2 hover:text-brand-600">Methode</a>
+    <a href="#pricing"  data-i18n="nav.pricing"  class="block py-2 hover:text-brand-600">Prijzen</a>
+    <a href="#about"    data-i18n="nav.about"    class="block py-2 hover:text-brand-600">Over ons</a>
+    <a href="#contact"  data-i18n="nav.contact"  class="block py-2 hover:text-brand-600">Contact</a>
+    <a href="#contact"  data-i18n="nav.cta"      class="block mt-3 rounded-full bg-brand-600 text-white font-semibold text-sm px-5 py-2.5 text-center">Gratis consult →</a>
+  </div>
+</header>
+
+<!-- ─── HERO ──────────────────────────────────────────────────────── -->
+<section class="pt-28 pb-20 px-6 lg:px-8 overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- Left: copy -->
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold text-brand-600 bg-brand-50 border border-brand-200 rounded-full px-3 py-1.5 mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse inline-block"></span>
+          <span data-i18n="hero.badge">AI Transformation Partner · Rotterdam, NL</span>
+        </div>
+        <h1 class="t-display font-display font-extrabold text-slate-900 mb-5">
+          <span data-i18n="hero.title1">Sluit de kloof<br/>tussen AI hype<br/>en AI waarde.</span>
+        </h1>
+        <p class="text-xl font-display font-semibold text-brand-700 mb-4" data-i18n="hero.title2">
+          Wij maken automatisering daadwerkelijk werken.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mb-8 max-w-lg" data-i18n="hero.subtitle">
+          Automatix FCZ ontwerpt en implementeert op maat gemaakte AI-transformatie en intelligente procesautomatisering voor logistiek, industrie, overheid en zakelijke dienstverlening. AVG-first by design.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" data-i18n="hero.cta1" class="inline-flex items-center rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 transition">
+            Boek een gratis consult
+          </a>
+          <a href="#how" data-i18n="hero.cta2" class="inline-flex items-center rounded-full border-2 border-slate-200 text-slate-700 font-semibold px-7 py-3.5 hover:border-brand-300 hover:text-brand-700 transition">
+            Bekijk de methode
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: dark stats panel -->
+      <div class="reveal relative">
+        <div class="bg-brand-950 rounded-3xl p-8 relative overflow-hidden">
+          <div class="absolute inset-0 rule-grid opacity-60"></div>
+          <p class="relative z-10 text-brand-400 text-xs font-semibold uppercase tracking-widest mb-8">Nederland · De AI-kloof</p>
+
+          <div class="relative z-10 space-y-7">
+            <div>
+              <div class="text-5xl font-display font-extrabold text-white leading-none">1 op 6</div>
+              <p class="text-brand-300 text-sm mt-2">Nederlandse bedrijven gebruikte AI in 2025, twee keer zo veel als 2023 (CBS)</p>
+            </div>
+            <div>
+              <div class="text-5xl font-display font-extrabold text-white leading-none">~95%</div>
+              <p class="text-brand-300 text-sm mt-2">van organisaties ziet geen meetbaar rendement op generatieve AI (MIT)</p>
+            </div>
+            <div>
+              <div class="text-5xl font-display font-extrabold text-white leading-none">4%</div>
+              <p class="text-brand-300 text-sm mt-2">AI-adoptie in logistiek, de laagste sector; precies waar wij beginnen (CBS)</p>
+            </div>
+          </div>
+
+          <div class="relative z-10 mt-8 pt-6 border-t border-white/10 flex items-center gap-3">
+            <span class="w-7 h-7 rounded-full bg-brand-600 inline-flex items-center justify-center flex-shrink-0">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span class="text-brand-200 text-sm">AVG-first implementatie: standaard, geen optie</span>
+          </div>
+        </div>
+
+        <!-- Floating accent chip -->
+        <div class="absolute -top-3 -right-3 bg-gold-400 text-slate-900 rounded-2xl px-4 py-2 text-sm font-bold shadow-lg rotate-2 select-none">
+          Rotterdam · 2026
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech logos strip -->
+    <div class="mt-16 pt-10 border-t border-slate-100 reveal">
+      <p class="text-center text-xs uppercase tracking-widest text-slate-400 mb-6 font-semibold">Werkend met technologieën van</p>
+      <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+        <span class="text-slate-400 font-semibold text-sm">OpenAI</span>
+        <span class="text-slate-200">·</span>
+        <span class="text-slate-400 font-semibold text-sm">Anthropic</span>
+        <span class="text-slate-200">·</span>
+        <span class="text-slate-400 font-semibold text-sm">n8n</span>
+        <span class="text-slate-200">·</span>
+        <span class="text-slate-400 font-semibold text-sm">Make</span>
+        <span class="text-slate-200">·</span>
+        <span class="text-slate-400 font-semibold text-sm">Azure</span>
+        <span class="text-slate-200">·</span>
+        <span class="text-slate-400 font-semibold text-sm">AWS</span>
+        <span class="text-slate-200">·</span>
+        <span class="text-slate-400 font-semibold text-sm">Google Cloud</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ──────────────────────────────────────────────────── -->
+<section id="services" class="bg-slate-50 py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-14">
+      <span class="text-brand-600 font-semibold text-xs uppercase tracking-widest">Services</span>
+      <h2 class="t-large font-display font-extrabold text-slate-900 mt-2" data-i18n="services.title">AI-automatisering, van A tot Z</h2>
+      <p class="text-slate-500 text-lg mt-3 max-w-xl" data-i18n="services.subtitle">Van één geautomatiseerde workflow tot een volledig geïntegreerde AI-operatielaag voor uw bedrijf.</p>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <!-- Featured — spans 2 cols on md+ -->
+      <div class="reveal card-lift md:col-span-2 bg-brand-900 text-white rounded-3xl p-8 relative overflow-hidden min-h-[220px]">
+        <div class="absolute inset-0 dot-grid opacity-40"></div>
+        <div class="relative z-10 flex flex-col h-full">
+          <h3 class="text-2xl font-display font-bold mb-3" data-i18n="services.1.title">Procesautomatisering</h3>
+          <p class="text-brand-200 leading-relaxed max-w-md flex-1" data-i18n="services.1.desc">Elimineer repetitief handwerk met AI-aangedreven workflows die zichzelf uitvoeren, 24/7. We starten op de werkvloer, geen vragenlijsten.</p>
+          <a href="process-automation.html" data-i18n="services.learnMore" class="mt-6 inline-flex items-center text-gold-400 hover:text-gold-300 font-semibold text-sm transition self-start">Meer informatie →</a>
+        </div>
+      </div>
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-3xl p-7">
+        <h3 class="text-xl font-display font-bold text-slate-900 mb-2" data-i18n="services.2.title">AI Agents</h3>
+        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="services.2.desc">Digitale medewerkers die zelfstandig informatie verzamelen, analyseren en verwerken, binnen vaste bedrijfsregels.</p>
+        <a href="ai-agents-chatbots.html" data-i18n="services.learnMore" class="mt-5 inline-flex items-center text-brand-600 hover:text-brand-700 font-semibold text-sm transition">Meer informatie →</a>
+      </div>
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-3xl p-7">
+        <h3 class="text-xl font-display font-bold text-slate-900 mb-2" data-i18n="services.3.title">Data &amp; Analytics</h3>
+        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="services.3.desc">Verander verspreide data in realtime dashboards en automatisch vernieuwde beslisonderlagen.</p>
+        <a href="data-analytics-pipelines.html" data-i18n="services.learnMore" class="mt-5 inline-flex items-center text-brand-600 hover:text-brand-700 font-semibold text-sm transition">Meer informatie →</a>
+      </div>
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-3xl p-7">
+        <h3 class="text-xl font-display font-bold text-slate-900 mb-2" data-i18n="services.4.title">Systeemintegratie</h3>
+        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="services.4.desc">Verbind uw CRM, ERP, e-mail en tools tot één samenhangende, geautomatiseerde stroom.</p>
+        <a href="system-integration.html" data-i18n="services.learnMore" class="mt-5 inline-flex items-center text-brand-600 hover:text-brand-700 font-semibold text-sm transition">Meer informatie →</a>
+      </div>
+
+      <!-- Tinted accent card -->
+      <div class="reveal card-lift bg-brand-50 border border-brand-100 rounded-3xl p-7">
+        <h3 class="text-xl font-display font-bold text-brand-900 mb-2" data-i18n="services.5.title">Maatwerk AI</h3>
+        <p class="text-brand-700/80 text-sm leading-relaxed" data-i18n="services.5.desc">Specifieke modellen: intelligente documentverwerking, beslissingsondersteuning en meer, gebouwd rond uw businesscase.</p>
+        <a href="custom-ai-solutions.html" data-i18n="services.learnMore" class="mt-5 inline-flex items-center text-brand-600 hover:text-brand-700 font-semibold text-sm transition">Meer informatie →</a>
+      </div>
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-3xl p-7">
+        <h3 class="text-xl font-display font-bold text-slate-900 mb-2" data-i18n="services.6.title">Governance &amp; Compliance</h3>
+        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="services.6.desc">IAM, versleuteling, logging en AVG/AI Act-compliance: standaard onderdeel van elke implementatie.</p>
+        <a href="compliance-security.html" data-i18n="services.learnMore" class="mt-5 inline-flex items-center text-brand-600 hover:text-brand-700 font-semibold text-sm transition">Meer informatie →</a>
+      </div>
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-3xl p-7">
+        <h3 class="text-xl font-display font-bold text-slate-900 mb-2" data-i18n="services.7.title">Conversationele AI</h3>
+        <p class="text-slate-600 text-sm leading-relaxed" data-i18n="services.7.desc">Spraak- en chatinterfaces die context bewaren via WhatsApp, webchat en telefoon, in elke taal.</p>
+        <a href="conversational-ai.html" data-i18n="services.learnMore" class="mt-5 inline-flex items-center text-brand-600 hover:text-brand-700 font-semibold text-sm transition">Meer informatie →</a>
+      </div>
+
+      <!-- Wide bottom: managed services -->
+      <div class="reveal card-lift md:col-span-2 bg-slate-900 text-white rounded-3xl p-8 relative overflow-hidden">
+        <div class="relative z-10 flex flex-col sm:flex-row sm:items-center gap-6">
+          <div class="flex-1">
+            <h3 class="text-2xl font-display font-bold mb-2" data-i18n="services.9.title">Managed Services</h3>
+            <p class="text-slate-400 leading-relaxed" data-i18n="services.9.desc">Doorlopende bewaking, support en optimalisatie nadat uw automatiseringen live zijn. Prestaties verslechteren nooit stilletjes.</p>
+          </div>
+          <a href="managed-services.html" class="flex-shrink-0 inline-flex items-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3 transition">
+            Meer informatie →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ──────────────────────────────────────────────── -->
+<section id="how" class="bg-white py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal mb-14">
+      <span class="text-brand-600 font-semibold text-xs uppercase tracking-widest">Methode</span>
+      <h2 class="t-large font-display font-extrabold text-slate-900 mt-2" data-i18n="how.title">Zes fasen. Meetbaar resultaat.</h2>
+      <p class="text-slate-500 text-lg mt-3 max-w-xl">Geen online vragenlijsten. We starten op de werkvloer.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+
+      <div class="reveal flex gap-5">
+        <span class="flex-shrink-0 text-slate-300 font-display font-extrabold text-2xl leading-none w-7 mt-0.5 select-none" aria-hidden="true">1</span>
+        <div>
+          <h3 class="font-display font-bold text-slate-900 text-lg mb-1.5" data-i18n="how.1.title">Observeer</h3>
+          <p class="text-slate-500 text-sm leading-relaxed" data-i18n="how.1.desc">We bezoeken uw organisatie fysiek. We volgen een volledig proces van begin tot eind op de werkvloer, voeren interviews op locatie en combineren dat met gerichte remote follow-up.</p>
+        </div>
+      </div>
+
+      <div class="reveal flex gap-5">
+        <span class="flex-shrink-0 text-slate-300 font-display font-extrabold text-2xl leading-none w-7 mt-0.5 select-none" aria-hidden="true">2</span>
+        <div>
+          <h3 class="font-display font-bold text-slate-900 text-lg mb-1.5" data-i18n="how.2.title">Model</h3>
+          <p class="text-slate-500 text-sm leading-relaxed" data-i18n="how.2.desc">Op basis van wat we observeerden vereenvoudigen we het proces voordat technologie in beeld komt: welke stappen verdwijnen, welke worden geautomatiseerd, waar blijft menselijk oordeel noodzakelijk.</p>
+        </div>
+      </div>
+
+      <div class="reveal flex gap-5">
+        <span class="flex-shrink-0 text-slate-300 font-display font-extrabold text-2xl leading-none w-7 mt-0.5 select-none" aria-hidden="true">3</span>
+        <div>
+          <h3 class="font-display font-bold text-slate-900 text-lg mb-1.5" data-i18n="how.3.title">Engineer</h3>
+          <p class="text-slate-500 text-sm leading-relaxed" data-i18n="how.3.desc">Ons team bouwt de werkende oplossing: AI-agents, workflows en API-integraties, documentverwerking, kennisbanken en dashboards, met monitoring en logging vanaf dag één.</p>
+        </div>
+      </div>
+
+      <div class="reveal flex gap-5">
+        <span class="flex-shrink-0 text-slate-300 font-display font-extrabold text-2xl leading-none w-7 mt-0.5 select-none" aria-hidden="true">4</span>
+        <div>
+          <h3 class="font-display font-bold text-slate-900 text-lg mb-1.5" data-i18n="how.4.title">Integreer</h3>
+          <p class="text-slate-500 text-sm leading-relaxed" data-i18n="how.4.desc">Alle componenten worden geïntegreerd met CRM, ERP, HR en financiële systemen in één infrastructuur, met veilige gegevensuitwisseling, authenticatie en aandacht voor schaalbaarheid.</p>
+        </div>
+      </div>
+
+      <div class="reveal flex gap-5">
+        <span class="flex-shrink-0 text-slate-300 font-display font-extrabold text-2xl leading-none w-7 mt-0.5 select-none" aria-hidden="true">5</span>
+        <div>
+          <h3 class="font-display font-bold text-slate-900 text-lg mb-1.5" data-i18n="how.5.title">Valideer</h3>
+          <p class="text-slate-500 text-sm leading-relaxed" data-i18n="how.5.desc">Voordat de oplossing live gaat testen we of ze voldoet aan de doelen uit fase 2: functioneel, integratie en performance testing, security, plus acceptatietests met uw team.</p>
+        </div>
+      </div>
+
+      <div class="reveal flex gap-5">
+        <span class="flex-shrink-0 text-slate-300 font-display font-extrabold text-2xl leading-none w-7 mt-0.5 select-none" aria-hidden="true">6</span>
+        <div>
+          <h3 class="font-display font-bold text-slate-900 text-lg mb-1.5" data-i18n="how.6.title">Optimaliseer</h3>
+          <p class="text-slate-500 text-sm leading-relaxed" data-i18n="how.6.desc">Transformatie stopt niet bij oplevering. We monitoren prestaties, beschikbaarheid en security, bewaken AI-kwaliteit en identificeren continu nieuwe automatiseringsmogelijkheden.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Inline CTA -->
+    <div class="reveal mt-14 bg-brand-50 border border-brand-100 rounded-3xl p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+      <div class="flex-1">
+        <h3 class="font-display font-bold text-slate-900 text-xl">Klaar om aan de slag te gaan?</h3>
+        <p class="text-slate-500 mt-1 text-sm">Een gratis consult duurt 30 minuten en laat zien waar winst te halen is in uw processen.</p>
+      </div>
+      <a href="#contact" class="flex-shrink-0 inline-flex items-center rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 transition">
+        Plan een gesprek →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ───────────────────────────────────────────────────── -->
+<section id="pricing" class="bg-slate-50 py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center reveal mb-14">
+      <span class="text-brand-600 font-semibold text-xs uppercase tracking-widest">Prijzen</span>
+      <h2 class="t-large font-display font-extrabold text-slate-900 mt-2" data-i18n="pricing.title">Zo werken we, zo betaalt u</h2>
+      <p class="text-slate-500 text-lg mt-3" data-i18n="pricing.subtitle">Drie inkomstenstromen, één doel: resultaten die blijven.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6 items-start">
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-3xl p-8">
+        <h3 class="font-display font-bold text-xl text-slate-900" data-i18n="pricing.projects.name">Projecten</h3>
+        <p class="text-slate-500 text-sm mt-1" data-i18n="pricing.projects.desc">De basis in de eerste jaren: maatimplementaties afgestemd op uw proces.</p>
+        <div class="mt-6 pb-6 border-b border-slate-100">
+          <span class="text-4xl font-display font-extrabold text-slate-900" data-i18n="pricing.projects.price">Vanaf €2.500</span>
+          <span class="text-slate-500 text-sm ml-1" data-i18n="pricing.projects.priceNote">per project</span>
+        </div>
+        <ul class="mt-6 space-y-3 text-sm text-slate-600">
+          <li class="flex items-start gap-2.5"><span class="text-brand-500 font-bold mt-0.5 flex-shrink-0">✓</span><span data-i18n="pricing.projects.f1">Scope en prijs op basis van complexiteit en impact</span></li>
+          <li class="flex items-start gap-2.5"><span class="text-brand-500 font-bold mt-0.5 flex-shrink-0">✓</span><span data-i18n="pricing.projects.f2">Direct contact met de mensen die het ook bouwen</span></li>
+          <li class="flex items-start gap-2.5"><span class="text-brand-500 font-bold mt-0.5 flex-shrink-0">✓</span><span data-i18n="pricing.projects.f3">Van één automatisering tot volledige systeemintegratie</span></li>
+          <li class="flex items-start gap-2.5"><span class="text-brand-500 font-bold mt-0.5 flex-shrink-0">✓</span><span data-i18n="pricing.projects.f4">Eindigt met overdracht en documentatie</span></li>
+        </ul>
+        <a href="#contact" data-i18n="pricing.cta.secondary" class="mt-8 block text-center rounded-full border-2 border-slate-900 text-slate-900 font-semibold py-3 hover:bg-slate-900 hover:text-white transition text-sm">Gratis consult boeken</a>
+      </div>
+
+      <!-- Featured -->
+      <div class="reveal card-lift relative bg-brand-950 text-white rounded-3xl p-8">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span class="bg-gold-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="pricing.managed.badge">Terugkerend</span>
+        </div>
+        <h3 class="font-display font-bold text-xl" data-i18n="pricing.managed.name">Managed Services</h3>
+        <p class="text-brand-300 text-sm mt-1" data-i18n="pricing.managed.desc">Doorlopend beheer en verfijning onder duidelijke SLA's zodra uw automatisering live is.</p>
+        <div class="mt-6 pb-6 border-b border-white/10">
+          <span class="text-4xl font-display font-extrabold" data-i18n="pricing.managed.price">Op maat SLA</span>
+          <span class="text-brand-300 text-sm ml-1" data-i18n="pricing.managed.priceNote">per maand</span>
+        </div>
+        <ul class="mt-6 space-y-3 text-sm text-brand-200">
+          <li class="flex items-start gap-2.5"><span class="text-gold-400 font-bold mt-0.5 flex-shrink-0">✓</span><span data-i18n="pricing.managed.f1">Uptime- en prestatiebewaking</span></li>
+          <li class="flex items-start gap-2.5"><span class="text-gold-400 font-bold mt-0.5 flex-shrink-0">✓</span><span data-i18n="pricing.managed.f2">Incidentrespons met gedefinieerde SLA's</span></li>
+          <li class="flex items-start gap-2.5"><span class="text-gold-400 font-bold mt-0.5 flex-shrink-0">✓</span><span data-i18n="pricing.managed.f3">Regelmatige optimalisatiereviews</span></li>
+          <li class="flex items-start gap-2.5"><span class="text-gold-400 font-bold mt-0.5 flex-shrink-0">✓</span><span data-i18n="pricing.managed.f4">Één aanspreekpunt voor alles wat we voor u beheren</span></li>
+        </ul>
+        <a href="#contact" data-i18n="pricing.cta.secondary" class="mt-8 block text-center rounded-full bg-gold-400 hover:bg-gold-500 text-slate-900 font-semibold py-3 transition text-sm">Gratis consult boeken</a>
+      </div>
+
+      <div class="reveal border-2 border-dashed border-slate-200 rounded-3xl p-8 flex flex-col justify-center text-center">
+        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wide" data-i18n="pricing.software.name">Eigen software</span>
+        <p class="mt-3 text-slate-500 text-sm" data-i18n="pricing.software.desc">Op de roadmap: een AI Agent Management Platform en herbruikbare workflow- en kennisplatforms.</p>
+        <p class="mt-4 text-brand-600 font-semibold text-sm" data-i18n="pricing.software.status">Binnenkort beschikbaar</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── HONESTY ───────────────────────────────────────────────────── -->
+<section class="bg-white py-24 px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto">
+    <div class="reveal bg-brand-950 rounded-3xl p-12 text-center relative overflow-hidden">
+      <div class="absolute inset-0 dot-grid opacity-50"></div>
+      <div class="relative z-10">
+        <span class="text-brand-400 font-semibold text-xs uppercase tracking-widest" data-i18n="honesty.label">Waar we voor staan</span>
+        <h2 class="t-medium font-display font-extrabold text-white mt-4 mb-6" data-i18n="honesty.title">Opgericht in 2026. Gebouwd om te blijven, niet om groot te lijken.</h2>
+        <p class="text-brand-200 text-lg leading-relaxed" data-i18n="honesty.body">
+          Automatix is een jong bedrijf: twee oprichters, geen externe investeerders, en een bewuste focus op vier sectoren waar we het snelst bewezen waarde kunnen leveren. We groeien liever langzaam op bewezen resultaten dan dat we claimen wat we nog niet hard kunnen maken. Logistiek is ons vertrekpunt: de directe domeinexpertise van de oprichters, en de sector met de laagste AI-adoptie in Nederland, waardoor het voordeel van de eerste mover nog steeds breed open ligt.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────────────── -->
+<section id="about" class="bg-slate-50 py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+    <div class="reveal">
+      <span class="text-brand-600 font-semibold text-xs uppercase tracking-widest">Over ons</span>
+      <h2 class="t-large font-display font-extrabold text-slate-900 mt-2" data-i18n="about.title">Gebouwd in Rotterdam. Gebouwd voor Europees bedrijfsleven.</h2>
+      <p class="mt-5 text-slate-700 italic text-lg bg-brand-50 rounded-2xl px-5 py-4" data-i18n="about.quote">
+        Technologie is geen doel op zich, maar een instrument om organisaties slimmer, efficiënter en toekomstbestendiger te laten werken.
+      </p>
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+          <div class="text-xs font-bold uppercase tracking-wide text-brand-600" data-i18n="about.mission.title">Missie</div>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="about.mission.body">Organisaties helpen slimmer te werken door processen te analyseren, te vereenvoudigen en te automatiseren met AI — meetbaar bijdragend aan efficiëntie, besluitvorming en datakwaliteit.</p>
+        </div>
+        <div class="rounded-2xl bg-white border border-slate-200 p-5">
+          <div class="text-xs font-bold uppercase tracking-wide text-brand-600" data-i18n="about.vision.title">Visie</div>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed" data-i18n="about.vision.body">De komende tien jaar verschuift software van passief instrument naar actieve deelnemer: een digitale infrastructuur waar mensen, AI en systemen continu samenwerken.</p>
+        </div>
+      </div>
+      <p class="mt-6 text-slate-600 leading-relaxed" data-i18n="about.p1">
+        Automatix werd in 2026 opgericht door Ruslan en Fadil — twee oprichters die bewust kozen voor bootstrappen: groeien vanuit eigen omzet, zonder externe investeerders.
+      </p>
+      <div class="mt-8 grid grid-cols-3 gap-6">
+        <div>
+          <div class="text-3xl font-display font-extrabold text-brand-600">2026</div>
+          <div class="text-xs text-slate-500 mt-1" data-i18n="about.stat1">Opgericht</div>
+        </div>
+        <div>
+          <div class="text-3xl font-display font-extrabold text-brand-600">2</div>
+          <div class="text-xs text-slate-500 mt-1" data-i18n="about.stat2">Teamleden</div>
+        </div>
+        <div>
+          <div class="text-3xl font-display font-extrabold text-brand-600">4</div>
+          <div class="text-xs text-slate-500 mt-1" data-i18n="about.stat3">Doelsectoren</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal relative h-96 lg:h-full rounded-3xl overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80"
+        alt="Rotterdam skyline — Automatix FCZ is gevestigd in Rotterdam, Nederland"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-950/75 via-transparent to-transparent"></div>
+      <div class="absolute bottom-6 left-6">
+        <div class="text-brand-300 text-xs uppercase tracking-widest" data-i18n="about.hq.label">Hoofdkantoor</div>
+        <div class="text-white text-xl font-display font-bold mt-1" data-i18n="about.hq.value">Rotterdam, Nederland</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Values -->
+  <div class="max-w-7xl mx-auto mt-20">
+    <h3 class="reveal text-center text-2xl font-display font-extrabold text-slate-900 mb-10" data-i18n="about.values.title">Onze kernwaarden</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-2xl p-6 text-center">
+        <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center mx-auto mb-4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4 class="font-display font-bold text-slate-900" data-i18n="about.values.1.title">Kwaliteit</h4>
+        <p class="mt-2 text-slate-500 text-sm" data-i18n="about.values.1.desc">Elke oplossing is gebouwd voor langdurig gebruik: betrouwbaarheid, onderhoudbaarheid en schaalbaarheid staan voorop.</p>
+      </div>
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-2xl p-6 text-center">
+        <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center mx-auto mb-4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h4 class="font-display font-bold text-slate-900" data-i18n="about.values.2.title">Transparantie</h4>
+        <p class="mt-2 text-slate-500 text-sm" data-i18n="about.values.2.desc">We communiceren helder over mogelijkheden, beperkingen, kosten en verwachtingen gedurende het gehele project.</p>
+      </div>
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-2xl p-6 text-center">
+        <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center mx-auto mb-4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h4 class="font-display font-bold text-slate-900" data-i18n="about.values.3.title">Verantwoord vakmanschap</h4>
+        <p class="mt-2 text-slate-500 text-sm" data-i18n="about.values.3.desc">We passen nieuwe technologie alleen toe als ze bewezen waarde biedt. Vakmanschap en zorgvuldigheid gaan voor snelheid.</p>
+      </div>
+
+      <div class="reveal card-lift bg-white border border-slate-200 rounded-2xl p-6 text-center">
+        <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center mx-auto mb-4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        </div>
+        <h4 class="font-display font-bold text-slate-900" data-i18n="about.values.4.title">Continue verbetering</h4>
+        <p class="mt-2 text-slate-500 text-sm" data-i18n="about.values.4.desc">Elke implementatie levert nieuwe inzichten die we gebruiken om onze processen en oplossingen te blijven verfijnen.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ───────────────────────────────────────────────────── -->
+<section id="contact" class="bg-brand-950 py-24 px-6 lg:px-8 relative overflow-hidden">
+  <div class="absolute inset-0 rule-grid opacity-50 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-16">
+
+    <div class="reveal">
+      <h2 class="t-large font-display font-extrabold text-white" data-i18n="contact.title">Laten we vandaag iets automatiseren</h2>
+      <p class="mt-4 text-brand-200 text-lg max-w-md leading-relaxed" data-i18n="contact.subtitle">Vertel ons iets over uw bedrijf en we nemen binnen één werkdag contact op voor een gratis consult.</p>
+      <div class="mt-10 space-y-4">
+        <div class="flex items-center gap-4 text-brand-200 text-sm">
+          <span class="w-9 h-9 rounded-full bg-brand-800 flex items-center justify-center text-brand-400 flex-shrink-0">✉</span>
+          hello@automatixfcz.nl
+        </div>
+        <div class="flex items-center gap-4 text-brand-200 text-sm">
+          <span class="w-9 h-9 rounded-full bg-brand-800 flex items-center justify-center text-brand-400 flex-shrink-0">☎</span>
+          +31 (0)10 123 4567
+        </div>
+        <div class="flex items-center gap-4 text-brand-200 text-sm">
+          <span class="w-9 h-9 rounded-full bg-brand-800 flex items-center justify-center text-brand-400 flex-shrink-0">📍</span>
+          <span data-i18n="contact.address">Wilhelminakade 12, 3072 AP Rotterdam, NL</span>
+        </div>
+      </div>
+    </div>
+
+    <form id="contactForm" class="reveal bg-white rounded-3xl p-8 space-y-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <input required name="name" type="text" data-i18n-placeholder="contact.form.name" placeholder="Volledige naam" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:bg-white transition text-sm" />
+        <input required name="company" type="text" data-i18n-placeholder="contact.form.company" placeholder="Bedrijf" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:bg-white transition text-sm" />
+      </div>
+      <input required name="email" type="email" data-i18n-placeholder="contact.form.email" placeholder="Zakelijk e-mailadres" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:bg-white transition text-sm" />
+      <textarea required name="message" data-i18n-placeholder="contact.form.message" placeholder="Wat wilt u automatiseren?" rows="4" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-500 focus:bg-white transition text-sm resize-none"></textarea>
+      <p class="text-xs text-slate-400">We reageren binnen één werkdag. Gegevens worden verwerkt conform ons <a href="privacy.html" class="underline hover:text-slate-600">privacybeleid</a>.</p>
+      <button type="submit" id="formSubmitBtn" data-i18n="contact.form.submit" class="w-full rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3.5 transition text-sm">Bericht versturen</button>
+      <p id="formSuccess" data-i18n="contact.form.note" class="hidden text-emerald-600 text-sm text-center">Bericht verzonden. We reageren binnen één werkdag.</p>
+      <p id="formError" class="hidden text-red-500 text-sm text-center">Er is iets misgegaan — mail ons op <a href="mailto:hello@automatixfcz.nl" class="underline">hello@automatixfcz.nl</a>.</p>
+    </form>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+<footer class="bg-slate-950 border-t border-white/5 py-12 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div>
+      <div class="flex items-center gap-2 mb-3">
+        <svg width="26" height="26" viewBox="0 0 30 30" fill="none">
+          <rect width="30" height="30" rx="7" fill="#4f46e5"/>
+          <path d="M9 21L14.5 10L20 21" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="21.5" cy="10" r="2" fill="white"/>
+        </svg>
+        <span class="font-display font-bold text-white">Automatix <span class="text-brand-400">FCZ</span></span>
+      </div>
+      <p class="text-sm text-slate-500 leading-relaxed" data-i18n="footer.tagline">AI-transformatie &amp; intelligente procesautomatisering. Gemaakt in Rotterdam.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold text-sm mb-4" data-i18n="footer.companyHeading">Bedrijf</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="#about"   data-i18n="footer.aboutLink"    class="hover:text-white transition">Over ons</a></li>
+        <li><a href="#services" data-i18n="footer.servicesLink" class="hover:text-white transition">Services</a></li>
+        <li><a href="#contact"  data-i18n="footer.contactLink"  class="hover:text-white transition">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold text-sm mb-4" data-i18n="footer.servicesHeading">Services</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="process-automation.html"     data-i18n="services.1.title" class="hover:text-white transition">Procesautomatisering</a></li>
+        <li><a href="ai-agents-chatbots.html"     data-i18n="services.2.title" class="hover:text-white transition">AI Agents</a></li>
+        <li><a href="data-analytics-pipelines.html" data-i18n="services.3.title" class="hover:text-white transition">Data &amp; Analytics</a></li>
+        <li><a href="system-integration.html"     data-i18n="services.4.title" class="hover:text-white transition">Systeemintegratie</a></li>
+        <li><a href="custom-ai-solutions.html"    data-i18n="services.5.title" class="hover:text-white transition">Maatwerk AI</a></li>
+        <li><a href="compliance-security.html"    data-i18n="services.6.title" class="hover:text-white transition">Governance &amp; Compliance</a></li>
+        <li><a href="conversational-ai.html"      data-i18n="services.7.title" class="hover:text-white transition">Conversationele AI</a></li>
+        <li><a href="managed-services.html"       data-i18n="services.9.title" class="hover:text-white transition">Managed Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-semibold text-sm mb-4" data-i18n="footer.legalHeading">Juridisch</h4>
+      <ul class="space-y-2 text-sm text-slate-500">
+        <li><a href="privacy.html"       data-i18n="footer.privacy" class="hover:text-white transition">Privacybeleid</a></li>
+        <li><a href="terms.html"         data-i18n="footer.terms"   class="hover:text-white transition">Algemene voorwaarden</a></li>
+        <li><a href="privacy.html#gdpr"  data-i18n="footer.gdpr"    class="hover:text-white transition">AVG</a></li>
+        <li><button type="button" data-i18n="footer.cookieSettings" onclick="Automatix.openConsentSettings()" class="hover:text-white transition text-left">Cookie-instellingen</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-slate-600 flex flex-col sm:flex-row justify-between gap-2">
+    <span data-i18n="footer.copyright">© 2026 Automatix FCZ. Alle rechten voorbehouden.</span>
+    <span data-i18n="footer.kvkLine">KVK: 00000000 · Rotterdam, Nederland</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Contact form
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('formSubmitBtn');
+      const orig = btn.textContent;
+      btn.disabled = true; btn.textContent = '...';
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST', body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          document.getElementById('formSuccess').classList.remove('hidden');
+          document.getElementById('formError').classList.add('hidden');
+          contactForm.reset();
+        } else {
+          document.getElementById('formError').classList.remove('hidden');
+        }
+      } catch {
+        document.getElementById('formError').classList.remove('hidden');
+      } finally {
+        btn.disabled = false; btn.textContent = orig;
+      }
+    });
+  }
+</script>
+<script src="i18n.js"></script>
+<script src="consent.js" defer></script>
+</body>
+</html>
