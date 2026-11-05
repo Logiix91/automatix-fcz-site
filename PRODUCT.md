@@ -10,7 +10,7 @@ Operations and IT decision-makers at Dutch logistics, industry, government, and 
 
 ## Product Purpose
 
-Automatix FCZ is a Rotterdam-based AI-transformation and intelligent-process-automation consultancy, founded 2026, bootstrapped by two founders with no outside investors. The site's job is to convert a skeptical, hype-fatigued B2B visitor into a booked free consult by demonstrating real engineering rigor (a named 6-phase methodology, concrete pricing model, 8-service portfolio) and an honest account of company size and stage, rather than generic AI-transformation marketing claims. Success looks like booked consult calls and credibility with compliance-minded reviewers (especially in the government and logistics sectors, where AI adoption is lowest and skepticism highest).
+FR Operations is a Rotterdam-based AI-transformation and intelligent-process-automation consultancy, founded 2026, bootstrapped by two founders with no outside investors. The site's job is to convert a skeptical, hype-fatigued B2B visitor into a booked free consult by demonstrating real engineering rigor (a named 6-phase methodology, concrete pricing model, 8-service portfolio) and an honest account of company size and stage, rather than generic AI-transformation marketing claims. Success looks like booked consult calls and credibility with compliance-minded reviewers (especially in the government and logistics sectors, where AI adoption is lowest and skepticism highest).
 
 ## Brand Personality
 

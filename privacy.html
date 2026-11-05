@@ -3,204 +3,174 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Privacy Policy | Automatix FCZ</title>
-<meta name="description" content="Privacy Policy for Automatix FCZ: what personal data we collect, why, and your rights under the GDPR." />
-<link rel="canonical" href="https://www.automatixfcz.nl/privacy.html" />
+<title>Privacy Policy | FR Operations</title>
+<meta name="description" content="Privacy Policy for FR Operations: what personal data we collect, why, and your rights under the GDPR." />
+<link rel="canonical" href="https://www.frops.nl/privacy.html" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Privacy Policy | Automatix FCZ" />
-<meta property="og:description" content="What personal data Automatix FCZ collects, why, and your rights under the GDPR." />
-<meta property="og:url" content="https://www.automatixfcz.nl/privacy.html" />
+<meta property="og:title" content="Privacy Policy | FR Operations" />
+<meta property="og:description" content="What personal data FR Operations collects, why, and your rights under the GDPR." />
+<meta property="og:url" content="https://www.frops.nl/privacy.html" />
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: { display: ['Barlow Condensed', 'sans-serif'], sans: ['Barlow', 'sans-serif'], body: ['Inter', 'sans-serif'] },
-        colors: {
-          navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
-          ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
-        },
-        boxShadow: { glow: '0 0 60px -10px rgba(255,122,48,0.35)' },
-      }
-    }
-  }
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Barlow', sans-serif; }
-  .bg-grid {
-    background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-                       linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
-<body class="bg-white text-navy-900 antialiased">
-
-<!-- NAV -->
-<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-2">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect width="28" height="28" rx="7" fill="#ff7a30"/>
-        <path d="M8 19L13 9L18 19" stroke="#0b1120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="20" cy="9" r="1.6" fill="#0b1120"/>
-      </svg>
-      <span class="text-white font-bold text-lg tracking-tight">Automatix <span class="text-ember-500">FCZ</span></span>
-    </a>
-    <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-      <a href="index.html#services" data-i18n="nav.services" class="hover:text-white transition">Services</a>
-      <a href="index.html#how" data-i18n="nav.how" class="hover:text-white transition">How it works</a>
-      <a href="index.html#pricing" data-i18n="nav.pricing" class="hover:text-white transition">Pricing</a>
-      <a href="index.html#about" data-i18n="nav.about" class="hover:text-white transition">About</a>
-      <a href="index.html#contact" data-i18n="nav.contact" class="hover:text-white transition">Contact</a>
-    </nav>
-    <div class="flex items-center gap-3">
-      <select id="langSelect" aria-label="Language" class="bg-navy-800 text-slate-200 text-sm border border-white/15 rounded-full px-3 py-2 focus:outline-none focus:border-ember-500">
-        <option value="nl">🇳🇱 Nederlands</option>
-        <option value="en">🇬🇧 English</option>
-      </select>
-      <a href="index.html#contact" data-i18n="nav.cta" class="hidden sm:inline-flex items-center rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold text-sm px-5 py-2.5 transition">
-        Book a free call
-      </a>
-      <button id="menuBtn" class="md:hidden text-white p-2">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
-      </button>
+<body>
+<a class="skip" href="#main" data-i18n="nav.skip">Naar de inhoud</a>
+<header class="nav">
+  <div class="container">
+    <div class="nav__bar">
+      <a class="wordmark" href="index.html" aria-label="FR Operations, home"><svg class="mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><rect class="mark__tile" width="28" height="28" rx="7"/><path class="mark__line" d="M8 19L13 9L18 19" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle class="mark__dot" cx="20" cy="9" r="1.6"/></svg><span>FR <span class="wordmark__accent">Operations</span></span></a>
+      <nav class="nav__links" aria-label="Hoofdmenu">
+        <a href="index.html#services" data-i18n="nav.services">Diensten</a>
+        <a href="index.html#how" data-i18n="nav.how">Hoe het werkt</a>
+        <a href="index.html#pricing" data-i18n="nav.pricing">Prijzen</a>
+        <a href="index.html#about" data-i18n="nav.about">Over ons</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav__tools">
+        <select id="langSelect" class="lang" aria-label="Taal / Language">
+          <option value="nl">Nederlands</option>
+          <option value="en">English</option>
+        </select>
+        <a class="btn btn--quiet nav__cta" href="index.html#contact" data-i18n="nav.cta">Plan een gratis gesprek</a>
+        <button id="menuBtn" class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+      </div>
     </div>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-navy-900 px-6 py-4 space-y-3 text-slate-300">
-    <a href="index.html#services" data-i18n="nav.services" class="block hover:text-white">Services</a>
-    <a href="index.html#how" data-i18n="nav.how" class="block hover:text-white">How it works</a>
-    <a href="index.html#pricing" data-i18n="nav.pricing" class="block hover:text-white">Pricing</a>
-    <a href="index.html#about" data-i18n="nav.about" class="block hover:text-white">About</a>
-    <a href="index.html#contact" data-i18n="nav.contact" class="block hover:text-white">Contact</a>
+    <div id="mobileMenu" class="nav__menu hidden">
+      <a href="index.html#services" data-i18n="nav.services">Diensten</a>
+      <a href="index.html#how" data-i18n="nav.how">Hoe het werkt</a>
+      <a href="index.html#pricing" data-i18n="nav.pricing">Prijzen</a>
+      <a href="index.html#about" data-i18n="nav.about">Over ons</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+      <a class="btn btn--quiet" href="index.html#contact" data-i18n="nav.cta">Plan een gratis gesprek</a>
+    </div>
   </div>
 </header>
 
-<!-- PAGE HEADER -->
-<section class="bg-navy-900 bg-grid pt-36 pb-16 px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto text-center reveal">
-    <h1 data-i18n="legal.privacy.title" class="text-4xl sm:text-5xl font-extrabold text-white font-display">Privacy Policy</h1>
-    <p data-i18n="legal.privacy.updated" class="mt-3 text-sm text-slate-400">Last updated: June 2026</p>
-  </div>
-</section>
+<main id="main">
+  <section class="hero hero--split on-field" aria-labelledby="doc-title">
+    <div class="container">
+      <div class="hero__text">
+        <h1 id="doc-title" data-i18n="legal.privacy.title">Privacybeleid</h1>
+        <p class="hero__meta" data-i18n="legal.privacy.updated">Laatst bijgewerkt: juni 2026</p>
+        <p class="lead" data-i18n="legal.privacy.intro">FR Operations ("wij", "ons") respecteert uw privacy. Deze pagina legt uit welke persoonsgegevens we verzamelen, waarom, en welke rechten u heeft onder de AVG.</p>
+      </div>
+      <div class="hero__side toc">
+        <ol>
+          <li><a href="#s1" data-i18n="legal.privacy.s1.title">Wie we zijn</a></li>
+          <li><a href="#s2" data-i18n="legal.privacy.s2.title">Wat we verzamelen</a></li>
+          <li><a href="#s3" data-i18n="legal.privacy.s3.title">Waarom we het verwerken</a></li>
+          <li><a href="#s4" data-i18n="legal.privacy.s4.title">Rechtsgrond</a></li>
+          <li><a href="#s5" data-i18n="legal.privacy.s5.title">Hoe lang we het bewaren</a></li>
+          <li><a href="#s6" data-i18n="legal.privacy.s6.title">Cookies &amp; analytics</a></li>
+          <li><a href="#s7" data-i18n="legal.privacy.s7.title">Het delen van uw gegevens</a></li>
+          <li><a href="#s8" data-i18n="legal.privacy.s8.title">Beveiliging</a></li>
+          <li><a href="#s9" data-i18n="legal.privacy.s9.title">Uw rechten</a></li>
+          <li><a href="#s10" data-i18n="legal.privacy.s10.title">Wijzigingen in dit beleid</a></li>
+          <li><a href="#s11" data-i18n="legal.privacy.s11.title">Contact</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTENT -->
-<section class="bg-white py-20 px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto">
-    <p data-i18n="legal.privacy.intro" class="reveal text-lg text-slate-600">
-      Automatix FCZ ("we", "us") respects your privacy. This page explains what personal data we collect, why, and what rights you have under the GDPR.
-    </p>
+  <section class="section section--first">
+    <div class="container">
+      <article class="doc">
+        <h2 id="s1" data-i18n="legal.privacy.s1.title">Wie we zijn</h2>
+        <p data-i18n="legal.privacy.s1.body">FR Operations is een in Rotterdam gevestigde automatiseringsstudio (KVK: 00000000). Ons contactpunt voor gegevens is info@frops.nl.</p>
+        <h2 id="s2" data-i18n="legal.privacy.s2.title">Wat we verzamelen</h2>
+        <p data-i18n="legal.privacy.s2.body">Via ons contactformulier verzamelen we de naam, het bedrijf, het e-mailadres en het bericht dat u opgeeft. We verzamelen geen betaalgegevens op deze site en u heeft geen account nodig.</p>
+        <h2 id="s3" data-i18n="legal.privacy.s3.title">Waarom we het verwerken</h2>
+        <p data-i18n="legal.privacy.s3.body">We gebruiken deze gegevens alleen om op uw aanvraag te reageren, een adviesgesprek in te plannen en afgesproken diensten te leveren. We verkopen of verhuren uw gegevens nooit.</p>
+        <h2 id="s4" data-i18n="legal.privacy.s4.title">Rechtsgrond</h2>
+        <p data-i18n="legal.privacy.s4.body">We baseren ons op uw toestemming bij het versturen van het formulier, en op de uitvoering van de overeenkomst zodra u klant wordt.</p>
+        <h2 id="s5" data-i18n="legal.privacy.s5.title">Hoe lang we het bewaren</h2>
+        <p data-i18n="legal.privacy.s5.body">Aanvraaggegevens bewaren we maximaal 24 maanden. Klantgegevens bewaren we voor de duur van de samenwerking plus de wettelijke bewaartermijn (momenteel 7 jaar voor financiële gegevens onder Nederlands belastingrecht).</p>
+        <h2 id="s6" data-i18n="legal.privacy.s6.title">Cookies &amp; analytics</h2>
+        <p data-i18n="legal.privacy.s6.body">Deze site gebruikt Cloudflare Web Analytics: een cookieloze, privacyvriendelijke tool die bezoeken telt zonder u individueel te volgen of gegevens te delen met adverteerders. Deze draait alleen als u dit accepteert in de cookiebanner; u kunt uw keuze altijd wijzigen via 'Cookie-instellingen' in de footer. Daarnaast slaan we uw gekozen weergavetaal op in de lokale opslag van uw browser, puur voor uw gemak, die u kunt wissen via uw browserinstellingen.</p>
+        <button type="button" class="btn btn--quiet" data-i18n="legal.privacy.s6.cta" onclick="FROps.openConsentSettings()">Cookie-instellingen beheren</button>
+        <h2 id="s7" data-i18n="legal.privacy.s7.title">Het delen van uw gegevens</h2>
+        <p data-i18n="legal.privacy.s7.body">We delen gegevens uitsluitend met verwerkers die strikt noodzakelijk zijn voor onze bedrijfsvoering (zoals e-mail- of CRM-tools), onder AVG-conforme verwerkersovereenkomsten, en brengen ze nooit buiten de EU/EER zonder passende waarborgen.</p>
+        <h2 id="s8" data-i18n="legal.privacy.s8.title">Beveiliging</h2>
+        <p data-i18n="legal.privacy.s8.body">We treffen passende technische en organisatorische maatregelen om uw gegevens te beschermen tegen onbevoegde toegang, verlies of misbruik.</p>
+      <div id="gdpr" class="doc__mark">
+        <h2 id="s9" data-i18n="legal.privacy.s9.title">Uw rechten</h2>
+        <p data-i18n="legal.privacy.s9.body">Onder de AVG heeft u recht op inzage, correctie of verwijdering van uw gegevens, op beperking of bezwaar tegen verwerking, en op dataportabiliteit. U kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens. Om een recht uit te oefenen, mail naar info@frops.nl.</p>
+      </div>
+        <h2 id="s10" data-i18n="legal.privacy.s10.title">Wijzigingen in dit beleid</h2>
+        <p data-i18n="legal.privacy.s10.body">We kunnen dit beleid van tijd tot tijd bijwerken. De versie op deze pagina is altijd de meest actuele.</p>
+        <h2 id="s11" data-i18n="legal.privacy.s11.title">Contact</h2>
+        <p data-i18n="legal.privacy.s11.body">Vragen over dit beleid? Mail naar info@frops.nl of schrijf naar Wilhelminakade 12, 3072 AP Rotterdam, NL.</p>
+        <p class="doc__back"><a class="textlink" href="index.html" data-i18n="legal.backHome">Terug naar home</a></p>
+      </article>
+    </div>
+  </section>
+</main>
 
-    <div class="mt-10 space-y-10">
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s1.title" class="text-xl font-bold text-navy-900">Who we are</h2>
-        <p data-i18n="legal.privacy.s1.body" class="mt-2 text-slate-600">Automatix FCZ is a Rotterdam-based automation studio (KVK: 00000000). Our data contact is hello@automatixfcz.nl.</p>
+<footer class="foot">
+  <div class="container">
+    <div class="grid12">
+      <p class="foot__statement" data-i18n="about.quote">Technologie is gereedschap. Het gaat erom dat uw werk er lichter van wordt.</p>
+    </div>
+    <div class="grid12 foot__cols">
+      <div class="foot__brand">
+        <a class="wordmark" href="index.html" aria-label="FR Operations, home"><svg class="mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><rect class="mark__tile" width="28" height="28" rx="7"/><path class="mark__line" d="M8 19L13 9L18 19" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle class="mark__dot" cx="20" cy="9" r="1.6"/></svg><span>FR <span class="wordmark__accent">Operations</span></span></a>
+        <p data-i18n="footer.tagline">Procesautomatisering met AI voor het MKB, vanuit Rotterdam.</p>
       </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s2.title" class="text-xl font-bold text-navy-900">What we collect</h2>
-        <p data-i18n="legal.privacy.s2.body" class="mt-2 text-slate-600">Through our contact form we collect the name, company, email address and message you provide. We don't collect payment details on this site, and you don't need an account.</p>
+      <div class="foot__group">
+        <h2 class="foot__head" data-i18n="footer.companyHeading">Bedrijf</h2>
+        <ul>
+          <li><a href="index.html#about" data-i18n="footer.aboutLink">Over ons</a></li>
+          <li><a href="index.html#services" data-i18n="footer.servicesLink">Diensten</a></li>
+          <li><a href="index.html#contact" data-i18n="footer.contactLink">Contact</a></li>
+        </ul>
       </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s3.title" class="text-xl font-bold text-navy-900">Why we process it</h2>
-        <p data-i18n="legal.privacy.s3.body" class="mt-2 text-slate-600">We use this data only to respond to your enquiry, schedule a consultation, and deliver agreed services. We never sell or rent your data.</p>
+      <div class="foot__group foot__group--wide">
+        <h2 class="foot__head" data-i18n="footer.servicesHeading">Diensten</h2>
+        <ul>
+          <li><a href="process-automation.html" data-i18n="services.1.title">Procesautomatisering</a></li>
+          <li><a href="ai-agents-chatbots.html" data-i18n="services.2.title">AI-agents</a></li>
+          <li><a href="data-analytics-pipelines.html" data-i18n="services.3.title">Data- &amp; analysepijplijnen</a></li>
+          <li><a href="system-integration.html" data-i18n="services.4.title">Systeemintegratie</a></li>
+          <li><a href="custom-ai-solutions.html" data-i18n="services.5.title">Maatwerk AI-oplossingen</a></li>
+          <li><a href="compliance-security.html" data-i18n="services.6.title">Governance, compliance &amp; beveiliging</a></li>
+          <li><a href="conversational-ai.html" data-i18n="services.7.title">Conversational AI</a></li>
+          <li><a href="managed-services.html" data-i18n="services.9.title">Managed Services</a></li>
+        </ul>
       </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s4.title" class="text-xl font-bold text-navy-900">Legal basis</h2>
-        <p data-i18n="legal.privacy.s4.body" class="mt-2 text-slate-600">We rely on your consent when you submit the form, and on contract performance once a client relationship begins.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s5.title" class="text-xl font-bold text-navy-900">How long we keep it</h2>
-        <p data-i18n="legal.privacy.s5.body" class="mt-2 text-slate-600">Enquiry data is kept up to 24 months. Client data is kept for the duration of the engagement plus the retention period required by Dutch tax law (currently 7 years for financial records).</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s6.title" class="text-xl font-bold text-navy-900">Cookies & analytics</h2>
-        <p data-i18n="legal.privacy.s6.body" class="mt-2 text-slate-600">This site uses Cloudflare Web Analytics: a cookieless, privacy-first tool that counts visits without tracking you individually or sharing data with advertisers. It only runs if you accept it in the cookie banner; you can change your choice anytime via 'Cookie settings' in the footer. We separately store your chosen display language in your browser's local storage, purely for convenience, which you can clear via your browser settings.</p>
-        <button type="button" data-i18n="legal.privacy.s6.cta" onclick="Automatix.openConsentSettings()" class="mt-4 inline-flex items-center rounded-full border border-navy-900 text-navy-900 font-semibold text-sm px-5 py-2.5 hover:bg-navy-900 hover:text-white transition">Manage cookie settings</button>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s7.title" class="text-xl font-bold text-navy-900">Sharing your data</h2>
-        <p data-i18n="legal.privacy.s7.body" class="mt-2 text-slate-600">We only share data with processors strictly necessary to run our business (e.g. email or CRM tools), under GDPR-compliant agreements, and never transfer it outside the EU/EEA without proper safeguards.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s8.title" class="text-xl font-bold text-navy-900">Security</h2>
-        <p data-i18n="legal.privacy.s8.body" class="mt-2 text-slate-600">We apply appropriate technical and organizational measures to protect your data against unauthorized access, loss or misuse.</p>
-      </div>
-      <div id="gdpr" class="reveal scroll-mt-24 rounded-2xl border border-ember-500/30 bg-ember-500/5 p-6">
-        <h2 data-i18n="legal.privacy.s9.title" class="text-xl font-bold text-navy-900">Your rights</h2>
-        <p data-i18n="legal.privacy.s9.body" class="mt-2 text-slate-600">Under the GDPR you can access, correct, or erase your data, restrict or object to its processing, and request portability. You can also lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens). To exercise any right, email hello@automatixfcz.nl.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s10.title" class="text-xl font-bold text-navy-900">Changes to this policy</h2>
-        <p data-i18n="legal.privacy.s10.body" class="mt-2 text-slate-600">We may update this policy occasionally. The version published here is always the current one.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.privacy.s11.title" class="text-xl font-bold text-navy-900">Contact</h2>
-        <p data-i18n="legal.privacy.s11.body" class="mt-2 text-slate-600">Questions about this policy? Email hello@automatixfcz.nl or write to Wilhelminakade 12, 3072 AP Rotterdam, NL.</p>
+      <div class="foot__group">
+        <h2 class="foot__head" data-i18n="footer.legalHeading">Juridisch</h2>
+        <ul>
+          <li><a href="privacy.html" data-i18n="footer.privacy">Privacybeleid</a></li>
+          <li><a href="terms.html" data-i18n="footer.terms">Algemene voorwaarden</a></li>
+          <li><a href="privacy.html#gdpr" data-i18n="footer.gdpr">AVG</a></li>
+          <li><button type="button" class="foot__link" data-i18n="footer.cookieSettings" onclick="FROps.openConsentSettings()">Cookie-instellingen</button></li>
+        </ul>
       </div>
     </div>
-
-    <a href="index.html" data-i18n="legal.backHome" class="reveal inline-block mt-12 text-ember-600 font-semibold hover:underline">← Back to home</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-navy-950 border-t border-white/5 py-12 px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    <div>
-      <span class="text-white font-bold text-lg">Automatix <span class="text-ember-500">FCZ</span></span>
-      <p data-i18n="footer.tagline" class="mt-3 text-sm text-slate-500">AI transformation & intelligent process automation. Engineered in Rotterdam.</p>
+    <div class="foot__legal">
+      <span data-i18n="footer.copyright">© 2026 FR Operations.</span>
+      <span>KVK: <span class="fill" data-fill="kvk" data-i18n="footer.kvkPending">nummer volgt</span></span>
+      <span data-i18n="footer.place">Rotterdam, Nederland</span>
     </div>
-    <div>
-      <h4 data-i18n="footer.companyHeading" class="text-white font-semibold text-sm mb-3">Company</h4>
-      <ul class="space-y-2 text-sm text-slate-500">
-        <li><a href="index.html#about" data-i18n="footer.aboutLink" class="hover:text-white">About us</a></li>
-        <li><a href="index.html#services" data-i18n="footer.servicesLink" class="hover:text-white">Services</a></li>
-        <li><a href="index.html#contact" data-i18n="footer.contactLink" class="hover:text-white">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="footer.servicesHeading" class="text-white font-semibold text-sm mb-3">Services</h4>
-      <ul class="space-y-2 text-sm text-slate-500">
-        <li><a href="process-automation.html" data-i18n="services.1.title" class="hover:text-white">Process Automation</a></li>
-        <li><a href="ai-agents-chatbots.html" data-i18n="services.2.title" class="hover:text-white">AI Agents</a></li>
-        <li><a href="data-analytics-pipelines.html" data-i18n="services.3.title" class="hover:text-white">Data &amp; Analytics Pipelines</a></li>
-        <li><a href="system-integration.html" data-i18n="services.4.title" class="hover:text-white">System Integration</a></li>
-        <li><a href="custom-ai-solutions.html" data-i18n="services.5.title" class="hover:text-white">Custom AI Solutions</a></li>
-        <li><a href="compliance-security.html" data-i18n="services.6.title" class="hover:text-white">Governance, Compliance &amp; Security</a></li>
-        <li><a href="conversational-ai.html" data-i18n="services.7.title" class="hover:text-white">Conversational AI</a></li>
-        <li><a href="managed-services.html" data-i18n="services.9.title" class="hover:text-white">Managed Services</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="footer.legalHeading" class="text-white font-semibold text-sm mb-3">Legal</h4>
-      <ul class="space-y-2 text-sm text-slate-500">
-        <li><a href="privacy.html" data-i18n="footer.privacy" class="hover:text-white">Privacy Policy</a></li>
-        <li><a href="terms.html" data-i18n="footer.terms" class="hover:text-white">Terms of Service</a></li>
-        <li><a href="privacy.html#gdpr" data-i18n="footer.gdpr" class="hover:text-white">GDPR</a></li>
-        <li><button type="button" data-i18n="footer.cookieSettings" onclick="Automatix.openConsentSettings()" class="hover:text-white text-left">Cookie settings</button></li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
-    <span data-i18n="footer.copyright">© 2026 Automatix FCZ. All rights reserved.</span>
-    <span data-i18n="footer.kvkLine">KVK: 00000000 · Rotterdam, The Netherlands</span>
   </div>
 </footer>
 
 <script>
-  document.getElementById('menuBtn').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-  });
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
+  (function () {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
+    });
+    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+  })();
 </script>
 <script src="i18n.js"></script>
 <script src="consent.js" defer></script>

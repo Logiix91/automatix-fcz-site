@@ -1,0 +1,34 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Index-First",
+  "theme": "brand",
+  "axes": "light/display-condensed/warm",
+  "hero": "Corridor",
+  "nav": "floating pill",
+  "footer": "statement",
+  "imagery": "none",
+  "photos": [],
+  "entry": "index.html",
+  "fingerprint": "index-first/corridor/pill/statement/rows-figures-steps-switcher-table-split-form",
+  "sections": [
+   "Hero",
+   "Index",
+   "Figures",
+   "Steps",
+   "Switcher",
+   "Table",
+   "Split",
+   "Form",
+   "Footer"
+  ],
+  "signature": "the eight services as an index that starts on the first screen",
+  "waived": [
+   "49b"
+  ],
+  "prompt": "AI process automation consultancy for Dutch SMEs, hire",
+  "date": "2026-11-05"
+ }
+]

@@ -1,0 +1,6 @@
+﻿name = "automatix-fcz-site"
+compatibility_date = "2025-01-01"
+account_id = "657ff9ca5ae9beb60b960435c6b7423c"
+
+[assets]
+directory = "."

@@ -1,0 +1,25 @@
+{
+ "scanned": "2026-11-05",
+ "findings": {
+  "fonts": "Barlow Condensed 700/800 (display) + Barlow 400-700 (body) + Inter 400-600 (declared, unused as display), Google Fonts link (index.html L41)",
+  "palette": "Tailwind CDN config, named brand tokens navy 950/900/800/700 and ember 400/500/600 as hex (index.html L45-48, repeated per page)",
+  "motion": "no library; CSS .reveal (opacity 0 at rest) + five canvas background scripts (hero-bg, orchestrate-bg, agent-bg, flow-bg, pipeline-bg)",
+  "spacing": "Tailwind default 4pt utilities",
+  "framework": "static HTML, Tailwind Play CDN, Cloudflare Workers static assets (wrangler.toml, assets dir '.'), i18n.js NL/EN via data-i18n, consent.js, Formspree form (placeholder ID)",
+  "product": "none to capture: a consultancy with no running product",
+  "other": ".impeccable/ critique from an earlier design pass; PRODUCT.md brief"
+ },
+ "preserve": [
+  "navy + ember brand colours",
+  "Barlow Condensed + Barlow",
+  "every link, field, handler, i18n key and script hook",
+  "page content and words except where a copy gate names them"
+ ],
+ "introduce": [
+  "OKLCH tokens (tokens.css/base.css)",
+  "Index-First shape",
+  "Corridor hero",
+  "gates",
+  "slots for missing facts"
+ ]
+}

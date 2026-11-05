@@ -3,203 +3,171 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Terms of Service | Automatix FCZ</title>
-<meta name="description" content="Terms of Service / General Terms and Conditions for Automatix FCZ." />
-<link rel="canonical" href="https://www.automatixfcz.nl/terms.html" />
+<title>Terms of Service | FR Operations</title>
+<meta name="description" content="Terms of Service / General Terms and Conditions for FR Operations." />
+<link rel="canonical" href="https://www.frops.nl/terms.html" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Terms of Service | Automatix FCZ" />
-<meta property="og:description" content="General Terms and Conditions for Automatix FCZ services." />
-<meta property="og:url" content="https://www.automatixfcz.nl/terms.html" />
+<meta property="og:title" content="Terms of Service | FR Operations" />
+<meta property="og:description" content="General Terms and Conditions for FR Operations services." />
+<meta property="og:url" content="https://www.frops.nl/terms.html" />
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: { display: ['Barlow Condensed', 'sans-serif'], sans: ['Barlow', 'sans-serif'], body: ['Inter', 'sans-serif'] },
-        colors: {
-          navy: { 950: '#070b14', 900: '#0b1120', 800: '#101a30', 700: '#162242' },
-          ember: { 500: '#ff7a30', 600: '#f2641a', 400: '#ff9a5c' },
-        },
-        boxShadow: { glow: '0 0 60px -10px rgba(255,122,48,0.35)' },
-      }
-    }
-  }
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Barlow', sans-serif; }
-  .bg-grid {
-    background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-                       linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
-<body class="bg-white text-navy-900 antialiased">
-
-<!-- NAV -->
-<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-navy-900/80 border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-2">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect width="28" height="28" rx="7" fill="#ff7a30"/>
-        <path d="M8 19L13 9L18 19" stroke="#0b1120" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="20" cy="9" r="1.6" fill="#0b1120"/>
-      </svg>
-      <span class="text-white font-bold text-lg tracking-tight">Automatix <span class="text-ember-500">FCZ</span></span>
-    </a>
-    <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-      <a href="index.html#services" data-i18n="nav.services" class="hover:text-white transition">Services</a>
-      <a href="index.html#how" data-i18n="nav.how" class="hover:text-white transition">How it works</a>
-      <a href="index.html#pricing" data-i18n="nav.pricing" class="hover:text-white transition">Pricing</a>
-      <a href="index.html#about" data-i18n="nav.about" class="hover:text-white transition">About</a>
-      <a href="index.html#contact" data-i18n="nav.contact" class="hover:text-white transition">Contact</a>
-    </nav>
-    <div class="flex items-center gap-3">
-      <select id="langSelect" aria-label="Language" class="bg-navy-800 text-slate-200 text-sm border border-white/15 rounded-full px-3 py-2 focus:outline-none focus:border-ember-500">
-        <option value="nl">🇳🇱 Nederlands</option>
-        <option value="en">🇬🇧 English</option>
-      </select>
-      <a href="index.html#contact" data-i18n="nav.cta" class="hidden sm:inline-flex items-center rounded-full bg-ember-500 hover:bg-ember-600 text-navy-950 font-semibold text-sm px-5 py-2.5 transition">
-        Book a free call
-      </a>
-      <button id="menuBtn" class="md:hidden text-white p-2">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
-      </button>
+<body>
+<a class="skip" href="#main" data-i18n="nav.skip">Naar de inhoud</a>
+<header class="nav">
+  <div class="container">
+    <div class="nav__bar">
+      <a class="wordmark" href="index.html" aria-label="FR Operations, home"><svg class="mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><rect class="mark__tile" width="28" height="28" rx="7"/><path class="mark__line" d="M8 19L13 9L18 19" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle class="mark__dot" cx="20" cy="9" r="1.6"/></svg><span>FR <span class="wordmark__accent">Operations</span></span></a>
+      <nav class="nav__links" aria-label="Hoofdmenu">
+        <a href="index.html#services" data-i18n="nav.services">Diensten</a>
+        <a href="index.html#how" data-i18n="nav.how">Hoe het werkt</a>
+        <a href="index.html#pricing" data-i18n="nav.pricing">Prijzen</a>
+        <a href="index.html#about" data-i18n="nav.about">Over ons</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav__tools">
+        <select id="langSelect" class="lang" aria-label="Taal / Language">
+          <option value="nl">Nederlands</option>
+          <option value="en">English</option>
+        </select>
+        <a class="btn btn--quiet nav__cta" href="index.html#contact" data-i18n="nav.cta">Plan een gratis gesprek</a>
+        <button id="menuBtn" class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+      </div>
     </div>
-  </div>
-  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-navy-900 px-6 py-4 space-y-3 text-slate-300">
-    <a href="index.html#services" data-i18n="nav.services" class="block hover:text-white">Services</a>
-    <a href="index.html#how" data-i18n="nav.how" class="block hover:text-white">How it works</a>
-    <a href="index.html#pricing" data-i18n="nav.pricing" class="block hover:text-white">Pricing</a>
-    <a href="index.html#about" data-i18n="nav.about" class="block hover:text-white">About</a>
-    <a href="index.html#contact" data-i18n="nav.contact" class="block hover:text-white">Contact</a>
+    <div id="mobileMenu" class="nav__menu hidden">
+      <a href="index.html#services" data-i18n="nav.services">Diensten</a>
+      <a href="index.html#how" data-i18n="nav.how">Hoe het werkt</a>
+      <a href="index.html#pricing" data-i18n="nav.pricing">Prijzen</a>
+      <a href="index.html#about" data-i18n="nav.about">Over ons</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+      <a class="btn btn--quiet" href="index.html#contact" data-i18n="nav.cta">Plan een gratis gesprek</a>
+    </div>
   </div>
 </header>
 
-<!-- PAGE HEADER -->
-<section class="bg-navy-900 bg-grid pt-36 pb-16 px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto text-center reveal">
-    <h1 data-i18n="legal.terms.title" class="text-4xl sm:text-5xl font-extrabold text-white font-display">Terms of Service</h1>
-    <p data-i18n="legal.terms.updated" class="mt-3 text-sm text-slate-400">Last updated: June 2026</p>
-  </div>
-</section>
+<main id="main">
+  <section class="hero hero--split on-field" aria-labelledby="doc-title">
+    <div class="container">
+      <div class="hero__text">
+        <h1 id="doc-title" data-i18n="legal.terms.title">Algemene Voorwaarden</h1>
+        <p class="hero__meta" data-i18n="legal.terms.updated">Laatst bijgewerkt: juni 2026</p>
+        <p class="lead" data-i18n="legal.terms.intro">Deze Algemene Voorwaarden ("Voorwaarden") zijn van toepassing op elk adviesgesprek, voorstel en dienstverleningsovereenkomst tussen FR Operations ("wij") en de klant ("u"). Door onze diensten af te nemen, accepteert u deze Voorwaarden.</p>
+      </div>
+      <div class="hero__side toc">
+        <ol>
+          <li><a href="#s1" data-i18n="legal.terms.s1.title">Onze diensten</a></li>
+          <li><a href="#s2" data-i18n="legal.terms.s2.title">Offertes &amp; overeenkomsten</a></li>
+          <li><a href="#s3" data-i18n="legal.terms.s3.title">Prijzen &amp; betaling</a></li>
+          <li><a href="#s4" data-i18n="legal.terms.s4.title">Uw verantwoordelijkheden</a></li>
+          <li><a href="#s5" data-i18n="legal.terms.s5.title">Intellectueel eigendom</a></li>
+          <li><a href="#s6" data-i18n="legal.terms.s6.title">Vertrouwelijkheid &amp; gegevensbescherming</a></li>
+          <li><a href="#s7" data-i18n="legal.terms.s7.title">Aansprakelijkheid</a></li>
+          <li><a href="#s8" data-i18n="legal.terms.s8.title">Overmacht</a></li>
+          <li><a href="#s9" data-i18n="legal.terms.s9.title">Beëindiging</a></li>
+          <li><a href="#s10" data-i18n="legal.terms.s10.title">Toepasselijk recht</a></li>
+          <li><a href="#s11" data-i18n="legal.terms.s11.title">Contact</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTENT -->
-<section class="bg-white py-20 px-6 lg:px-8">
-  <div class="max-w-3xl mx-auto">
-    <p data-i18n="legal.terms.intro" class="reveal text-lg text-slate-600">
-      These General Terms and Conditions ("Terms") apply to every consultation, proposal and service agreement between Automatix FCZ ("we") and the client ("you"). By engaging our services, you accept these Terms.
-    </p>
+  <section class="section section--first">
+    <div class="container">
+      <article class="doc">
+        <h2 id="s1" data-i18n="legal.terms.s1.title">Onze diensten</h2>
+        <p data-i18n="legal.terms.s1.body">FR Operations levert AI-automatiseringsadvies, workflow-automatisering, AI-agents/chatbots, systeemintegraties en gerelateerde maatwerksoftware, zoals beschreven op deze website of in een schriftelijk voorstel.</p>
+        <h2 id="s2" data-i18n="legal.terms.s2.title">Offertes &amp; overeenkomsten</h2>
+        <p data-i18n="legal.terms.s2.body">Kennismakingsgesprekken zijn gratis en vrijblijvend. Een dienstverleningsovereenkomst komt alleen tot stand zodra beide partijen een schriftelijk voorstel bevestigen met scope, planning en prijs.</p>
+        <h2 id="s3" data-i18n="legal.terms.s3.title">Prijzen &amp; betaling</h2>
+        <p data-i18n="legal.terms.s3.body">Prijzen worden in EUR weergegeven en maandelijks gefactureerd, tenzij anders overeengekomen. Starter- en Growth-abonnementen zijn altijd opzegbaar, ingaand aan het einde van de lopende factuurmaand. Facturen zijn binnen 14 dagen betaalbaar.</p>
+        <h2 id="s4" data-i18n="legal.terms.s4.title">Uw verantwoordelijkheden</h2>
+        <p data-i18n="legal.terms.s4.body">U zorgt voor tijdige toegang tot de systemen, data en mensen die redelijkerwijs nodig zijn om de afgesproken automatiseringen te leveren, en gebruikt onze oplevering in overeenstemming met geldende wetgeving.</p>
+        <h2 id="s5" data-i18n="legal.terms.s5.title">Intellectueel eigendom</h2>
+        <p data-i18n="legal.terms.s5.body">Tenzij schriftelijk anders overeengekomen, wordt maatwerkautomatisering die specifiek voor u is gebouwd na volledige betaling uw eigendom. Wij behouden de rechten op onze eigen bestaande tools, frameworks en kennis.</p>
+        <h2 id="s6" data-i18n="legal.terms.s6.title">Vertrouwelijkheid &amp; gegevensbescherming</h2>
+        <p data-i18n="legal.terms.s6.body">Beide partijen behandelen informatie die tijdens de samenwerking wordt gedeeld vertrouwelijk. Persoonsgegevens worden verwerkt volgens ons Privacybeleid.</p>
+        <h2 id="s7" data-i18n="legal.terms.s7.title">Aansprakelijkheid</h2>
+        <p data-i18n="legal.terms.s7.body">Onze aansprakelijkheid voor een claim is beperkt tot de vergoeding die voor die dienst is betaald in de drie maanden voorafgaand aan de claim, behalve waar Nederlands recht een dergelijke beperking niet toestaat (zoals bij grove nalatigheid of opzet).</p>
+        <h2 id="s8" data-i18n="legal.terms.s8.title">Overmacht</h2>
+        <p data-i18n="legal.terms.s8.body">Geen van de partijen is aansprakelijk voor vertraging door omstandigheden buiten redelijke controle, waaronder uitval van platforms van derden waarmee we integreren.</p>
+        <h2 id="s9" data-i18n="legal.terms.s9.title">Beëindiging</h2>
+        <p data-i18n="legal.terms.s9.body">Elke partij kan een lopende samenwerking beëindigen met 30 dagen schriftelijke opzegtermijn. Vergoedingen voor werk dat tot die datum is verricht, blijven verschuldigd.</p>
+        <h2 id="s10" data-i18n="legal.terms.s10.title">Toepasselijk recht</h2>
+        <p data-i18n="legal.terms.s10.body">Op deze Voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in Rotterdam, Nederland.</p>
+        <h2 id="s11" data-i18n="legal.terms.s11.title">Contact</h2>
+        <p data-i18n="legal.terms.s11.body">Vragen over deze Voorwaarden? Mail naar info@frops.nl.</p>
+        <p class="doc__back"><a class="textlink" href="index.html" data-i18n="legal.backHome">Terug naar home</a></p>
+      </article>
+    </div>
+  </section>
+</main>
 
-    <div class="mt-10 space-y-10">
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s1.title" class="text-xl font-bold text-navy-900">Our services</h2>
-        <p data-i18n="legal.terms.s1.body" class="mt-2 text-slate-600">Automatix FCZ provides AI automation consulting, workflow automation, AI agents/chatbots, system integrations and related custom software, as described on this website or in a written proposal.</p>
+<footer class="foot">
+  <div class="container">
+    <div class="grid12">
+      <p class="foot__statement" data-i18n="about.quote">Technologie is gereedschap. Het gaat erom dat uw werk er lichter van wordt.</p>
+    </div>
+    <div class="grid12 foot__cols">
+      <div class="foot__brand">
+        <a class="wordmark" href="index.html" aria-label="FR Operations, home"><svg class="mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><rect class="mark__tile" width="28" height="28" rx="7"/><path class="mark__line" d="M8 19L13 9L18 19" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle class="mark__dot" cx="20" cy="9" r="1.6"/></svg><span>FR <span class="wordmark__accent">Operations</span></span></a>
+        <p data-i18n="footer.tagline">Procesautomatisering met AI voor het MKB, vanuit Rotterdam.</p>
       </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s2.title" class="text-xl font-bold text-navy-900">Quotes & agreements</h2>
-        <p data-i18n="legal.terms.s2.body" class="mt-2 text-slate-600">Discovery calls are free and non-binding. A service agreement only takes effect once both parties confirm a written proposal covering scope, timeline and pricing.</p>
+      <div class="foot__group">
+        <h2 class="foot__head" data-i18n="footer.companyHeading">Bedrijf</h2>
+        <ul>
+          <li><a href="index.html#about" data-i18n="footer.aboutLink">Over ons</a></li>
+          <li><a href="index.html#services" data-i18n="footer.servicesLink">Diensten</a></li>
+          <li><a href="index.html#contact" data-i18n="footer.contactLink">Contact</a></li>
+        </ul>
       </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s3.title" class="text-xl font-bold text-navy-900">Pricing & payment</h2>
-        <p data-i18n="legal.terms.s3.body" class="mt-2 text-slate-600">Prices are shown in EUR and billed monthly unless agreed otherwise. Starter and Growth plans can be cancelled anytime, effective at the end of the current billing month. Invoices are payable within 14 days.</p>
+      <div class="foot__group foot__group--wide">
+        <h2 class="foot__head" data-i18n="footer.servicesHeading">Diensten</h2>
+        <ul>
+          <li><a href="process-automation.html" data-i18n="services.1.title">Procesautomatisering</a></li>
+          <li><a href="ai-agents-chatbots.html" data-i18n="services.2.title">AI-agents</a></li>
+          <li><a href="data-analytics-pipelines.html" data-i18n="services.3.title">Data- &amp; analysepijplijnen</a></li>
+          <li><a href="system-integration.html" data-i18n="services.4.title">Systeemintegratie</a></li>
+          <li><a href="custom-ai-solutions.html" data-i18n="services.5.title">Maatwerk AI-oplossingen</a></li>
+          <li><a href="compliance-security.html" data-i18n="services.6.title">Governance, compliance &amp; beveiliging</a></li>
+          <li><a href="conversational-ai.html" data-i18n="services.7.title">Conversational AI</a></li>
+          <li><a href="managed-services.html" data-i18n="services.9.title">Managed Services</a></li>
+        </ul>
       </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s4.title" class="text-xl font-bold text-navy-900">Your responsibilities</h2>
-        <p data-i18n="legal.terms.s4.body" class="mt-2 text-slate-600">You agree to give us timely access to the systems, data and people reasonably needed to deliver the agreed automations, and to use our deliverables in compliance with applicable law.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s5.title" class="text-xl font-bold text-navy-900">Intellectual property</h2>
-        <p data-i18n="legal.terms.s5.body" class="mt-2 text-slate-600">Unless agreed otherwise in writing, custom automations built specifically for you become your property once fully paid. We keep the rights to our own pre-existing tools, frameworks and know-how.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s6.title" class="text-xl font-bold text-navy-900">Confidentiality & data protection</h2>
-        <p data-i18n="legal.terms.s6.body" class="mt-2 text-slate-600">Both parties keep information shared during the engagement confidential. Personal data is handled per our <a href="privacy.html" class="text-ember-600 hover:underline">Privacy Policy</a>.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s7.title" class="text-xl font-bold text-navy-900">Liability</h2>
-        <p data-i18n="legal.terms.s7.body" class="mt-2 text-slate-600">Our liability for any claim is limited to the fees paid for that service in the three months before the claim, except where Dutch law does not allow such limitation (e.g. gross negligence or willful misconduct).</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s8.title" class="text-xl font-bold text-navy-900">Force majeure</h2>
-        <p data-i18n="legal.terms.s8.body" class="mt-2 text-slate-600">Neither party is liable for delays caused by circumstances beyond reasonable control, including outages of third-party platforms we integrate with.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s9.title" class="text-xl font-bold text-navy-900">Termination</h2>
-        <p data-i18n="legal.terms.s9.body" class="mt-2 text-slate-600">Either party may end an ongoing engagement with 30 days' written notice. Fees for work completed up to that date remain payable.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s10.title" class="text-xl font-bold text-navy-900">Governing law</h2>
-        <p data-i18n="legal.terms.s10.body" class="mt-2 text-slate-600">These Terms are governed by Dutch law. Disputes are submitted to the competent court in Rotterdam, the Netherlands.</p>
-      </div>
-      <div class="reveal">
-        <h2 data-i18n="legal.terms.s11.title" class="text-xl font-bold text-navy-900">Contact</h2>
-        <p data-i18n="legal.terms.s11.body" class="mt-2 text-slate-600">Questions about these Terms? Email hello@automatixfcz.nl.</p>
+      <div class="foot__group">
+        <h2 class="foot__head" data-i18n="footer.legalHeading">Juridisch</h2>
+        <ul>
+          <li><a href="privacy.html" data-i18n="footer.privacy">Privacybeleid</a></li>
+          <li><a href="terms.html" data-i18n="footer.terms">Algemene voorwaarden</a></li>
+          <li><a href="privacy.html#gdpr" data-i18n="footer.gdpr">AVG</a></li>
+          <li><button type="button" class="foot__link" data-i18n="footer.cookieSettings" onclick="FROps.openConsentSettings()">Cookie-instellingen</button></li>
+        </ul>
       </div>
     </div>
-
-    <a href="index.html" data-i18n="legal.backHome" class="reveal inline-block mt-12 text-ember-600 font-semibold hover:underline">← Back to home</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-navy-950 border-t border-white/5 py-12 px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    <div>
-      <span class="text-white font-bold text-lg">Automatix <span class="text-ember-500">FCZ</span></span>
-      <p data-i18n="footer.tagline" class="mt-3 text-sm text-slate-500">AI transformation & intelligent process automation. Engineered in Rotterdam.</p>
+    <div class="foot__legal">
+      <span data-i18n="footer.copyright">© 2026 FR Operations.</span>
+      <span>KVK: <span class="fill" data-fill="kvk" data-i18n="footer.kvkPending">nummer volgt</span></span>
+      <span data-i18n="footer.place">Rotterdam, Nederland</span>
     </div>
-    <div>
-      <h4 data-i18n="footer.companyHeading" class="text-white font-semibold text-sm mb-3">Company</h4>
-      <ul class="space-y-2 text-sm text-slate-500">
-        <li><a href="index.html#about" data-i18n="footer.aboutLink" class="hover:text-white">About us</a></li>
-        <li><a href="index.html#services" data-i18n="footer.servicesLink" class="hover:text-white">Services</a></li>
-        <li><a href="index.html#contact" data-i18n="footer.contactLink" class="hover:text-white">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="footer.servicesHeading" class="text-white font-semibold text-sm mb-3">Services</h4>
-      <ul class="space-y-2 text-sm text-slate-500">
-        <li><a href="process-automation.html" data-i18n="services.1.title" class="hover:text-white">Process Automation</a></li>
-        <li><a href="ai-agents-chatbots.html" data-i18n="services.2.title" class="hover:text-white">AI Agents</a></li>
-        <li><a href="data-analytics-pipelines.html" data-i18n="services.3.title" class="hover:text-white">Data &amp; Analytics Pipelines</a></li>
-        <li><a href="system-integration.html" data-i18n="services.4.title" class="hover:text-white">System Integration</a></li>
-        <li><a href="custom-ai-solutions.html" data-i18n="services.5.title" class="hover:text-white">Custom AI Solutions</a></li>
-        <li><a href="compliance-security.html" data-i18n="services.6.title" class="hover:text-white">Governance, Compliance &amp; Security</a></li>
-        <li><a href="conversational-ai.html" data-i18n="services.7.title" class="hover:text-white">Conversational AI</a></li>
-        <li><a href="managed-services.html" data-i18n="services.9.title" class="hover:text-white">Managed Services</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 data-i18n="footer.legalHeading" class="text-white font-semibold text-sm mb-3">Legal</h4>
-      <ul class="space-y-2 text-sm text-slate-500">
-        <li><a href="privacy.html" data-i18n="footer.privacy" class="hover:text-white">Privacy Policy</a></li>
-        <li><a href="terms.html" data-i18n="footer.terms" class="hover:text-white">Terms of Service</a></li>
-        <li><a href="privacy.html#gdpr" data-i18n="footer.gdpr" class="hover:text-white">GDPR</a></li>
-        <li><button type="button" data-i18n="footer.cookieSettings" onclick="Automatix.openConsentSettings()" class="hover:text-white text-left">Cookie settings</button></li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/5 text-xs text-slate-500 flex flex-col sm:flex-row justify-between gap-2">
-    <span data-i18n="footer.copyright">© 2026 Automatix FCZ. All rights reserved.</span>
-    <span data-i18n="footer.kvkLine">KVK: 00000000 · Rotterdam, The Netherlands</span>
   </div>
 </footer>
 
 <script>
-  document.getElementById('menuBtn').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-  });
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
+  (function () {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
+    });
+    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+  })();
 </script>
 <script src="i18n.js"></script>
 <script src="consent.js" defer></script>
