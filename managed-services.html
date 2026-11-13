@@ -14,41 +14,40 @@
 <meta name="twitter:title" content="Managed Services | FR Operations" />
 <meta name="twitter:description" content="Every automation needs upkeep: monitoring, incident response, and tuning as your business changes. Our managed services keep your AI agents, workflows and integrations running reliably long after launch." />
 <script>document.documentElement.classList.add('js');</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14406f">
+<meta name="robots" content="noindex">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="nav.skip">Naar de inhoud</a>
+<div class="topbar"><div class="container"><p data-i18n="footer.tagline">Procesautomatisering met AI voor het MKB, vanuit Rotterdam.</p><a href="mailto:info@frops.nl">info@frops.nl</a></div></div>
 <header class="nav">
-  <div class="container">
-    <div class="nav__bar">
-      <a class="wordmark" href="index.html" aria-label="FR Operations, home"><svg class="mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><rect class="mark__tile" width="28" height="28" rx="7"/><path class="mark__line" d="M8 19L13 9L18 19" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle class="mark__dot" cx="20" cy="9" r="1.6"/></svg><span>FR <span class="wordmark__accent">Operations</span></span></a>
-      <nav class="nav__links" aria-label="Hoofdmenu">
-        <a href="index.html#services" data-i18n="nav.services">Diensten</a>
-        <a href="index.html#how" data-i18n="nav.how">Hoe het werkt</a>
-        <a href="index.html#pricing" data-i18n="nav.pricing">Prijzen</a>
-        <a href="index.html#about" data-i18n="nav.about">Over ons</a>
-        <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
-      </nav>
-      <div class="nav__tools">
-        <select id="langSelect" class="lang" aria-label="Taal / Language">
-          <option value="nl">Nederlands</option>
-          <option value="en">English</option>
-        </select>
-        <a class="btn btn--quiet nav__cta" href="index.html#contact" data-i18n="nav.cta">Plan een gratis gesprek</a>
-        <button id="menuBtn" class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
-      </div>
-    </div>
-    <div id="mobileMenu" class="nav__menu hidden">
+  <div class="container nav__bar">
+    <a class="brand" href="index.html" aria-label="FR Operations, home"><svg class="brand__mark" width="34" height="34" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="5" fill="#14406f"/><path d="M8 9l7 7-7 7M17 9l7 7-7 7" fill="none" stroke="#ffc917" stroke-width="3.5"/></svg><span>FR Operations</span></a>
+    <nav class="nav__links" aria-label="Hoofdmenu">
       <a href="index.html#services" data-i18n="nav.services">Diensten</a>
       <a href="index.html#how" data-i18n="nav.how">Hoe het werkt</a>
+      <a href="index.html#cases" data-i18n="nav.cases">Cases</a>
       <a href="index.html#pricing" data-i18n="nav.pricing">Prijzen</a>
       <a href="index.html#about" data-i18n="nav.about">Over ons</a>
       <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
-      <a class="btn btn--quiet" href="index.html#contact" data-i18n="nav.cta">Plan een gratis gesprek</a>
+    </nav>
+    <div class="nav__tools">
+      <div class="lang" role="group" aria-label="Taal / Language"><button type="button" data-lang="nl" aria-pressed="true" aria-label="Nederlands">NL</button><button type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button></div>
+      <a class="btn btn--small btn--primary nav__cta" href="index.html#contact" data-i18n="nav.cta">Plan een gratis gesprek</a>
+      <button id="menuBtn" class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
     </div>
+  </div>
+  <div id="mobileMenu" class="nav__menu container hidden">
+    <a href="index.html#services" data-i18n="nav.services">Diensten</a>
+    <a href="index.html#how" data-i18n="nav.how">Hoe het werkt</a>
+    <a href="index.html#cases" data-i18n="nav.cases">Cases</a>
+    <a href="index.html#pricing" data-i18n="nav.pricing">Prijzen</a>
+    <a href="index.html#about" data-i18n="nav.about">Over ons</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    <a class="btn btn--primary" href="index.html#contact" data-i18n="nav.cta">Plan een gratis gesprek</a>
   </div>
 </header>
 
@@ -104,7 +103,7 @@
     </div>
     <div class="grid12 foot__cols">
       <div class="foot__brand">
-        <a class="wordmark" href="index.html" aria-label="FR Operations, home"><svg class="mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><rect class="mark__tile" width="28" height="28" rx="7"/><path class="mark__line" d="M8 19L13 9L18 19" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle class="mark__dot" cx="20" cy="9" r="1.6"/></svg><span>FR <span class="wordmark__accent">Operations</span></span></a>
+        <a class="brand" href="index.html" aria-label="FR Operations, home"><svg class="brand__mark" width="34" height="34" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="5" fill="#14406f"/><path d="M8 9l7 7-7 7M17 9l7 7-7 7" fill="none" stroke="#ffc917" stroke-width="3.5"/></svg><span>FR Operations</span></a>
         <p data-i18n="footer.tagline">Procesautomatisering met AI voor het MKB, vanuit Rotterdam.</p>
       </div>
       <div class="foot__group">
@@ -146,20 +145,7 @@
   </div>
 </footer>
 
-<script>
-  (function () {
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
-    });
-    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    }));
-  })();
-</script>
+<script src="site.js" defer></script>
 <script src="i18n.js"></script>
 <script src="consent.js" defer></script>
 </body>
