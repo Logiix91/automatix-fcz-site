@@ -1,23 +1,73 @@
-:root {
-  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
-  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
-  --text-display-s: clamp(2.25rem, 4vw + 0.5rem, 3.75rem); --text-display: clamp(2.75rem, 5vw + 1rem, 5.25rem);
-  --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
-  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
-  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
-  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
-  --color-paper: oklch(97.5% 0.006 266); --color-paper-2: oklch(95% 0.008 266); --color-paper-3: oklch(92% 0.012 266);
-  --color-ink: oklch(18% 0.032 267); --color-ink-2: oklch(32% 0.03 266); --color-muted: oklch(48% 0.02 266);
-  --color-rule: oklch(88% 0.01 266);
-  /* the brand field: navy 900 / 800 / 950 from the old Tailwind config, with the text that sits on it */
-  --color-field: oklch(18% 0.032 267); --color-field-2: oklch(22.1% 0.046 264); --color-field-3: oklch(15% 0.021 264);
-  --color-on-field: oklch(96% 0.008 266); --color-on-field-muted: oklch(78% 0.02 266); --color-field-rule: oklch(32% 0.04 266);
-  /* ember 500 / 600 from the old Tailwind config; ember is a fill, never text on paper (2.4:1) */
-  --color-accent: oklch(72.5% 0.182 46); --color-accent-2: oklch(67.4% 0.191 43); --color-accent-ink: oklch(15% 0.021 264); --color-focus: oklch(62% 0.19 43);
-  --font-display: "Barlow Condensed", "Arial Narrow", ui-sans-serif, system-ui, sans-serif; --font-body: "Barlow", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-body);
-  --display-weight: 800; --body-weight: 400; --strong-weight: 600;
-  --radius-card: 8px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
-  --tracking-display: -0.01em;
+/* FR Operations: design tokens. design.md explains the choices. */
+
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url("fonts/archivo-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url("fonts/archivo-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* colour: drafting paper, harbour green, and two colours that mean something */
+  --paper: #f2f3ef;
+  --panel: #ffffff;
+  --ink: #15201c;
+  --ink-2: #44524c;
+  --rule: #d3d8d0;
+  --rule-strong: #15201c;
+
+  --field: #0f3d32;        /* the green ground: method, contact */
+  --field-deep: #0a2b23;   /* footer */
+  --on-field: #eef2ec;
+  --on-field-2: #a9bdb3;
+  --field-rule: #2a5a4d;
+
+  --manual: #b5432a;       /* work a person does by hand */
+  --manual-tint: #fbece7;
+  --auto: #1a7a58;         /* work the software does */
+  --auto-tint: #e5f2eb;
+
+  --error: #b3261e;
+  --focus: #0b62d6;
+  --focus-on-field: #ffd84a;
+
+  /* type: one family, three widths, each with a job */
+  --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --w-head: 112%;   /* headings: wide and heavy */
+  --w-text: 100%;   /* running text */
+  --w-data: 86%;    /* diagram labels, table heads, figures */
+
+  --t-small: 0.875rem;
+  --t-body: 1.0625rem;
+  --t-lead: clamp(1.125rem, 0.4vw + 1.02rem, 1.3125rem);
+  --t-h3: clamp(1.1875rem, 0.4vw + 1.08rem, 1.375rem);
+  --t-h2: clamp(1.75rem, 1.6vw + 1.2rem, 2.625rem);
+  --t-h1: clamp(2.25rem, 3.4vw + 1.1rem, 4.25rem);
+  --t-figure: clamp(2rem, 2vw + 1.4rem, 3.25rem);
+
+  /* space */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px; --s-9: 112px;
+  --container: 1360px;
+  --gutter: 48px;
+  --col-gap: 32px;
+  --section: 120px;
+
+  --radius: 4px;
+  --nav-h: 68px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (max-width: 60rem) { :root { --gutter: 24px; --section: 88px; --col-gap: 24px; } }
+@media (max-width: 40rem) { :root { --gutter: 18px; --section: 64px; } }

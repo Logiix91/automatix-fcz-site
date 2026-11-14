@@ -268,6 +268,102 @@
     render();
   });
 
+  // ---- example: matching bank payments to invoices ----
+  const RECON = {
+    nl: { head: ['Bijschrijving', 'Bedrag', 'Factuur', 'Uitkomst'], sum: ['3 van 5 gekoppeld', '2 blijven over voor de administratie'],
+      rows: [['12-11', 'Bakkerij Van Dijk', 'fact 2026-0412', '€ 1.210,00', '2026-0412', 'Gekoppeld', 'factuurnummer in de omschrijving'],
+        ['12-11', 'Installatiebedrijf Noord', '0398 en 0401', '€ 3.872,00', '2026-0398 en 2026-0401', 'Gekoppeld', 'twee facturen, samen het juiste bedrag'],
+        ['13-11', 'J. de Boer', 'bedankt', '€ 605,00', '2026-0407', 'Gekoppeld', 'naam en bedrag komen overeen'],
+        ['13-11', 'Hoveniers Groen', 'factuur 0415', '€ 900,00', '2026-0415 (€ 968,00)', 'Naar administratie', '€ 68,00 te weinig betaald', 1],
+        ['13-11', 'Onbekende rekening', 'storting', '€ 250,00', 'Geen', 'Naar administratie', 'geen passende factuur gevonden', 1]] },
+    en: { head: ['Incoming payment', 'Amount', 'Invoice', 'Outcome'], sum: ['3 of 5 matched', '2 are left for accounts'],
+      rows: [['12-11', 'Bakkerij Van Dijk', 'inv 2026-0412', '€ 1,210.00', '2026-0412', 'Matched', 'invoice number in the description'],
+        ['12-11', 'Installatiebedrijf Noord', '0398 and 0401', '€ 3,872.00', '2026-0398 and 2026-0401', 'Matched', 'two invoices that add up to the amount'],
+        ['13-11', 'J. de Boer', 'thanks', '€ 605.00', '2026-0407', 'Matched', 'name and amount agree'],
+        ['13-11', 'Hoveniers Groen', 'invoice 0415', '€ 900.00', '2026-0415 (€ 968.00)', 'To accounts', '€ 68.00 short', 1],
+        ['13-11', 'Unknown account', 'deposit', '€ 250.00', 'None', 'To accounts', 'no matching invoice found', 1]] },
+  };
+  document.querySelectorAll('[data-recon]').forEach((box) => {
+    const render = () => {
+      const d = RECON[lang()];
+      const table = mk('table'), thead = mk('thead'), hr = mk('tr'), tbody = mk('tbody');
+      d.head.forEach((h) => { const th = mk('th', h); th.scope = 'col'; hr.append(th); });
+      thead.append(hr);
+      d.rows.forEach(([date, who, desc, amount, inv, outcome, why, flag]) => {
+        const tr = mk('tr', null, flag ? 'is-flag' : '');
+        const a = mk('td'); a.append(mk('b', who), mk('small', date + ', "' + desc + '"'));
+        const o = mk('td'); o.append(mk('b', outcome), mk('small', why));
+        [a, mk('td', amount, 'num'), mk('td', inv), o].forEach((td, i) => { td.dataset.label = d.head[i]; tr.append(td); });
+        tbody.append(tr);
+      });
+      table.append(thead, tbody);
+      const sum = mk('p', null, 'ex__sum'); sum.append(mk('b', d.sum[0]), d.sum[1]);
+      box.replaceChildren(table, sum);
+    };
+    document.addEventListener('frops:lang', render); render();
+  });
+
+  // ---- example: a day's schedule for three engineers (half-hour columns from 08:00) ----
+  const PLAN = {
+    nl: { people: ['Daan', 'Fatima', 'Koen'], sum: ['8 van 9 klussen ingepland', '1 wacht op de planner'], hold: 'Onderdeel niet op voorraad: planner beslist',
+      jobs: [[['08:00', '10:00', 'Cv-storing', 'Gouda'], ['10:30', '12:30', 'Onderhoud', 'Waddinxveen'], ['13:30', '16:00', 'Warmtepomp', 'Zoetermeer']],
+        [['08:30', '11:00', 'Airco', 'Delft'], ['11:30', '13:00', 'Storing', 'Rijswijk'], ['14:00', '16:30', 'Oplevering', 'Den Haag']],
+        [['08:00', '09:30', 'Storing', 'Alphen'], ['10:00', '12:00', 'Onderhoud', 'Leiden'], ['13:00', '15:00', 'Warmtepomp', 'Leiden', 1]]] },
+    en: { people: ['Daan', 'Fatima', 'Koen'], sum: ['8 of 9 jobs scheduled', '1 waits for the planner'], hold: 'Part not in stock: planner decides',
+      jobs: [[['08:00', '10:00', 'Boiler fault', 'Gouda'], ['10:30', '12:30', 'Maintenance', 'Waddinxveen'], ['13:30', '16:00', 'Heat pump', 'Zoetermeer']],
+        [['08:30', '11:00', 'Air conditioning', 'Delft'], ['11:30', '13:00', 'Fault', 'Rijswijk'], ['14:00', '16:30', 'Handover', 'Den Haag']],
+        [['08:00', '09:30', 'Fault', 'Alphen'], ['10:00', '12:00', 'Maintenance', 'Leiden'], ['13:00', '15:00', 'Heat pump', 'Leiden', 1]]] },
+  };
+  const slot = (t) => { const [h, m] = t.split(':').map(Number); return (h - 8) * 2 + (m ? 1 : 0) + 1; };
+  document.querySelectorAll('[data-plan]').forEach((box) => {
+    const render = () => {
+      const d = PLAN[lang()];
+      const axis = mk('div', null, 'board__axis'); axis.setAttribute('aria-hidden', 'true');
+      for (let h = 8; h < 17; h++) axis.append(mk('span', String(h).padStart(2, '0') + ':00'));
+      const rows = d.people.map((name, i) => {
+        const row = mk('div', null, 'board__row'), track = mk('ul', null, 'board__track');
+        d.jobs[i].forEach(([from, to, what, where, flag]) => {
+          const li = mk('li', null, flag ? 'is-flag' : '');
+          li.style.setProperty('--a', slot(from)); li.style.setProperty('--b', slot(to));
+          li.append(mk('small', from + ' tot ' + to), mk('b', what), mk('span', where));
+          if (lang() === 'en') li.firstChild.textContent = from + ' to ' + to;
+          if (flag) li.append(mk('em', d.hold));
+          track.append(li);
+        });
+        row.append(mk('p', name, 'board__who'), track); return row;
+      });
+      const sum = mk('p', null, 'ex__sum'); sum.append(mk('b', d.sum[0]), d.sum[1]);
+      box.replaceChildren(axis, ...rows, sum);
+    };
+    document.addEventListener('frops:lang', render); render();
+  });
+
+  // ---- example: a weekly report fed by three systems ----
+  const REPORT = {
+    nl: { src: [['ERP', 'bijgewerkt 03:00'], ['CRM', 'bijgewerkt 03:00'], ['Boekhouding', 'bijgewerkt 03:05']], kpi: [['€ 84.300', 'omzet deze week'], ['37', 'openstaande offertes'], ['€ 41.900', 'openstaande posten']],
+      chart: 'Omzet per week, in duizenden euro', week: 'wk', warn: ['CRM: 2 offertes zonder klantnummer', 'niet meegeteld, staan klaar om aan te vullen'] },
+    en: { src: [['ERP', 'refreshed 03:00'], ['CRM', 'refreshed 03:00'], ['Accounts', 'refreshed 03:05']], kpi: [['€ 84,300', 'revenue this week'], ['37', 'open quotes'], ['€ 41,900', 'outstanding receivables']],
+      chart: 'Revenue per week, in thousands of euros', week: 'wk', warn: ['CRM: 2 quotes without a customer number', 'left out of the count, ready to be completed'] },
+    weeks: [[39, 71], [40, 78], [41, 69], [42, 82], [43, 75], [44, 88], [45, 80], [46, 84.3]],
+  };
+  document.querySelectorAll('[data-report]').forEach((box) => {
+    const render = () => {
+      const d = REPORT[lang()], loc = lang() === 'nl' ? 'nl-NL' : 'en-GB';
+      const src = mk('ul', null, 'report__src'); d.src.forEach(([n, t]) => { const li = mk('li'); li.append(mk('b', n), mk('span', t)); src.append(li); });
+      const kpi = mk('dl', null, 'report__kpi'); d.kpi.forEach(([v, l]) => { const w = mk('div'); w.append(mk('dd', v), mk('dt', l)); kpi.append(w); });
+      const fig = mk('figure', null, 'report__chart'); fig.append(mk('figcaption', d.chart));
+      const bars = mk('ol'); const max = 100;
+      REPORT.weeks.forEach(([wk, v], i) => {
+        const li = mk('li', null, i === REPORT.weeks.length - 1 ? 'is-now' : ''); li.style.setProperty('--h', Math.round((v / max) * 130) + 'px');
+        li.append(mk('b', v.toLocaleString(loc, { maximumFractionDigits: 0 })), mk('i'), mk('span', d.week + ' ' + wk)); bars.append(li);
+      });
+      fig.append(bars);
+      const warn = mk('p', null, 'report__warn'); warn.append(mk('b', d.warn[0]), d.warn[1]);
+      box.replaceChildren(src, kpi, fig, warn);
+    };
+    document.addEventListener('frops:lang', render); render();
+  });
+
   const form = document.getElementById('contactForm');
   if (form) {
     const ok = document.getElementById('formSuccess');

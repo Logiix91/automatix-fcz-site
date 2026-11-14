@@ -206,80 +206,67 @@
     <div class="container">
       <div class="sec__head">
         <h2 id="cases-title" data-i18n="cases.title">Automatisering in de praktijk</h2>
-        <p class="lead" data-i18n="uc.lead">Zes processen die in veel bedrijven nog met de hand gaan. Kies er een en bekijk het voorbeeld.</p>
+        <p class="lead" data-i18n="uc.lead">Zes heel verschillende processen die in veel bedrijven nog met de hand gaan. Kies er een en bekijk het voorbeeld.</p>
       </div>
       <div class="uc">
         <div class="uc__list" role="tablist" aria-orientation="vertical" aria-labelledby="cases-title">
-          <button type="button" role="tab" id="uc-tab-1" aria-controls="uc-1" aria-selected="true"><span data-i18n="cases.1.sector">Logistiek</span><b data-i18n="cases.1.title">Order naar factuur zonder overtypen</b></button>
+          <button type="button" role="tab" id="uc-tab-1" aria-controls="uc-1" aria-selected="true"><span data-i18n="u.1.sector">HR</span><b data-i18n="u.1.title">Nieuwe medewerker inwerken</b></button>
           <button type="button" role="tab" id="uc-tab-2" aria-controls="uc-2" aria-selected="false" tabindex="-1"><span data-i18n="x.1.sector">Logistiek</span><b data-i18n="x.1.title">Transportaanvragen uit de mailbox</b></button>
-          <button type="button" role="tab" id="uc-tab-3" aria-controls="uc-3" aria-selected="false" tabindex="-1"><span data-i18n="cases.2.sector">Zakelijke dienstverlening</span><b data-i18n="cases.2.title">Factuurcontrole</b></button>
-          <button type="button" role="tab" id="uc-tab-4" aria-controls="uc-4" aria-selected="false" tabindex="-1"><span data-i18n="cases.3.sector">Juridisch</span><b data-i18n="cases.3.title">Clausules uit contracten halen</b></button>
-          <button type="button" role="tab" id="uc-tab-5" aria-controls="uc-5" aria-selected="false" tabindex="-1"><span data-i18n="x.2.sector">Groothandel</span><b data-i18n="x.2.title">Offerteaanvragen beantwoorden</b></button>
+          <button type="button" role="tab" id="uc-tab-3" aria-controls="uc-3" aria-selected="false" tabindex="-1"><span data-i18n="u.3.sector">Financiën</span><b data-i18n="u.3.title">Bankbetalingen afletteren</b></button>
+          <button type="button" role="tab" id="uc-tab-4" aria-controls="uc-4" aria-selected="false" tabindex="-1"><span data-i18n="u.4.sector">Installatiebedrijf</span><b data-i18n="u.4.title">Monteurs inplannen</b></button>
+          <button type="button" role="tab" id="uc-tab-5" aria-controls="uc-5" aria-selected="false" tabindex="-1"><span data-i18n="u.5.sector">Directie</span><b data-i18n="u.5.title">Weekrapportage zonder Excel</b></button>
           <button type="button" role="tab" id="uc-tab-6" aria-controls="uc-6" aria-selected="false" tabindex="-1"><span data-i18n="x.3.sector">Klantenservice</span><b data-i18n="x.3.title">Waar is mijn zending?</b></button>
         </div>
         <div>
           <div class="uc__panel" role="tabpanel" id="uc-1" aria-labelledby="uc-tab-1" tabindex="0">
-            <p class="uc__sector" data-i18n="cases.1.sector">Logistiek</p>
-            <h3 data-i18n="cases.1.title">Order naar factuur zonder overtypen</h3>
+            <p class="uc__sector" data-i18n="u.1.sector">HR</p>
+            <h3 data-i18n="u.1.title">Nieuwe medewerker inwerken</h3>
             <dl class="uc__ba">
-              <div><dt data-i18n="cases.now">Nu</dt><dd data-i18n="cases.1.challenge">Medewerkers typen orderdata over van webshop naar ERP en factuurprogramma. Elke order, elke dag, met de fouten die daarbij horen.</dd></div>
-              <div><dt data-i18n="flow.tab.auto">Geautomatiseerd</dt><dd><b data-i18n="cases.1.result">0 handmatige stappen</b><span data-i18n="cases.1.resultLabel">per order, als het draait</span></dd></div>
+              <div><dt data-i18n="cases.now">Nu</dt><dd data-i18n="u.1.now">HR mailt IT voor een account, de manager voor een laptop en de administratie voor het contract, en houdt in een lijstje bij wat er nog mist.</dd></div>
+              <div><dt data-i18n="flow.tab.auto">Geautomatiseerd</dt><dd><b data-i18n="u.1.result">Eén melding zet alles in gang</b><span data-i18n="u.1.label">alleen de laptopkeuze wacht op de manager</span></dd></div>
             </dl>
             <div class="uc__ex">
-            <figure class="flow" data-flow aria-labelledby="flow-title">
-        <div class="flow__head">
-          <figcaption id="flow-title" data-i18n="flow.title">Voorbeeld: van order naar factuur</figcaption>
-          <div class="seg" role="group" aria-labelledby="flow-title">
-            <button type="button" data-flow-show="manual" aria-pressed="false" data-i18n="flow.tab.manual">Met de hand</button>
-            <button type="button" data-flow-show="auto" aria-pressed="true" data-i18n="flow.tab.auto">Geautomatiseerd</button>
-          </div>
-        </div>
-        <div class="flow__body">
-          <ul class="flow__lanes" aria-hidden="true">
-            <li data-i18n="flow.lane.shop">Webshop</li>
-            <li data-i18n="flow.lane.staff">Medewerker</li>
-            <li data-i18n="flow.lane.erp">ERP</li>
-            <li data-i18n="flow.lane.inv">Facturatie</li>
-          </ul>
-          <div class="flow__stage" data-flow-panel="manual" hidden>
-            <svg class="flow__wires" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-              <path d="M50 50H100V150H150"/><path d="M150 150H200V250H250"/><path d="M250 250H300V150H350"/><path d="M350 150H450"/><path d="M450 150H500V350H550"/>
-            </svg>
-            <ol class="flow__steps">
-              <li class="step" style="--c:1;--r:1"><span class="step__lane" data-i18n="flow.lane.shop">Webshop</span> <span data-i18n="flow.m1">Order komt binnen</span></li>
-              <li class="step step--manual" style="--c:2;--r:2"><span class="step__lane" data-i18n="flow.lane.staff">Medewerker</span> <span data-i18n="flow.m2">Typt de order over</span></li>
-              <li class="step" style="--c:3;--r:3"><span class="step__lane" data-i18n="flow.lane.erp">ERP</span> <span data-i18n="flow.m3">Order staat in ERP</span></li>
-              <li class="step step--manual" style="--c:4;--r:2"><span class="step__lane" data-i18n="flow.lane.staff">Medewerker</span> <span data-i18n="flow.m4">Controleert prijs en voorraad</span></li>
-              <li class="step step--manual" style="--c:5;--r:2"><span class="step__lane" data-i18n="flow.lane.staff">Medewerker</span> <span data-i18n="flow.m5">Typt de factuur over</span></li>
-              <li class="step" style="--c:6;--r:4"><span class="step__lane" data-i18n="flow.lane.inv">Facturatie</span> <span data-i18n="flow.m6">Factuur verstuurd</span></li>
-            </ol>
-          </div>
-          <div class="flow__stage" data-flow-panel="auto">
-            <svg class="flow__wires" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-              <path d="M50 50H100V250H150"/><path d="M150 250H350"/><path d="M350 250H500V350H550"/>
-              <path class="is-exception" d="M400 250V150H450"/><path class="is-exception" d="M450 150H500V250"/>
-            </svg>
-            <ol class="flow__steps">
-              <li class="step" style="--c:1;--r:1"><span class="step__lane" data-i18n="flow.lane.shop">Webshop</span> <span data-i18n="flow.m1">Order komt binnen</span></li>
-              <li class="step step--auto" style="--c:2;--r:3"><span class="step__lane" data-i18n="flow.lane.erp">ERP</span> <span data-i18n="flow.a2">Order aangemaakt</span></li>
-              <li class="step step--auto" style="--c:3 / span 2;--r:3"><span class="step__lane" data-i18n="flow.lane.erp">ERP</span> <span data-i18n="flow.a3">Controle op prijs en voorraad</span></li>
-              <li class="step step--manual" style="--c:5;--r:2"><span class="step__lane" data-i18n="flow.lane.staff">Medewerker</span> <span data-i18n="flow.a5">Beoordeelt de afwijking</span></li>
-              <li class="step step--auto" style="--c:6;--r:4"><span class="step__lane" data-i18n="flow.lane.inv">Facturatie</span> <span data-i18n="flow.m6">Factuur verstuurd</span></li>
-            </ol>
-          </div>
-        </div>
-        <div class="flow__foot">
-          <ul class="legend">
-            <li class="is-manual"><i></i><span data-i18n="flow.legend.manual">Handwerk</span></li>
-            <li><i></i><span data-i18n="flow.legend.auto">Software</span></li>
-            <li class="is-exception"><i></i><span data-i18n="flow.legend.exception">Alleen bij een afwijking</span></li>
-          </ul>
-          <p class="flow__sum" data-flow-panel="manual" hidden><b>3</b><span data-i18n="flow.sum.manual">handelingen met de hand per order</span></p>
-          <p class="flow__sum" data-flow-panel="auto" aria-live="polite"><b>0</b><span data-i18n="flow.sum.auto">handelingen met de hand. Alleen afwijkingen gaan naar een medewerker.</span></p>
-        </div>
-      </figure>
+            <figure class="flow" data-flow aria-labelledby="ob-title">
+              <div class="flow__head">
+                <figcaption id="ob-title" data-i18n="ob.title">Voorbeeld: de eerste werkdag regelen</figcaption>
+                <div class="seg" role="group" aria-labelledby="ob-title">
+                  <button type="button" data-flow-show="manual" aria-pressed="false" data-i18n="flow.tab.manual">Met de hand</button>
+                  <button type="button" data-flow-show="auto" aria-pressed="true" data-i18n="flow.tab.auto">Geautomatiseerd</button>
+                </div>
+              </div>
+              <div class="flow__body">
+                <ul class="flow__lanes" aria-hidden="true"><li data-i18n="ob.lane.hr">HR</li><li data-i18n="ob.lane.mgr">Manager</li><li data-i18n="ob.lane.it">IT</li><li data-i18n="ob.lane.adm">Administratie</li></ul>
+                <div class="flow__stage" data-flow-panel="manual" hidden>
+                  <svg class="flow__wires" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 50H150"/><path d="M150 50H200V250H250"/><path d="M250 250H300V150H350"/><path d="M350 150H400V350H450"/><path d="M450 350H500V50H550"/></svg>
+                  <ol class="flow__steps">
+                    <li class="step" style="--c:1;--r:1"><span class="step__lane" data-i18n="ob.lane.hr">HR</span> <span data-i18n="ob.start">Voert nieuwe medewerker in</span></li>
+                    <li class="step step--manual" style="--c:2;--r:1"><span class="step__lane" data-i18n="ob.lane.hr">HR</span> <span data-i18n="ob.m2">Mailt IT, manager en administratie</span></li>
+                    <li class="step step--manual" style="--c:3;--r:3"><span class="step__lane" data-i18n="ob.lane.it">IT</span> <span data-i18n="ob.m3">Maakt accounts aan</span></li>
+                    <li class="step step--manual" style="--c:4;--r:2"><span class="step__lane" data-i18n="ob.lane.mgr">Manager</span> <span data-i18n="ob.m4">Bestelt een laptop</span></li>
+                    <li class="step step--manual" style="--c:5;--r:4"><span class="step__lane" data-i18n="ob.lane.adm">Administratie</span> <span data-i18n="ob.m5">Stelt het contract op</span></li>
+                    <li class="step step--manual" style="--c:6;--r:1"><span class="step__lane" data-i18n="ob.lane.hr">HR</span> <span data-i18n="ob.m6">Belt na wat nog mist</span></li>
+                  </ol>
+                </div>
+                <div class="flow__stage" data-flow-panel="auto">
+                  <svg class="flow__wires" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 50H150V350H250"/><path d="M150 150H250"/><path d="M150 250H250"/><path d="M250 150H350V250"/><path d="M250 250H450"/><path d="M250 350H500V250"/><path d="M450 250H500V50H550"/></svg>
+                  <ol class="flow__steps">
+                    <li class="step" style="--c:1;--r:1"><span class="step__lane" data-i18n="ob.lane.hr">HR</span> <span data-i18n="ob.start">Voert nieuwe medewerker in</span></li>
+                    <li class="step step--manual" style="--c:3;--r:2"><span class="step__lane" data-i18n="ob.lane.mgr">Manager</span> <span data-i18n="ob.a.mgr">Kiest de laptop</span></li>
+                    <li class="step step--auto" style="--c:3;--r:3"><span class="step__lane" data-i18n="ob.lane.it">IT</span> <span data-i18n="ob.a.it">Accounts aangemaakt</span></li>
+                    <li class="step step--auto" style="--c:3;--r:4"><span class="step__lane" data-i18n="ob.lane.adm">Administratie</span> <span data-i18n="ob.a.adm">Contract klaar om te tekenen</span></li>
+                    <li class="step step--auto" style="--c:5;--r:3"><span class="step__lane" data-i18n="ob.lane.it">IT</span> <span data-i18n="ob.a.order">Laptop besteld</span></li>
+                    <li class="step step--auto" style="--c:6;--r:1"><span class="step__lane" data-i18n="ob.lane.hr">HR</span> <span data-i18n="ob.a.done">Overzicht: alles geregeld</span></li>
+                  </ol>
+                </div>
+              </div>
+              <div class="flow__foot">
+                <ul class="legend"><li class="is-manual"><i></i><span data-i18n="flow.legend.manual">Handwerk</span></li><li><i></i><span data-i18n="flow.legend.auto">Software</span></li></ul>
+                <p class="flow__sum" data-flow-panel="manual" hidden><b>5</b><span data-i18n="ob.sum.manual">handelingen met de hand per nieuwe medewerker</span></p>
+                <p class="flow__sum" data-flow-panel="auto" aria-live="polite"><b>1</b><span data-i18n="ob.sum.auto">handeling met de hand: de manager kiest de laptop.</span></p>
+              </div>
+            </figure>
             </div>
-            <p class="uc__service"><span data-i18n="cases.service">Dienst:</span> <a class="textlink" href="process-automation.html" data-i18n="services.1.title">Procesautomatisering</a></p>
+            <p class="uc__service"><span data-i18n="cases.service">Dienst:</span> <a class="textlink" href="system-integration.html" data-i18n="services.4.title">Systeemintegratie</a></p>
           </div>
           <div class="uc__panel" role="tabpanel" id="uc-2" aria-labelledby="uc-tab-2" tabindex="0">
             <p class="uc__sector" data-i18n="x.1.sector">Logistiek</p>
@@ -299,55 +286,43 @@
             <p class="uc__service"><span data-i18n="cases.service">Dienst:</span> <a class="textlink" href="custom-ai-solutions.html" data-i18n="services.5.title">Maatwerk AI-oplossingen</a></p>
           </div>
           <div class="uc__panel" role="tabpanel" id="uc-3" aria-labelledby="uc-tab-3" tabindex="0">
-            <p class="uc__sector" data-i18n="cases.2.sector">Zakelijke dienstverlening</p>
-            <h3 data-i18n="cases.2.title">Factuurcontrole</h3>
+            <p class="uc__sector" data-i18n="u.3.sector">Financiën</p>
+            <h3 data-i18n="u.3.title">Bankbetalingen afletteren</h3>
             <dl class="uc__ba">
-              <div><dt data-i18n="cases.now">Nu</dt><dd data-i18n="cases.2.challenge">Het financiële team legt elke binnenkomende factuur met de hand naast de inkooporder. Hoe meer facturen, hoe meer uren.</dd></div>
-              <div><dt data-i18n="flow.tab.auto">Geautomatiseerd</dt><dd><b data-i18n="cases.2.result">Alleen afwijkingen</b><span data-i18n="cases.2.resultLabel">komen nog bij een mens terecht</span></dd></div>
+              <div><dt data-i18n="cases.now">Nu</dt><dd data-i18n="u.3.now">De administratie zoekt bij elke bijschrijving de juiste factuur op en vinkt die met de hand af.</dd></div>
+              <div><dt data-i18n="flow.tab.auto">Geautomatiseerd</dt><dd><b data-i18n="u.3.result">Betaling en factuur gekoppeld</b><span data-i18n="u.3.label">alleen wat niet klopt blijft over</span></dd></div>
             </dl>
             <div class="uc__ex">
-            <div class="demo" data-demo="1">
-              <div><p class="demo__label" data-i18n="uc.in">Zo komt het binnen</p><div class="sheet" data-demo-sheet></div></div>
-              <div class="demo__arrow" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 12h17M14 6l6 6-6 6"/></svg></div>
-              <div><p class="demo__label" data-i18n="uc.out">Zo staat het in uw systeem</p><div class="record"><table><tbody data-demo-rows></tbody></table><p class="record__out" data-demo-out></p></div></div>
+            <div class="recon" data-recon></div>
+            <p class="ex__note" data-i18n="uc.note.recon">Verzonnen bijschrijvingen en facturen. De software koppelt wat zeker is en legt de rest met de reden erbij voor.</p>
             </div>
-            <p class="ex__note" data-i18n="uc.note.doc">Verzonnen gegevens. Blauw is herkend, oranje gaat eerst langs een medewerker. Beweeg over een veld om te zien waar het vandaan komt.</p>
-            </div>
-            <p class="uc__service"><span data-i18n="cases.service">Dienst:</span> <a class="textlink" href="ai-agents-chatbots.html" data-i18n="services.2.title">AI-agents</a></p>
+            <p class="uc__service"><span data-i18n="cases.service">Dienst:</span> <a class="textlink" href="process-automation.html" data-i18n="services.1.title">Procesautomatisering</a></p>
           </div>
           <div class="uc__panel" role="tabpanel" id="uc-4" aria-labelledby="uc-tab-4" tabindex="0">
-            <p class="uc__sector" data-i18n="cases.3.sector">Juridisch</p>
-            <h3 data-i18n="cases.3.title">Clausules uit contracten halen</h3>
+            <p class="uc__sector" data-i18n="u.4.sector">Installatiebedrijf</p>
+            <h3 data-i18n="u.4.title">Monteurs inplannen</h3>
             <dl class="uc__ba">
-              <div><dt data-i18n="cases.now">Nu</dt><dd data-i18n="cases.3.challenge">Juristen zoeken in elk binnenkomend contract dezelfde kernclausules op en vergelijken ze met de hand. Dat kost uren per contract.</dd></div>
-              <div><dt data-i18n="flow.tab.auto">Geautomatiseerd</dt><dd><b data-i18n="cases.3.result">Seconden</b><span data-i18n="cases.3.resultLabel">per contract, in plaats van uren</span></dd></div>
+              <div><dt data-i18n="cases.now">Nu</dt><dd data-i18n="u.4.now">De planner puzzelt elke ochtend met storingen, vaardigheden en reistijd in een spreadsheet.</dd></div>
+              <div><dt data-i18n="flow.tab.auto">Geautomatiseerd</dt><dd><b data-i18n="u.4.result">Een voorstel voor de dag</b><span data-i18n="u.4.label">de planner schuift en keurt goed</span></dd></div>
             </dl>
             <div class="uc__ex">
-            <div class="demo" data-demo="2">
-              <div><p class="demo__label" data-i18n="uc.in">Zo komt het binnen</p><div class="sheet" data-demo-sheet></div></div>
-              <div class="demo__arrow" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 12h17M14 6l6 6-6 6"/></svg></div>
-              <div><p class="demo__label" data-i18n="uc.out">Zo staat het in uw systeem</p><div class="record"><table><tbody data-demo-rows></tbody></table><p class="record__out" data-demo-out></p></div></div>
-            </div>
-            <p class="ex__note" data-i18n="uc.note.doc">Verzonnen gegevens. Blauw is herkend, oranje gaat eerst langs een medewerker. Beweeg over een veld om te zien waar het vandaan komt.</p>
-            </div>
-            <p class="uc__service"><span data-i18n="cases.service">Dienst:</span> <a class="textlink" href="custom-ai-solutions.html" data-i18n="services.5.title">Maatwerk AI-oplossingen</a></p>
-          </div>
-          <div class="uc__panel" role="tabpanel" id="uc-5" aria-labelledby="uc-tab-5" tabindex="0">
-            <p class="uc__sector" data-i18n="x.2.sector">Groothandel</p>
-            <h3 data-i18n="x.2.title">Offerteaanvragen beantwoorden</h3>
-            <dl class="uc__ba">
-              <div><dt data-i18n="cases.now">Nu</dt><dd data-i18n="x.2.now">Verkoop zoekt prijzen en voorraad op in het ERP en stelt elke offerte met de hand op.</dd></div>
-              <div><dt data-i18n="flow.tab.auto">Geautomatiseerd</dt><dd><b data-i18n="x.2.result">De offerte staat in concept</b><span data-i18n="x.2.label">verkoop past aan en verstuurt</span></dd></div>
-            </dl>
-            <div class="uc__ex">
-            <div class="demo" data-demo="3">
-              <div><p class="demo__label" data-i18n="uc.in">Zo komt het binnen</p><div class="sheet" data-demo-sheet></div></div>
-              <div class="demo__arrow" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 12h17M14 6l6 6-6 6"/></svg></div>
-              <div><p class="demo__label" data-i18n="uc.out">Zo staat het in uw systeem</p><div class="record"><table><tbody data-demo-rows></tbody></table><p class="record__out" data-demo-out></p></div></div>
-            </div>
-            <p class="ex__note" data-i18n="uc.note.doc">Verzonnen gegevens. Blauw is herkend, oranje gaat eerst langs een medewerker. Beweeg over een veld om te zien waar het vandaan komt.</p>
+            <div class="board" data-plan></div>
+            <p class="ex__note" data-i18n="uc.note.plan">Verzonnen monteurs en klussen. De software doet een voorstel; de planner houdt het laatste woord.</p>
             </div>
             <p class="uc__service"><span data-i18n="cases.service">Dienst:</span> <a class="textlink" href="ai-agents-chatbots.html" data-i18n="services.2.title">AI-agents</a></p>
+          </div>
+          <div class="uc__panel" role="tabpanel" id="uc-5" aria-labelledby="uc-tab-5" tabindex="0">
+            <p class="uc__sector" data-i18n="u.5.sector">Directie</p>
+            <h3 data-i18n="u.5.title">Weekrapportage zonder Excel</h3>
+            <dl class="uc__ba">
+              <div><dt data-i18n="cases.now">Nu</dt><dd data-i18n="u.5.now">Elke maandag haalt iemand cijfers uit het ERP, het CRM en de boekhouding en plakt ze in een spreadsheet.</dd></div>
+              <div><dt data-i18n="flow.tab.auto">Geautomatiseerd</dt><dd><b data-i18n="u.5.result">Het rapport staat er al</b><span data-i18n="u.5.label">elke nacht bijgewerkt uit de bronsystemen</span></dd></div>
+            </dl>
+            <div class="uc__ex">
+            <div class="report" data-report></div>
+            <p class="ex__note" data-i18n="uc.note.report">Verzonnen cijfers. Wat niet klopt in de brongegevens wordt gemeld en niet stilletjes meegeteld.</p>
+            </div>
+            <p class="uc__service"><span data-i18n="cases.service">Dienst:</span> <a class="textlink" href="data-analytics-pipelines.html" data-i18n="services.3.title">Data- &amp; analysepijplijnen</a></p>
           </div>
           <div class="uc__panel" role="tabpanel" id="uc-6" aria-labelledby="uc-tab-6" tabindex="0">
             <p class="uc__sector" data-i18n="x.3.sector">Klantenservice</p>

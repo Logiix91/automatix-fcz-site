@@ -15,7 +15,20 @@ The same content and examples as version 4, in the plain, light style of an esta
 Blue = software, orange-brown `#b35c00` = a person has to act, green `#1a7f4b` = done.
 
 ## Structure of the home page
-Hero with checklist, simulator, services (tiles), figures and calculator, step plan, use-case explorer (six cases, see `../v4/design.md` for where each example's content lives), pricing, about, contact.
+Hero with checklist, simulator, services (tiles), figures and calculator, step plan, use-case explorer, pricing, about, contact.
+
+## The six use cases (changed 14 Nov: each one now shows a different kind of work)
+
+| Use case | Sector | Example type | Where the content lives |
+|---|---|---|---|
+| Nieuwe medewerker inwerken | HR | swimlane diagram, by hand / automated | `index.html`, `ob.*` keys in `i18n.js` |
+| Transportaanvragen uit de mailbox | Logistiek | marked document | `DEMO[...][0]` in `site.js` |
+| Bankbetalingen afletteren | Financiën | payments matched to invoices, table | `RECON` in `site.js` |
+| Monteurs inplannen | Installatiebedrijf | day schedule for three engineers | `PLAN` in `site.js` |
+| Weekrapportage zonder Excel | Directie | small report with figures and a bar chart | `REPORT` in `site.js` |
+| Waar is mijn zending? | Klantenservice | chat with lookup and hand-over | `CHAT` in `site.js` |
+
+Case texts: `u.1`, `u.3`, `u.4`, `u.5`, `x.1` and `x.3` in `i18n.js`. The other entries in `DEMO` (invoice, contract, quote) and the `cases.*` / `x.2` texts are no longer shown; they are kept so they can be switched back in.
 
 ## Files
 `site.css` is version 4's stylesheet with one block appended at the end ("version 5") that sets this look. `site.js` and the examples are the same as version 4. New texts: `usp.*`, `sim.h`, `sim.lead` in `i18n.js`.
